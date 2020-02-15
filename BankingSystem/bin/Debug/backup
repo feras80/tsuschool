@@ -1,0 +1,29 @@
+doc.LoadFile(path);
+ XMLElement *l_pRootElement = doc.RootElement();
+
+if( NULL != l_pRootElement )
+{
+    // set of &lt;person&gt; tags
+    XMLElement *l_pPeople = l_pRootElement->FirstChildElement( "users" );
+
+    if ( NULL != l_pPeople )
+    {
+        XMLElement *l_pPerson = l_pPeople->FirstChildElement( "user" );
+
+        while( l_pPerson )
+        {
+            XMLElement *l_pForename = l_pPerson->FirstChildElement( "Username" );
+
+            if ( NULL != l_pForename )
+            {
+                std::cout << l_pForename->GetText();
+            }
+
+
+
+            std::cout << std::endl;
+
+            l_pPerson = l_pPerson->NextSiblingElement( "person" );
+        }
+    }
+}
