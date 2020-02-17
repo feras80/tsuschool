@@ -1,13 +1,8 @@
 #include "Accounts.h"
-
 #include <iostream>
-
 #include <string>
-
-#include <tinyxml2.h>usp_GetPaymentDetails
-
+#include <tinyxml2.h>
 #include <constants.h>
-
 #include <iomanip>
 #include <cstddef>
 #include <ctime>
@@ -20,7 +15,10 @@ Accounts::Accounts() {
   void GetAllAccounts();
   void GetAccount(string a);
   void GetAccountBalance(string a);
+  void Deposit(string a , string amount);
+  void Withdraw (string a , string amount);
 }
+
 void bindTransaction(string a) {
 
   cout << "\n";
@@ -98,6 +96,125 @@ void bindTransaction(string a) {
     }
   }
 
+}
+
+void Accounts::Deposit (string a , string amount)
+{
+
+    char date[9];
+	_strdate(date);
+
+XMLDocument doc;
+  const char * path = constants::dataPath;
+char accountNumberChar[100];
+char typeChar[100];
+  doc.LoadFile(path);
+
+XMLElement * pTop = doc.RootElement();
+XMLElement *pTransactions = pTop->FirstChildElement("Transactions");
+   XMLNode * pRoot = doc.NewElement("transaction");
+pTransactions->InsertEndChild(pRoot);
+  //  doc.InsertFirstChild(pRoot);
+    XMLElement * pElement = doc.NewElement("AccountNo");
+
+    pElement->SetText(strdup(a.c_str())); // AccountNo
+
+    pRoot->InsertEndChild(pElement);
+
+
+    pElement = doc.NewElement("type");
+    pElement->SetText("Deposit"); // type
+    pRoot->InsertEndChild(pElement);
+
+    pElement = doc.NewElement("amount");
+    pElement->SetText(strdup(amount.c_str())); // Amount
+    pRoot->InsertEndChild(pElement);
+
+
+    pElement = doc.NewElement("date");
+    pElement->SetText(strdup(date)); // Date
+    pRoot->InsertEndChild(pElement);
+
+    doc.SaveFile(path);
+
+}
+
+void Accounts::Withdraw (string a , string amount)
+{
+
+    char date[9];
+	_strdate(date);
+
+XMLDocument doc;
+  const char * path = constants::dataPath;
+char accountNumberChar[100];
+char typeChar[100];
+  doc.LoadFile(path);
+
+XMLElement * pTop = doc.RootElement();
+XMLElement *pTransactions = pTop->FirstChildElement("Transactions");
+   XMLNode * pRoot = doc.NewElement("transaction");
+pTransactions->InsertEndChild(pRoot);
+  //  doc.InsertFirstChild(pRoot);
+    XMLElement * pElement = doc.NewElement("AccountNo");
+
+    pElement->SetText(strdup(a.c_str())); // AccountNo
+
+    pRoot->InsertEndChild(pElement);
+
+
+    pElement = doc.NewElement("type");
+    pElement->SetText("Withdrawal"); // type
+    pRoot->InsertEndChild(pElement);
+
+    pElement = doc.NewElement("amount");
+    pElement->SetText(strdup(amount.c_str())); // Amount
+    pRoot->InsertEndChild(pElement);
+
+
+    pElement = doc.NewElement("date");
+    pElement->SetText(strdup(date)); // Date
+    pRoot->InsertEndChild(pElement);
+
+    doc.SaveFile(path);
+
+}
+
+bool Accounts::AcountExists(string a)
+{
+     XMLDocument doc;
+       string acountChar;
+  const char * path = constants::dataPath;
+
+  int i = 0;
+  doc.LoadFile(path);
+
+  XMLElement * pRootElement = doc.RootElement();
+
+
+  if (NULL != pRootElement) {
+
+    XMLElement * pAccounts = pRootElement -> FirstChildElement("Accounts");
+
+    if (NULL != pAccounts) {
+      XMLElement * pAccount = pAccounts -> FirstChildElement("Account");
+
+      while (pAccount) {
+        XMLElement * pAccountNo = pAccount -> FirstChildElement("AccountNo");
+        acountChar = pAccountNo -> GetText();
+
+        if (acountChar == a) {
+          return true;
+
+
+          }
+                pAccount = pAccount -> NextSiblingElement("Account");
+      }
+  }
+    }
+
+
+    return false;
 }
 
 void Accounts::GetAccount(string a) {

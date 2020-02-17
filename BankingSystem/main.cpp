@@ -39,6 +39,7 @@ void mainMenu() {
     string accountType;
     string customerName;
     string accountBalance;
+    bool accountExists;
 
     do {
       system("cls");
@@ -60,26 +61,26 @@ void mainMenu() {
       cout << endl;
       switch (ch) {
       case 1:
-system("cls");
+      system("cls");
         do {
           system("Color B");
           Header();
 
-                    cout << "Enter Account Number(Must be unique):";
+          cout << "Enter Account Number(Must be unique):";
           cin >> accountNumber;
           cout <<endl;
           cout << "Enter Account Type(Checking or Saving):";
           cin >> accountType;
-  cout <<endl;
-                    cout << "Enter customer name:";
+          cout <<endl;
+          cout << "Enter customer name:";
           cin >> customerName;
-  cout <<endl;
-           cout << "Enter account balance:";
+          cout <<endl;
+          cout << "Enter account balance:";
           cin >> accountBalance;
           account.InsertAccount(accountNumber,accountType,customerName, accountBalance);
-            cout <<endl;
-cout << "Account has been created!";
-  cout <<endl;
+          cout <<endl;
+          cout << "Account has been created!";
+          cout <<endl;
 
           cout << "Back to main menu?('y' or 'n')\n";
 
@@ -117,9 +118,65 @@ cout << "Account has been created!";
         break;
       case 4:
 
+
+        do {
+          system("cls");
+          system("Color B");
+          Header();
+          cout << "Enter Account Number: ";
+          cin >> accountNumber;
+           cout << "Enter Deposit Amount: ";
+           cin >> accountBalance;
+
+           accountExists = account.AcountExists(accountNumber);
+
+           if (accountExists== false)
+           {
+      cout << "Account Does not exist.";
+      cout <<endl ;
+           }
+           else
+           {
+               account.Deposit(accountNumber, accountBalance);
+               cout << "Amount has been deposited.";
+           }
+
+      cout <<endl<<endl;
+      cout << "Back to main menu?('y' or 'n')\n";
+
+          cin >> c;
+        }
+        while (c == 'n');
         break;
       case 5:
+ do {
+          system("cls");
+          system("Color B");
+          Header();
+          cout << "Enter Account Number: ";
+          cin >> accountNumber;
+          cout << "Enter Amount to Withdraw (Must be negative amount): ";
+          cin >> accountBalance;
 
+           accountExists = account.AcountExists(accountNumber);
+
+           if (accountExists== false)
+           {
+      cout << "Account Does not exist.";
+      cout <<endl ;
+           }
+           else
+           {
+               account.Withdraw(accountNumber, accountBalance);
+               cout << "Amount has been withdrawn.";
+           }
+
+      cout <<endl<<endl;
+      cout << "Back to main menu?('y' or 'n')\n";
+
+          cin >> c;
+        }
+        while (c == 'n');
         break;
       case 6:
           system("cls");

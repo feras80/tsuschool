@@ -125,5 +125,35 @@
             <amount>19.00</amount>
             <date>11/30/2019</date>
         </transaction>
+        <transaction>
+            <AccountNo>10</AccountNo>
+            <type>Deposit</type>
+            <amount>399</amount>
+            <date>02/15/20</date>
+        </transaction>
+        <transaction>
+            <AccountNo>10</AccountNo>
+            <type>Deposit</type>
+            <amount>361</amount>
+            <date>02/15/20</date>
+        </transaction>
+        <transaction>
+            <AccountNo>4</AccountNo>
+            <type>Deposit</type>
+            <amount>12</amount>
+            <date>02/15/20</date>
+        </transaction>
+        <transaction>
+            <AccountNo>8</AccountNo>
+            <type>Deposit</type>
+            <amount>-66</amount>
+            <date>02/15/20</date>
+        </transaction>
+        <transaction>
+            <AccountNo>8</AccountNo>
+            <type>Withdrawal</type>
+            <amount>-55</amount>
+            <date>02/15/20</date>
+        </transaction>
     </Transactions>
 </file>
