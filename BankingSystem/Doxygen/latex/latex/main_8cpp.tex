@@ -1,0 +1,322 @@
+\hypertarget{main_8cpp}{}\doxysection{C\+:/\+Users/cb05314/\+Documents/\+T\+S\+U/\+C\+P\+P\+T/\+Banking\+System/main.cpp File Reference}
+\label{main_8cpp}\index{C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp@{C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$Employee.\+h$>$}\newline
+{\ttfamily \#include $<$tinyxml2.\+h$>$}\newline
+{\ttfamily \#include $<$Users.\+h$>$}\newline
+{\ttfamily \#include $<$Accounts.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a36e2097fc280b614200149c851afd1b6}{Header}} ()
+\item 
+void \mbox{\hyperlink{main_8cpp_ab3002fe8e0074c9e2ecb5b835e5e819f}{main\+Menu}} ()
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a36e2097fc280b614200149c851afd1b6}\label{main_8cpp_a36e2097fc280b614200149c851afd1b6}} 
+\index{main.cpp@{main.cpp}!Header@{Header}}
+\index{Header@{Header}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{Header()}{Header()}}
+{\footnotesize\ttfamily void Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 14 of file main.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     system(\textcolor{stringliteral}{"Color A"});}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     cout << \textcolor{stringliteral}{"\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\(\backslash\)n"};}
+\DoxyCodeLine{19     cout << \textcolor{stringliteral}{"...............................Welcome to the Banking System................................\(\backslash\)n"};}
+\DoxyCodeLine{20     cout << \textcolor{stringliteral}{"\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\string~\(\backslash\)n"};}
+\DoxyCodeLine{21     cout << endl;}
+\DoxyCodeLine{22 \}}
+
+\end{DoxyCode}
+
+
+Referenced by main(), and main\+Menu().
+
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 238 of file main.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{239 \{}
+\DoxyCodeLine{240     \textcolor{keywordtype}{string} ch;}
+\DoxyCodeLine{241     \textcolor{comment}{// Init Users Instance}}
+\DoxyCodeLine{242     \mbox{\hyperlink{class_users}{Users}} user;}
+\DoxyCodeLine{243     \textcolor{comment}{//Display the Header}}
+\DoxyCodeLine{244     \mbox{\hyperlink{main_8cpp_a36e2097fc280b614200149c851afd1b6}{Header}}();}
+\DoxyCodeLine{245     \textcolor{comment}{// Prompt the user to enter a password}}
+\DoxyCodeLine{246     cout << \textcolor{stringliteral}{"Enter your password:"};}
+\DoxyCodeLine{247     cin >> ch;}
+\DoxyCodeLine{248     cout << endl;}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250     \textcolor{keywordflow}{if} (ch == user.\mbox{\hyperlink{class_users_af3b5e4015df188df9f0dda9afa2f892d}{GetPassword}}())}
+\DoxyCodeLine{251     \{}
+\DoxyCodeLine{252         \textcolor{comment}{//Valid password}}
+\DoxyCodeLine{253         \mbox{\hyperlink{main_8cpp_ab3002fe8e0074c9e2ecb5b835e5e819f}{mainMenu}}();}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255     \}}
+\DoxyCodeLine{256     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{257     \{}
+\DoxyCodeLine{258         \textcolor{comment}{//Invalid password}}
+\DoxyCodeLine{259         cout << \textcolor{stringliteral}{"You are not permitted to access this system\(\backslash\)n"};}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261     \}}
+\DoxyCodeLine{262 \}}
+
+\end{DoxyCode}
+
+
+References Users\+::\+Get\+Password(), Header(), and main\+Menu().
+
+\mbox{\Hypertarget{main_8cpp_ab3002fe8e0074c9e2ecb5b835e5e819f}\label{main_8cpp_ab3002fe8e0074c9e2ecb5b835e5e819f}} 
+\index{main.cpp@{main.cpp}!mainMenu@{mainMenu}}
+\index{mainMenu@{mainMenu}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{mainMenu()}{mainMenu()}}
+{\footnotesize\ttfamily void main\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 26 of file main.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28     \textcolor{keywordtype}{int} ch;}
+\DoxyCodeLine{29     \textcolor{comment}{// Init Accounts instance}}
+\DoxyCodeLine{30     \mbox{\hyperlink{class_accounts}{Accounts}} account;}
+\DoxyCodeLine{31     \textcolor{keywordflow}{while} (1)}
+\DoxyCodeLine{32     \{}
+\DoxyCodeLine{33         \textcolor{comment}{// Variables}}
+\DoxyCodeLine{34         \textcolor{keywordtype}{char} c;}
+\DoxyCodeLine{35         \textcolor{keywordtype}{string} accountNumber;}
+\DoxyCodeLine{36         \textcolor{keywordtype}{string} accountType;}
+\DoxyCodeLine{37         \textcolor{keywordtype}{string} customerName;}
+\DoxyCodeLine{38         \textcolor{keywordtype}{string} accountBalance;}
+\DoxyCodeLine{39         \textcolor{keywordtype}{bool} accountExists;}
+\DoxyCodeLine{40         \textcolor{comment}{// Print out main menu choices}}
+\DoxyCodeLine{41         \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{42             system(\textcolor{stringliteral}{"cls"});}
+\DoxyCodeLine{43             \mbox{\hyperlink{main_8cpp_a36e2097fc280b614200149c851afd1b6}{Header}}();}
+\DoxyCodeLine{44             cout << \textcolor{stringliteral}{" 1. Create Account\(\backslash\)n\(\backslash\) "};}
+\DoxyCodeLine{45             cout << \textcolor{stringliteral}{"2. View Account\(\backslash\)n\(\backslash\) "};}
+\DoxyCodeLine{46             cout << \textcolor{stringliteral}{"3. Account List\(\backslash\)n\(\backslash\) "};}
+\DoxyCodeLine{47             cout << \textcolor{stringliteral}{"4. Deposit\(\backslash\)n\(\backslash\) "};}
+\DoxyCodeLine{48             cout << \textcolor{stringliteral}{"5. Withdraw\(\backslash\)n\(\backslash\) "};}
+\DoxyCodeLine{49             cout << \textcolor{stringliteral}{"6. Account Balance\(\backslash\)n\(\backslash\) "};}
+\DoxyCodeLine{50             cout << \textcolor{stringliteral}{"7. Exit \(\backslash\)n\(\backslash\) "};}
+\DoxyCodeLine{51             cout << endl;}
+\DoxyCodeLine{52             \textcolor{comment}{// Prompt the user the enter a choice}}
+\DoxyCodeLine{53             cout << \textcolor{stringliteral}{"Enter your choice : \(\backslash\)n\(\backslash\) "};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55             cin >> ch;}
+\DoxyCodeLine{56             cout << endl;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58             cout << endl;}
+\DoxyCodeLine{59             \textcolor{keywordflow}{switch} (ch)}
+\DoxyCodeLine{60             \{}
+\DoxyCodeLine{61                 \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{62                     \textcolor{comment}{// Clear screen}}
+\DoxyCodeLine{63                     system(\textcolor{stringliteral}{"cls"});}
+\DoxyCodeLine{64                     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{65                         \textcolor{comment}{//Change color}}
+\DoxyCodeLine{66                         system(\textcolor{stringliteral}{"Color B"});}
+\DoxyCodeLine{67                         \textcolor{comment}{// Display Header}}
+\DoxyCodeLine{68                         \mbox{\hyperlink{main_8cpp_a36e2097fc280b614200149c851afd1b6}{Header}}();}
+\DoxyCodeLine{69                         \textcolor{comment}{// Prompt the user to enter new account information}}
+\DoxyCodeLine{70                         cout << \textcolor{stringliteral}{"Enter Account Number(Must be unique):"};}
+\DoxyCodeLine{71                         cin >> accountNumber;}
+\DoxyCodeLine{72                         cout << endl;}
+\DoxyCodeLine{73                         cout << \textcolor{stringliteral}{"Enter Account Type(Checking or Saving):"};}
+\DoxyCodeLine{74                         cin >> accountType;}
+\DoxyCodeLine{75                         cout << endl;}
+\DoxyCodeLine{76                         cout << \textcolor{stringliteral}{"Enter customer name:"};}
+\DoxyCodeLine{77                         cin >> customerName;}
+\DoxyCodeLine{78                         cout << endl;}
+\DoxyCodeLine{79                         cout << \textcolor{stringliteral}{"Enter account balance:"};}
+\DoxyCodeLine{80                         cin >> accountBalance;}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82                         \textcolor{comment}{// Call InsertAccount Function}}
+\DoxyCodeLine{83                         account.\mbox{\hyperlink{class_accounts_a79f7ab429e30a2a67705ebd97c309d0d}{InsertAccount}}(accountNumber, accountType, customerName, accountBalance);}
+\DoxyCodeLine{84                         cout << endl;}
+\DoxyCodeLine{85                         cout << \textcolor{stringliteral}{"Account has been created!"};}
+\DoxyCodeLine{86                         cout << endl;}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88                         cout << \textcolor{stringliteral}{"Back to main menu?('y' or 'n')\(\backslash\)n"};}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90                         cin >> c;}
+\DoxyCodeLine{91                     \}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93                     \textcolor{keywordflow}{while} (c == \textcolor{charliteral}{'n'});}
+\DoxyCodeLine{94                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{95                 \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{96                     \textcolor{comment}{//Clear screen}}
+\DoxyCodeLine{97                     system(\textcolor{stringliteral}{"cls"});}
+\DoxyCodeLine{98                     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{99                         \textcolor{comment}{//Change color}}
+\DoxyCodeLine{100                         system(\textcolor{stringliteral}{"Color B"});}
+\DoxyCodeLine{101                         \textcolor{comment}{//Display Header}}
+\DoxyCodeLine{102                         \mbox{\hyperlink{main_8cpp_a36e2097fc280b614200149c851afd1b6}{Header}}();}
+\DoxyCodeLine{103                         \textcolor{comment}{//Prompt the user to enter account number}}
+\DoxyCodeLine{104                         cout << \textcolor{stringliteral}{"Enter Account Number: "};}
+\DoxyCodeLine{105                         cin >> accountNumber;}
+\DoxyCodeLine{106                         \textcolor{comment}{//Call GetAccount Function}}
+\DoxyCodeLine{107                         account.\mbox{\hyperlink{class_accounts_a91ead45d60e894f7725444ebea347eb7}{GetAccount}}(accountNumber);}
+\DoxyCodeLine{108                         cout << \textcolor{stringliteral}{"Back to main menu?('y' or 'n')\(\backslash\)n"};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110                         cin >> c;}
+\DoxyCodeLine{111                     \}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113                     \textcolor{keywordflow}{while} (c == \textcolor{charliteral}{'n'});}
+\DoxyCodeLine{114                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{115                 \textcolor{keywordflow}{case} 3:}
+\DoxyCodeLine{116                     \textcolor{comment}{//Clear screen}}
+\DoxyCodeLine{117                     system(\textcolor{stringliteral}{"cls"});}
+\DoxyCodeLine{118                     \textcolor{comment}{//Display header}}
+\DoxyCodeLine{119                     \mbox{\hyperlink{main_8cpp_a36e2097fc280b614200149c851afd1b6}{Header}}();}
+\DoxyCodeLine{120                     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{121                         \textcolor{comment}{//Call GetAllAccounts Function}}
+\DoxyCodeLine{122                         account.\mbox{\hyperlink{class_accounts_aa878135d898fc49e79ed3bf49d3a69b8}{GetAllAccounts}}();}
+\DoxyCodeLine{123                         cout << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125                         cout << \textcolor{stringliteral}{"Back to main menu?('y' or 'n')\(\backslash\)n"};}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127                         cin >> c;}
+\DoxyCodeLine{128                     \}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130                     \textcolor{keywordflow}{while} (c == \textcolor{charliteral}{'n'});}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{133                 \textcolor{keywordflow}{case} 4:}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135                     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{136                         \textcolor{comment}{//Clear screen}}
+\DoxyCodeLine{137                         system(\textcolor{stringliteral}{"cls"});}
+\DoxyCodeLine{138                         \textcolor{comment}{//Change color}}
+\DoxyCodeLine{139                         system(\textcolor{stringliteral}{"Color B"});}
+\DoxyCodeLine{140                         \textcolor{comment}{//Display Header}}
+\DoxyCodeLine{141                         \mbox{\hyperlink{main_8cpp_a36e2097fc280b614200149c851afd1b6}{Header}}();}
+\DoxyCodeLine{142                         \textcolor{comment}{//Prompt the user to enter deposit information}}
+\DoxyCodeLine{143                         cout << \textcolor{stringliteral}{"Enter Account Number: "};}
+\DoxyCodeLine{144                         cin >> accountNumber;}
+\DoxyCodeLine{145                         cout << \textcolor{stringliteral}{"Enter Deposit Amount: "};}
+\DoxyCodeLine{146                         cin >> accountBalance;}
+\DoxyCodeLine{147                         \textcolor{comment}{//Check if account exists}}
+\DoxyCodeLine{148                         accountExists = account.\mbox{\hyperlink{class_accounts_a2043aec650956611653222f7e952683c}{AcountExists}}(accountNumber);}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150                         \textcolor{keywordflow}{if} (accountExists == \textcolor{keyword}{false})}
+\DoxyCodeLine{151                         \{}
+\DoxyCodeLine{152                             cout << \textcolor{stringliteral}{"Account Does not exist."};}
+\DoxyCodeLine{153                             cout << endl;}
+\DoxyCodeLine{154                         \}}
+\DoxyCodeLine{155                         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{156                         \{}
+\DoxyCodeLine{157                             \textcolor{comment}{// Call Deposit function}}
+\DoxyCodeLine{158                             account.\mbox{\hyperlink{class_accounts_a3ecaee83dc026b3bad8b69ae5b8d0598}{Deposit}}(accountNumber, accountBalance);}
+\DoxyCodeLine{159                             cout << \textcolor{stringliteral}{"Amount has been deposited."};}
+\DoxyCodeLine{160                         \}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162                         cout << endl << endl;}
+\DoxyCodeLine{163                         cout << \textcolor{stringliteral}{"Back to main menu?('y' or 'n')\(\backslash\)n"};}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165                         cin >> c;}
+\DoxyCodeLine{166                     \}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168                     \textcolor{keywordflow}{while} (c == \textcolor{charliteral}{'n'});}
+\DoxyCodeLine{169                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{170                 \textcolor{keywordflow}{case} 5:}
+\DoxyCodeLine{171                     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{172                         \textcolor{comment}{//Clear screen}}
+\DoxyCodeLine{173                         system(\textcolor{stringliteral}{"cls"});}
+\DoxyCodeLine{174                         \textcolor{comment}{//Change color}}
+\DoxyCodeLine{175                         system(\textcolor{stringliteral}{"Color B"});}
+\DoxyCodeLine{176                         \textcolor{comment}{//Display Header}}
+\DoxyCodeLine{177                         \mbox{\hyperlink{main_8cpp_a36e2097fc280b614200149c851afd1b6}{Header}}();}
+\DoxyCodeLine{178                         \textcolor{comment}{// Prompt the user to enter withdrawal information}}
+\DoxyCodeLine{179                         cout << \textcolor{stringliteral}{"Enter Account Number: "};}
+\DoxyCodeLine{180                         cin >> accountNumber;}
+\DoxyCodeLine{181                         cout << \textcolor{stringliteral}{"Enter Amount to Withdraw (Must be negative amount): "};}
+\DoxyCodeLine{182                         cin >> accountBalance;}
+\DoxyCodeLine{183                         \textcolor{comment}{// Check if account exists}}
+\DoxyCodeLine{184                         accountExists = account.\mbox{\hyperlink{class_accounts_a2043aec650956611653222f7e952683c}{AcountExists}}(accountNumber);}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186                         \textcolor{keywordflow}{if} (accountExists == \textcolor{keyword}{false})}
+\DoxyCodeLine{187                         \{}
+\DoxyCodeLine{188                             cout << \textcolor{stringliteral}{"Account Does not exist."};}
+\DoxyCodeLine{189                             cout << endl;}
+\DoxyCodeLine{190                         \}}
+\DoxyCodeLine{191                         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{192                         \{}
+\DoxyCodeLine{193                             \textcolor{comment}{// Call Withdraw Function}}
+\DoxyCodeLine{194                             account.\mbox{\hyperlink{class_accounts_a44ff25c8dee341d9a3a9af4a13bd3467}{Withdraw}}(accountNumber, accountBalance);}
+\DoxyCodeLine{195                             cout << \textcolor{stringliteral}{"Amount has been withdrawn."};}
+\DoxyCodeLine{196                         \}}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198                         cout << endl << endl;}
+\DoxyCodeLine{199                         cout << \textcolor{stringliteral}{"Back to main menu?('y' or 'n')\(\backslash\)n"};}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201                         cin >> c;}
+\DoxyCodeLine{202                     \}}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204                     \textcolor{keywordflow}{while} (c == \textcolor{charliteral}{'n'});}
+\DoxyCodeLine{205                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{206                 \textcolor{keywordflow}{case} 6:}
+\DoxyCodeLine{207                     \textcolor{comment}{//Clear screen}}
+\DoxyCodeLine{208                     system(\textcolor{stringliteral}{"cls"});}
+\DoxyCodeLine{209                     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{210                         \textcolor{comment}{//Change color}}
+\DoxyCodeLine{211                         system(\textcolor{stringliteral}{"Color B"});}
+\DoxyCodeLine{212                         \textcolor{comment}{//Display Header}}
+\DoxyCodeLine{213                         \mbox{\hyperlink{main_8cpp_a36e2097fc280b614200149c851afd1b6}{Header}}();}
+\DoxyCodeLine{214                         \textcolor{comment}{// Prompt the user to enter an account number}}
+\DoxyCodeLine{215                         cout << \textcolor{stringliteral}{"Enter Account Number: "};}
+\DoxyCodeLine{216                         cin >> accountNumber;}
+\DoxyCodeLine{217                         \textcolor{comment}{//Call GetAccountBalance function}}
+\DoxyCodeLine{218                         account.\mbox{\hyperlink{class_accounts_a9b6de0158cd47be60ab16d5dd81e9e43}{GetAccountBalance}}(accountNumber);}
+\DoxyCodeLine{219                         cout << \textcolor{stringliteral}{"Back to main menu?('y' or 'n')\(\backslash\)n"};}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221                         cin >> c;}
+\DoxyCodeLine{222                     \}}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224                     \textcolor{keywordflow}{while} (c == \textcolor{charliteral}{'n'});}
+\DoxyCodeLine{225                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{226                 \textcolor{keywordflow}{case} 7:}
+\DoxyCodeLine{227                     \textcolor{comment}{//Exit the application}}
+\DoxyCodeLine{228                     exit(0);}
+\DoxyCodeLine{229                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{230             \}}
+\DoxyCodeLine{231         \}}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233         \textcolor{keywordflow}{while} (ch <= 7);}
+\DoxyCodeLine{234     \}}
+\DoxyCodeLine{235 \}}
+
+\end{DoxyCode}
+
+
+References Accounts\+::\+Acount\+Exists(), Accounts\+::\+Deposit(), Accounts\+::\+Get\+Account(), Accounts\+::\+Get\+Account\+Balance(), Accounts\+::\+Get\+All\+Accounts(), Header(), Accounts\+::\+Insert\+Account(), and Accounts\+::\+Withdraw().
+
+
+
+Referenced by main().
+

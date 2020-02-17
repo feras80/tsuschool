@@ -1,0 +1,43 @@
+\hypertarget{structtinyxml2_1_1_long_fits_into_size_t_minus_one}{}\doxysection{tinyxml2\+::Long\+Fits\+Into\+Size\+T\+Minus\+One$<$ bool $>$ Struct Template Reference}
+\label{structtinyxml2_1_1_long_fits_into_size_t_minus_one}\index{tinyxml2::LongFitsIntoSizeTMinusOne$<$ bool $>$@{tinyxml2::LongFitsIntoSizeTMinusOne$<$ bool $>$}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{structtinyxml2_1_1_long_fits_into_size_t_minus_one_a3057710104ab733963eb32fda0bc374c}{Fits}} (unsigned long value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$bool = (sizeof(unsigned long) $>$= sizeof(size\+\_\+t))$>$\newline
+struct tinyxml2\+::\+Long\+Fits\+Into\+Size\+T\+Minus\+One$<$ bool $>$}
+
+
+
+Definition at line 2264 of file tinyxml2.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtinyxml2_1_1_long_fits_into_size_t_minus_one_a3057710104ab733963eb32fda0bc374c}\label{structtinyxml2_1_1_long_fits_into_size_t_minus_one_a3057710104ab733963eb32fda0bc374c}} 
+\index{tinyxml2::LongFitsIntoSizeTMinusOne$<$ bool $>$@{tinyxml2::LongFitsIntoSizeTMinusOne$<$ bool $>$}!Fits@{Fits}}
+\index{Fits@{Fits}!tinyxml2::LongFitsIntoSizeTMinusOne$<$ bool $>$@{tinyxml2::LongFitsIntoSizeTMinusOne$<$ bool $>$}}
+\doxysubsubsection{\texorpdfstring{Fits()}{Fits()}}
+{\footnotesize\ttfamily template$<$bool  = (sizeof(unsigned long) $>$= sizeof(size\+\_\+t))$>$ \\
+static bool \mbox{\hyperlink{structtinyxml2_1_1_long_fits_into_size_t_minus_one}{tinyxml2\+::\+Long\+Fits\+Into\+Size\+T\+Minus\+One}}$<$ bool $>$\+::Fits (\begin{DoxyParamCaption}\item[{unsigned long}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 2265 of file tinyxml2.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{2266     \{}
+\DoxyCodeLine{2267         \textcolor{keywordflow}{return} value < static\_cast<size\_t>(-\/1);}
+\DoxyCodeLine{2268     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cb05314/\+Documents/\+T\+S\+U/\+C\+P\+P\+T/\+Banking\+System/tinyxml2-\/master/\mbox{\hyperlink{tinyxml2_8cpp}{tinyxml2.\+cpp}}\end{DoxyCompactItemize}

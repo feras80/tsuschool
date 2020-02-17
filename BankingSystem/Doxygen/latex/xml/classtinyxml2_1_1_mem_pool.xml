@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classtinyxml2_1_1_mem_pool" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>tinyxml2::MemPool</compoundname>
+    <derivedcompoundref refid="classtinyxml2_1_1_mem_pool_t" prot="public" virt="non-virtual">tinyxml2::MemPoolT&lt; sizeof(tinyxml2::XMLAttribute) &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classtinyxml2_1_1_mem_pool_t" prot="public" virt="non-virtual">tinyxml2::MemPoolT&lt; sizeof(tinyxml2::XMLComment) &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classtinyxml2_1_1_mem_pool_t" prot="public" virt="non-virtual">tinyxml2::MemPoolT&lt; sizeof(tinyxml2::XMLElement) &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classtinyxml2_1_1_mem_pool_t" prot="public" virt="non-virtual">tinyxml2::MemPoolT&lt; sizeof(tinyxml2::XMLText) &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classtinyxml2_1_1_mem_pool_t" prot="public" virt="non-virtual">tinyxml2::MemPoolT&lt; ITEM_SIZE &gt;</derivedcompoundref>
+    <includes refid="tinyxml2_8h" local="no">tinyxml2.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtinyxml2_1_1_mem_pool_1a9101a0083d7370c85bd5aaaba7157f84" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>tinyxml2::MemPool::MemPool</definition>
+        <argsstring>()</argsstring>
+        <name>MemPool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/tinyxml2.h" line="332" column="5" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/tinyxml2.h" bodystart="332" bodyend="332"/>
+      </memberdef>
+      <memberdef kind="function" id="classtinyxml2_1_1_mem_pool_1ae55ad9e3faeca702e6ccbb38fdbcad72" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual tinyxml2::MemPool::~MemPool</definition>
+        <argsstring>()</argsstring>
+        <name>~MemPool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/tinyxml2.h" line="333" column="13" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/tinyxml2.h" bodystart="333" bodyend="333"/>
+      </memberdef>
+      <memberdef kind="function" id="classtinyxml2_1_1_mem_pool_1a0c518d49e3a94bde566f61e13b7240bb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int tinyxml2::MemPool::ItemSize</definition>
+        <argsstring>() const =0</argsstring>
+        <name>ItemSize</name>
+        <reimplementedby refid="classtinyxml2_1_1_mem_pool_t_1a54e4d9b343459ef1731314a99877ff35">ItemSize</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/tinyxml2.h" line="335" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classtinyxml2_1_1_mem_pool_1a4f977b5fed752c0bbfe5295f469d6449" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void *</type>
+        <definition>virtual void* tinyxml2::MemPool::Alloc</definition>
+        <argsstring>()=0</argsstring>
+        <name>Alloc</name>
+        <reimplementedby refid="classtinyxml2_1_1_mem_pool_t_1a810fd2b0caf56b8b688e55f2768f96c7">Alloc</reimplementedby>
+        <reimplementedby refid="classtinyxml2_1_1_mem_pool_t_1a810fd2b0caf56b8b688e55f2768f96c7">Alloc</reimplementedby>
+        <reimplementedby refid="classtinyxml2_1_1_mem_pool_t_1a810fd2b0caf56b8b688e55f2768f96c7">Alloc</reimplementedby>
+        <reimplementedby refid="classtinyxml2_1_1_mem_pool_t_1a810fd2b0caf56b8b688e55f2768f96c7">Alloc</reimplementedby>
+        <reimplementedby refid="classtinyxml2_1_1_mem_pool_t_1a810fd2b0caf56b8b688e55f2768f96c7">Alloc</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/tinyxml2.h" line="336" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classtinyxml2_1_1_mem_pool_1a49e3bfac2cba2ebd6776b31e571f64f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void tinyxml2::MemPool::Free</definition>
+        <argsstring>(void *)=0</argsstring>
+        <name>Free</name>
+        <reimplementedby refid="classtinyxml2_1_1_mem_pool_t_1a408ce0918e9d3d5e5e1cc4896944875f">Free</reimplementedby>
+        <reimplementedby refid="classtinyxml2_1_1_mem_pool_t_1a408ce0918e9d3d5e5e1cc4896944875f">Free</reimplementedby>
+        <reimplementedby refid="classtinyxml2_1_1_mem_pool_t_1a408ce0918e9d3d5e5e1cc4896944875f">Free</reimplementedby>
+        <reimplementedby refid="classtinyxml2_1_1_mem_pool_t_1a408ce0918e9d3d5e5e1cc4896944875f">Free</reimplementedby>
+        <reimplementedby refid="classtinyxml2_1_1_mem_pool_t_1a408ce0918e9d3d5e5e1cc4896944875f">Free</reimplementedby>
+        <param>
+          <type>void *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/tinyxml2.h" line="337" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classtinyxml2_1_1_mem_pool_1ac5804dd1387b2e4de5eef710076a0db1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void tinyxml2::MemPool::SetTracked</definition>
+        <argsstring>()=0</argsstring>
+        <name>SetTracked</name>
+        <reimplementedby refid="classtinyxml2_1_1_mem_pool_t_1aee3c611215ae08cce41a940bf2763027">SetTracked</reimplementedby>
+        <reimplementedby refid="classtinyxml2_1_1_mem_pool_t_1aee3c611215ae08cce41a940bf2763027">SetTracked</reimplementedby>
+        <reimplementedby refid="classtinyxml2_1_1_mem_pool_t_1aee3c611215ae08cce41a940bf2763027">SetTracked</reimplementedby>
+        <reimplementedby refid="classtinyxml2_1_1_mem_pool_t_1aee3c611215ae08cce41a940bf2763027">SetTracked</reimplementedby>
+        <reimplementedby refid="classtinyxml2_1_1_mem_pool_t_1aee3c611215ae08cce41a940bf2763027">SetTracked</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/tinyxml2.h" line="338" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>tinyxml2::MemPool</label>
+        <link refid="classtinyxml2_1_1_mem_pool"/>
+      </node>
+      <node id="5">
+        <label>tinyxml2::MemPoolT&lt; sizeof(tinyxml2::XMLText) &gt;</label>
+        <link refid="classtinyxml2_1_1_mem_pool_t"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tinyxml2::MemPoolT&lt; sizeof(tinyxml2::XMLComment) &gt;</label>
+        <link refid="classtinyxml2_1_1_mem_pool_t"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>tinyxml2::MemPoolT&lt; sizeof(tinyxml2::XMLElement) &gt;</label>
+        <link refid="classtinyxml2_1_1_mem_pool_t"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>tinyxml2::MemPoolT&lt; ITEM_SIZE &gt;</label>
+        <link refid="classtinyxml2_1_1_mem_pool_t"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tinyxml2::MemPoolT&lt; sizeof(tinyxml2::XMLAttribute) &gt;</label>
+        <link refid="classtinyxml2_1_1_mem_pool_t"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/tinyxml2.h" line="330" column="1" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/tinyxml2.h" bodystart="329" bodyend="339"/>
+    <listofallmembers>
+      <member refid="classtinyxml2_1_1_mem_pool_1a4f977b5fed752c0bbfe5295f469d6449" prot="public" virt="pure-virtual"><scope>tinyxml2::MemPool</scope><name>Alloc</name></member>
+      <member refid="classtinyxml2_1_1_mem_pool_1a49e3bfac2cba2ebd6776b31e571f64f7" prot="public" virt="pure-virtual"><scope>tinyxml2::MemPool</scope><name>Free</name></member>
+      <member refid="classtinyxml2_1_1_mem_pool_1a0c518d49e3a94bde566f61e13b7240bb" prot="public" virt="pure-virtual"><scope>tinyxml2::MemPool</scope><name>ItemSize</name></member>
+      <member refid="classtinyxml2_1_1_mem_pool_1a9101a0083d7370c85bd5aaaba7157f84" prot="public" virt="non-virtual"><scope>tinyxml2::MemPool</scope><name>MemPool</name></member>
+      <member refid="classtinyxml2_1_1_mem_pool_1ac5804dd1387b2e4de5eef710076a0db1" prot="public" virt="pure-virtual"><scope>tinyxml2::MemPool</scope><name>SetTracked</name></member>
+      <member refid="classtinyxml2_1_1_mem_pool_1ae55ad9e3faeca702e6ccbb38fdbcad72" prot="public" virt="virtual"><scope>tinyxml2::MemPool</scope><name>~MemPool</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

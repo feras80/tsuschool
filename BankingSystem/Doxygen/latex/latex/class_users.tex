@@ -1,0 +1,126 @@
+\hypertarget{class_users}{}\doxysection{Users Class Reference}
+\label{class_users}\index{Users@{Users}}
+
+
+{\ttfamily \#include $<$Users.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_users_af1f5c371c3f1e7f9b14210ed0d3718bc}{Users}} ()
+\item 
+\mbox{\hyperlink{class_users_a33ff9aadcaef989bf3c8570358f791f6}{$\sim$\+Users}} ()
+\item 
+string \mbox{\hyperlink{class_users_af3b5e4015df188df9f0dda9afa2f892d}{Get\+Password}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 8 of file Users.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_users_af1f5c371c3f1e7f9b14210ed0d3718bc}\label{class_users_af1f5c371c3f1e7f9b14210ed0d3718bc}} 
+\index{Users@{Users}!Users@{Users}}
+\index{Users@{Users}!Users@{Users}}
+\doxysubsubsection{\texorpdfstring{Users()}{Users()}}
+{\footnotesize\ttfamily Users\+::\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file Users.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     \mbox{\hyperlink{class_users_af3b5e4015df188df9f0dda9afa2f892d}{GetPassword}}();}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_users_a33ff9aadcaef989bf3c8570358f791f6}\label{class_users_a33ff9aadcaef989bf3c8570358f791f6}} 
+\index{Users@{Users}!````~Users@{$\sim$Users}}
+\index{````~Users@{$\sim$Users}!Users@{Users}}
+\doxysubsubsection{\texorpdfstring{$\sim$Users()}{~Users()}}
+{\footnotesize\ttfamily Users\+::$\sim$\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 55 of file Users.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{55 \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_users_af3b5e4015df188df9f0dda9afa2f892d}\label{class_users_af3b5e4015df188df9f0dda9afa2f892d}} 
+\index{Users@{Users}!GetPassword@{GetPassword}}
+\index{GetPassword@{GetPassword}!Users@{Users}}
+\doxysubsubsection{\texorpdfstring{GetPassword()}{GetPassword()}}
+{\footnotesize\ttfamily string Users\+::\+Get\+Password (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 16 of file Users.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18     \textcolor{keywordtype}{string} result;}
+\DoxyCodeLine{19     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document}{XMLDocument}} doc;}
+\DoxyCodeLine{20     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *path = \mbox{\hyperlink{classconstants_a566b0f322c6801a4ee4f64145f3ba91d}{constants::dataPath}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{comment}{// Load the XML file into the Doc instance}}
+\DoxyCodeLine{23     doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a2ebd4647a8af5fc6831b294ac26a150a}{LoadFile}}(path);}
+\DoxyCodeLine{24     \textcolor{comment}{//Get root Element}}
+\DoxyCodeLine{25     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pRootElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_ad2b70320d3c2a071c2f36928edff3e1c}{RootElement}}();}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keywordflow}{if} (NULL != pRootElement)}
+\DoxyCodeLine{28     \{}
+\DoxyCodeLine{29         \textcolor{comment}{//Get 'users' Child}}
+\DoxyCodeLine{30         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pUsers = pRootElement-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"users"});}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \textcolor{keywordflow}{if} (NULL != pUsers)}
+\DoxyCodeLine{33         \{}
+\DoxyCodeLine{34             \textcolor{comment}{// Get 'user' Child}}
+\DoxyCodeLine{35             \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pUser = pUsers-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"user"});}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37             \textcolor{keywordflow}{while} (pUser)}
+\DoxyCodeLine{38             \{}
+\DoxyCodeLine{39                 \textcolor{comment}{// Get 'password' Child}}
+\DoxyCodeLine{40                 \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pPassword = pUser-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"password"});}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42                 result = pPassword-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44                 std::cout << std::endl;}
+\DoxyCodeLine{45                 \textcolor{comment}{//Return result}}
+\DoxyCodeLine{46                 \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48             \}}
+\DoxyCodeLine{49         \}}
+\DoxyCodeLine{50     \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{53 \}}
+
+\end{DoxyCode}
+
+
+References constants\+::data\+Path, tinyxml2\+::\+X\+M\+L\+Node\+::\+First\+Child\+Element(), tinyxml2\+::\+X\+M\+L\+Element\+::\+Get\+Text(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Load\+File(), and tinyxml2\+::\+X\+M\+L\+Document\+::\+Root\+Element().
+
+
+
+Referenced by main().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cb05314/\+Documents/\+T\+S\+U/\+C\+P\+P\+T/\+Banking\+System/include/\mbox{\hyperlink{_users_8h}{Users.\+h}}\item 
+C\+:/\+Users/cb05314/\+Documents/\+T\+S\+U/\+C\+P\+P\+T/\+Banking\+System/src/\mbox{\hyperlink{_users_8cpp}{Users.\+cpp}}\end{DoxyCompactItemize}

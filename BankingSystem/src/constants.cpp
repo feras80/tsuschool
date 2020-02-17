@@ -1,5 +1,5 @@
 #include "constants.h"
 
-
- const char* constants::dataPath= "C:\\Users\\cb05314\\Documents\\TSU\\CPPT\\BankingSystem\\bin\\Debug\\data.xml";
+// Constants class
+ const char* constants::dataPath= "Put your xml file path here";
  const string adminUser= "Admin";

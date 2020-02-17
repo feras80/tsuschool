@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="class_accounts" kind="class" language="C++" prot="public">
+    <compoundname>Accounts</compoundname>
+    <includes refid="_accounts_8h" local="no">Accounts.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_accounts_1a1e38225716628bfd495622707f411b92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Accounts::Accounts</definition>
+        <argsstring>()</argsstring>
+        <name>Accounts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Accounts.h" line="9" column="1" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Accounts.cpp" bodystart="13" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_accounts_1a13d0560b86638e125cdcba905b517dc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>Accounts::~Accounts</definition>
+        <argsstring>()</argsstring>
+        <name>~Accounts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Accounts.h" line="10" column="9" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Accounts.cpp" bodystart="645" bodyend="645"/>
+      </memberdef>
+      <memberdef kind="function" id="class_accounts_1aa878135d898fc49e79ed3bf49d3a69b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Accounts::GetAllAccounts</definition>
+        <argsstring>()</argsstring>
+        <name>GetAllAccounts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Accounts.h" line="11" column="6" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Accounts.cpp" bodystart="481" bodyend="582"/>
+        <references refid="classconstants_1a566b0f322c6801a4ee4f64145f3ba91d" compoundref="constants_8h" startline="8">constants::dataPath</references>
+        <references refid="classtinyxml2_1_1_x_m_l_node_1a1795a35852dc8aae877cc8ded986e59b">tinyxml2::XMLNode::FirstChildElement</references>
+        <references refid="classtinyxml2_1_1_x_m_l_element_1a6d5c8d115561ade4e4456b71d91b6f51">tinyxml2::XMLElement::GetText</references>
+        <references refid="classtinyxml2_1_1_x_m_l_document_1a2ebd4647a8af5fc6831b294ac26a150a">tinyxml2::XMLDocument::LoadFile</references>
+        <references refid="classtinyxml2_1_1_x_m_l_node_1a1264c86233328f0cd36297552d982f80">tinyxml2::XMLNode::NextSiblingElement</references>
+        <references refid="classtinyxml2_1_1_x_m_l_document_1ad2b70320d3c2a071c2f36928edff3e1c" compoundref="tinyxml2_8h" startline="1785" endline="1787">tinyxml2::XMLDocument::RootElement</references>
+        <referencedby refid="main_8cpp_1ab3002fe8e0074c9e2ecb5b835e5e819f" compoundref="main_8cpp" startline="26" endline="235">mainMenu</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_accounts_1a91ead45d60e894f7725444ebea347eb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Accounts::GetAccount</definition>
+        <argsstring>(string a)</argsstring>
+        <name>GetAccount</name>
+        <param>
+          <type>string</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Accounts.h" line="12" column="6" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Accounts.cpp" bodystart="299" bodyend="404"/>
+        <references refid="_accounts_8cpp_1a0dd23933bd3fdf8e34527907ba0aeb47" compoundref="_accounts_8cpp" startline="26" endline="129">bindTransaction</references>
+        <references refid="classconstants_1a566b0f322c6801a4ee4f64145f3ba91d" compoundref="constants_8h" startline="8">constants::dataPath</references>
+        <references refid="classtinyxml2_1_1_x_m_l_node_1a1795a35852dc8aae877cc8ded986e59b">tinyxml2::XMLNode::FirstChildElement</references>
+        <references refid="classtinyxml2_1_1_x_m_l_element_1a6d5c8d115561ade4e4456b71d91b6f51">tinyxml2::XMLElement::GetText</references>
+        <references refid="classtinyxml2_1_1_x_m_l_document_1a2ebd4647a8af5fc6831b294ac26a150a">tinyxml2::XMLDocument::LoadFile</references>
+        <references refid="classtinyxml2_1_1_x_m_l_node_1a1264c86233328f0cd36297552d982f80">tinyxml2::XMLNode::NextSiblingElement</references>
+        <references refid="classtinyxml2_1_1_x_m_l_document_1ad2b70320d3c2a071c2f36928edff3e1c" compoundref="tinyxml2_8h" startline="1785" endline="1787">tinyxml2::XMLDocument::RootElement</references>
+        <referencedby refid="main_8cpp_1ab3002fe8e0074c9e2ecb5b835e5e819f" compoundref="main_8cpp" startline="26" endline="235">mainMenu</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_accounts_1a9b6de0158cd47be60ab16d5dd81e9e43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Accounts::GetAccountBalance</definition>
+        <argsstring>(string a)</argsstring>
+        <name>GetAccountBalance</name>
+        <param>
+          <type>string</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Accounts.h" line="13" column="6" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Accounts.cpp" bodystart="410" bodyend="475"/>
+        <references refid="classconstants_1a566b0f322c6801a4ee4f64145f3ba91d" compoundref="constants_8h" startline="8">constants::dataPath</references>
+        <references refid="classtinyxml2_1_1_x_m_l_node_1a1795a35852dc8aae877cc8ded986e59b">tinyxml2::XMLNode::FirstChildElement</references>
+        <references refid="classtinyxml2_1_1_x_m_l_element_1a6d5c8d115561ade4e4456b71d91b6f51">tinyxml2::XMLElement::GetText</references>
+        <references refid="classtinyxml2_1_1_x_m_l_document_1a2ebd4647a8af5fc6831b294ac26a150a">tinyxml2::XMLDocument::LoadFile</references>
+        <references refid="classtinyxml2_1_1_x_m_l_node_1a1264c86233328f0cd36297552d982f80">tinyxml2::XMLNode::NextSiblingElement</references>
+        <references refid="classtinyxml2_1_1_x_m_l_document_1ad2b70320d3c2a071c2f36928edff3e1c" compoundref="tinyxml2_8h" startline="1785" endline="1787">tinyxml2::XMLDocument::RootElement</references>
+        <referencedby refid="main_8cpp_1ab3002fe8e0074c9e2ecb5b835e5e819f" compoundref="main_8cpp" startline="26" endline="235">mainMenu</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_accounts_1a79f7ab429e30a2a67705ebd97c309d0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Accounts::InsertAccount</definition>
+        <argsstring>(string accountNumber, string accountType, string customerName, string accountBalance)</argsstring>
+        <name>InsertAccount</name>
+        <param>
+          <type>string</type>
+          <declname>accountNumber</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>accountType</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>customerName</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>accountBalance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Accounts.h" line="14" column="6" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Accounts.cpp" bodystart="591" bodyend="643"/>
+        <references refid="classconstants_1a566b0f322c6801a4ee4f64145f3ba91d" compoundref="constants_8h" startline="8">constants::dataPath</references>
+        <references refid="classtinyxml2_1_1_x_m_l_node_1a1795a35852dc8aae877cc8ded986e59b">tinyxml2::XMLNode::FirstChildElement</references>
+        <references refid="classtinyxml2_1_1_x_m_l_node_1aeb249ed60f4e8bfad3709151c3ee4286">tinyxml2::XMLNode::InsertEndChild</references>
+        <references refid="classtinyxml2_1_1_x_m_l_document_1a2ebd4647a8af5fc6831b294ac26a150a">tinyxml2::XMLDocument::LoadFile</references>
+        <references refid="classtinyxml2_1_1_x_m_l_document_1a8aa7817d4a1001364b06373763ab99d6">tinyxml2::XMLDocument::NewElement</references>
+        <references refid="classtinyxml2_1_1_x_m_l_document_1ad2b70320d3c2a071c2f36928edff3e1c" compoundref="tinyxml2_8h" startline="1785" endline="1787">tinyxml2::XMLDocument::RootElement</references>
+        <references refid="classtinyxml2_1_1_x_m_l_document_1a73ac416b4a2aa0952e841220eb3da18f">tinyxml2::XMLDocument::SaveFile</references>
+        <references refid="classtinyxml2_1_1_x_m_l_element_1a1f9c2cd61b72af5ae708d37b7ad283ce">tinyxml2::XMLElement::SetText</references>
+        <referencedby refid="main_8cpp_1ab3002fe8e0074c9e2ecb5b835e5e819f" compoundref="main_8cpp" startline="26" endline="235">mainMenu</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_accounts_1a2043aec650956611653222f7e952683c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Accounts::AcountExists</definition>
+        <argsstring>(string a)</argsstring>
+        <name>AcountExists</name>
+        <param>
+          <type>string</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Accounts.h" line="15" column="6" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Accounts.cpp" bodystart="250" bodyend="293"/>
+        <references refid="classconstants_1a566b0f322c6801a4ee4f64145f3ba91d" compoundref="constants_8h" startline="8">constants::dataPath</references>
+        <references refid="classtinyxml2_1_1_x_m_l_node_1a1795a35852dc8aae877cc8ded986e59b">tinyxml2::XMLNode::FirstChildElement</references>
+        <references refid="classtinyxml2_1_1_x_m_l_element_1a6d5c8d115561ade4e4456b71d91b6f51">tinyxml2::XMLElement::GetText</references>
+        <references refid="classtinyxml2_1_1_x_m_l_document_1a2ebd4647a8af5fc6831b294ac26a150a">tinyxml2::XMLDocument::LoadFile</references>
+        <references refid="classtinyxml2_1_1_x_m_l_node_1a1264c86233328f0cd36297552d982f80">tinyxml2::XMLNode::NextSiblingElement</references>
+        <references refid="classtinyxml2_1_1_x_m_l_document_1ad2b70320d3c2a071c2f36928edff3e1c" compoundref="tinyxml2_8h" startline="1785" endline="1787">tinyxml2::XMLDocument::RootElement</references>
+        <referencedby refid="main_8cpp_1ab3002fe8e0074c9e2ecb5b835e5e819f" compoundref="main_8cpp" startline="26" endline="235">mainMenu</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_accounts_1a3ecaee83dc026b3bad8b69ae5b8d0598" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Accounts::Deposit</definition>
+        <argsstring>(string a, string amount)</argsstring>
+        <name>Deposit</name>
+        <param>
+          <type>string</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>amount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Accounts.h" line="16" column="6" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Accounts.cpp" bodystart="136" bodyend="186"/>
+        <references refid="classconstants_1a566b0f322c6801a4ee4f64145f3ba91d" compoundref="constants_8h" startline="8">constants::dataPath</references>
+        <references refid="classtinyxml2_1_1_x_m_l_node_1a1795a35852dc8aae877cc8ded986e59b">tinyxml2::XMLNode::FirstChildElement</references>
+        <references refid="classtinyxml2_1_1_x_m_l_node_1aeb249ed60f4e8bfad3709151c3ee4286">tinyxml2::XMLNode::InsertEndChild</references>
+        <references refid="classtinyxml2_1_1_x_m_l_document_1a2ebd4647a8af5fc6831b294ac26a150a">tinyxml2::XMLDocument::LoadFile</references>
+        <references refid="classtinyxml2_1_1_x_m_l_document_1a8aa7817d4a1001364b06373763ab99d6">tinyxml2::XMLDocument::NewElement</references>
+        <references refid="classtinyxml2_1_1_x_m_l_document_1ad2b70320d3c2a071c2f36928edff3e1c" compoundref="tinyxml2_8h" startline="1785" endline="1787">tinyxml2::XMLDocument::RootElement</references>
+        <references refid="classtinyxml2_1_1_x_m_l_document_1a73ac416b4a2aa0952e841220eb3da18f">tinyxml2::XMLDocument::SaveFile</references>
+        <references refid="classtinyxml2_1_1_x_m_l_element_1a1f9c2cd61b72af5ae708d37b7ad283ce">tinyxml2::XMLElement::SetText</references>
+        <referencedby refid="main_8cpp_1ab3002fe8e0074c9e2ecb5b835e5e819f" compoundref="main_8cpp" startline="26" endline="235">mainMenu</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_accounts_1a44ff25c8dee341d9a3a9af4a13bd3467" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Accounts::Withdraw</definition>
+        <argsstring>(string a, string amount)</argsstring>
+        <name>Withdraw</name>
+        <param>
+          <type>string</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>amount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Accounts.h" line="17" column="6" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Accounts.cpp" bodystart="193" bodyend="243"/>
+        <references refid="classconstants_1a566b0f322c6801a4ee4f64145f3ba91d" compoundref="constants_8h" startline="8">constants::dataPath</references>
+        <references refid="classtinyxml2_1_1_x_m_l_node_1a1795a35852dc8aae877cc8ded986e59b">tinyxml2::XMLNode::FirstChildElement</references>
+        <references refid="classtinyxml2_1_1_x_m_l_node_1aeb249ed60f4e8bfad3709151c3ee4286">tinyxml2::XMLNode::InsertEndChild</references>
+        <references refid="classtinyxml2_1_1_x_m_l_document_1a2ebd4647a8af5fc6831b294ac26a150a">tinyxml2::XMLDocument::LoadFile</references>
+        <references refid="classtinyxml2_1_1_x_m_l_document_1a8aa7817d4a1001364b06373763ab99d6">tinyxml2::XMLDocument::NewElement</references>
+        <references refid="classtinyxml2_1_1_x_m_l_document_1ad2b70320d3c2a071c2f36928edff3e1c" compoundref="tinyxml2_8h" startline="1785" endline="1787">tinyxml2::XMLDocument::RootElement</references>
+        <references refid="classtinyxml2_1_1_x_m_l_document_1a73ac416b4a2aa0952e841220eb3da18f">tinyxml2::XMLDocument::SaveFile</references>
+        <references refid="classtinyxml2_1_1_x_m_l_element_1a1f9c2cd61b72af5ae708d37b7ad283ce">tinyxml2::XMLElement::SetText</references>
+        <referencedby refid="main_8cpp_1ab3002fe8e0074c9e2ecb5b835e5e819f" compoundref="main_8cpp" startline="26" endline="235">mainMenu</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Accounts.h" line="7" column="1" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Accounts.h" bodystart="6" bodyend="19"/>
+    <listofallmembers>
+      <member refid="class_accounts_1a1e38225716628bfd495622707f411b92" prot="public" virt="non-virtual"><scope>Accounts</scope><name>Accounts</name></member>
+      <member refid="class_accounts_1a2043aec650956611653222f7e952683c" prot="public" virt="non-virtual"><scope>Accounts</scope><name>AcountExists</name></member>
+      <member refid="class_accounts_1a3ecaee83dc026b3bad8b69ae5b8d0598" prot="public" virt="non-virtual"><scope>Accounts</scope><name>Deposit</name></member>
+      <member refid="class_accounts_1a91ead45d60e894f7725444ebea347eb7" prot="public" virt="non-virtual"><scope>Accounts</scope><name>GetAccount</name></member>
+      <member refid="class_accounts_1a9b6de0158cd47be60ab16d5dd81e9e43" prot="public" virt="non-virtual"><scope>Accounts</scope><name>GetAccountBalance</name></member>
+      <member refid="class_accounts_1aa878135d898fc49e79ed3bf49d3a69b8" prot="public" virt="non-virtual"><scope>Accounts</scope><name>GetAllAccounts</name></member>
+      <member refid="class_accounts_1a79f7ab429e30a2a67705ebd97c309d0d" prot="public" virt="non-virtual"><scope>Accounts</scope><name>InsertAccount</name></member>
+      <member refid="class_accounts_1a44ff25c8dee341d9a3a9af4a13bd3467" prot="public" virt="non-virtual"><scope>Accounts</scope><name>Withdraw</name></member>
+      <member refid="class_accounts_1a13d0560b86638e125cdcba905b517dc2" prot="public" virt="virtual"><scope>Accounts</scope><name>~Accounts</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

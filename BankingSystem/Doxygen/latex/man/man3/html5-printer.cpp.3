@@ -1,0 +1,57 @@
+.TH "C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/tinyxml2-master/contrib/html5-printer.cpp" 3 "Sun Feb 16 2020" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/tinyxml2-master/contrib/html5-printer.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include '\&.\&./tinyxml2\&.h'\fP
+.br
+\fC#include <iostream>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBXMLPrinterHTML5\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (void)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int main (void)"
+
+.PP
+Definition at line 93 of file html5\-printer\&.cpp\&.
+.PP
+.nf
+93                 {
+94     XMLDocument doc (false);
+95     doc\&.Parse (input);
+96 
+97     std::cout << "INPUT:\n" << input << "\n\n";
+98 
+99     XMLPrinter prn (NULL, true);
+100     doc\&.Print (&prn);
+101     std::cout << "XMLPrinter (not valid HTML5):\n" << prn\&.CStr() << "\n\n";
+102 
+103     XMLPrinterHTML5 html5 (NULL, true);
+104     doc\&.Print (&html5);
+105     std::cout << "XMLPrinterHTML5:\n" << html5\&.CStr() << "\n";
+106 
+107     return 0;
+108 }
+.fi
+.PP
+References tinyxml2::XMLDocument::Parse()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

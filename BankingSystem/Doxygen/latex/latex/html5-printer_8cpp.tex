@@ -1,0 +1,51 @@
+\hypertarget{html5-printer_8cpp}{}\doxysection{C\+:/\+Users/cb05314/\+Documents/\+T\+S\+U/\+C\+P\+P\+T/\+Banking\+System/tinyxml2-\/master/contrib/html5-\/printer.cpp File Reference}
+\label{html5-printer_8cpp}\index{C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/tinyxml2-\/master/contrib/html5-\/printer.cpp@{C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/tinyxml2-\/master/contrib/html5-\/printer.cpp}}
+{\ttfamily \#include \char`\"{}../tinyxml2.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_x_m_l_printer_h_t_m_l5}{X\+M\+L\+Printer\+H\+T\+M\+L5}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{html5-printer_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{html5-printer_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{html5-printer_8cpp_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{html5-\/printer.cpp@{html5-\/printer.cpp}!main@{main}}
+\index{main@{main}!html5-\/printer.cpp@{html5-\/printer.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 93 of file html5-\/printer.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{93                 \{}
+\DoxyCodeLine{94     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document}{XMLDocument}} doc (\textcolor{keyword}{false});}
+\DoxyCodeLine{95     doc.Parse (input);}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     std::cout << \textcolor{stringliteral}{"INPUT:\(\backslash\)n"} << input << \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n"};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_printer}{XMLPrinter}} prn (NULL, \textcolor{keyword}{true});}
+\DoxyCodeLine{100     doc.Print (\&prn);}
+\DoxyCodeLine{101     std::cout << \textcolor{stringliteral}{"XMLPrinter (not valid HTML5):\(\backslash\)n"} << prn.CStr() << \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n"};}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \mbox{\hyperlink{class_x_m_l_printer_h_t_m_l5}{XMLPrinterHTML5}} html5 (NULL, \textcolor{keyword}{true});}
+\DoxyCodeLine{104     doc.Print (\&html5);}
+\DoxyCodeLine{105     std::cout << \textcolor{stringliteral}{"XMLPrinterHTML5:\(\backslash\)n"} << html5.CStr() << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{108 \}}
+
+\end{DoxyCode}
+
+
+References tinyxml2\+::\+X\+M\+L\+Document\+::\+Parse().
+

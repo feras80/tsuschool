@@ -1,0 +1,143 @@
+\hypertarget{_accounts_8cpp}{}\doxysection{C\+:/\+Users/cb05314/\+Documents/\+T\+S\+U/\+C\+P\+P\+T/\+Banking\+System/src/\+Accounts.cpp File Reference}
+\label{_accounts_8cpp}\index{C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Accounts.cpp@{C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Accounts.cpp}}
+{\ttfamily \#include \char`\"{}Accounts.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$tinyxml2.\+h$>$}\newline
+{\ttfamily \#include $<$constants.\+h$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_accounts_8cpp_a0dd23933bd3fdf8e34527907ba0aeb47}{bind\+Transaction}} (string a)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_accounts_8cpp_a0dd23933bd3fdf8e34527907ba0aeb47}\label{_accounts_8cpp_a0dd23933bd3fdf8e34527907ba0aeb47}} 
+\index{Accounts.cpp@{Accounts.cpp}!bindTransaction@{bindTransaction}}
+\index{bindTransaction@{bindTransaction}!Accounts.cpp@{Accounts.cpp}}
+\doxysubsubsection{\texorpdfstring{bindTransaction()}{bindTransaction()}}
+{\footnotesize\ttfamily void bind\+Transaction (\begin{DoxyParamCaption}\item[{string}]{a }\end{DoxyParamCaption})}
+
+
+
+Definition at line 26 of file Accounts.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{27 \{}
+\DoxyCodeLine{28     \textcolor{comment}{// Build Header}}
+\DoxyCodeLine{29     cout << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{30     cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{31     cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Account Transactions-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{32     cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{33     cout << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{34     \textcolor{keywordtype}{string} accountChar;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document}{XMLDocument}} doc;}
+\DoxyCodeLine{37     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *path = \mbox{\hyperlink{classconstants_a566b0f322c6801a4ee4f64145f3ba91d}{constants::dataPath}};}
+\DoxyCodeLine{38     \textcolor{keywordtype}{double} totalBalance;}
+\DoxyCodeLine{39     \textcolor{keywordtype}{char} amountText[100];}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{comment}{// Load the XML file into the doc instance}}
+\DoxyCodeLine{42     doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a2ebd4647a8af5fc6831b294ac26a150a}{LoadFile}}(path);}
+\DoxyCodeLine{43     \textcolor{comment}{// To get current system date}}
+\DoxyCodeLine{44     time\_t t = time(0);}
+\DoxyCodeLine{45     \textcolor{keyword}{struct }tm *timeStruct = localtime(\&t);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     \textcolor{comment}{//Get The root Element}}
+\DoxyCodeLine{48     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pRootElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_ad2b70320d3c2a071c2f36928edff3e1c}{RootElement}}();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \textcolor{comment}{// Print out the table header.}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     cout << \textcolor{charliteral}{'|'} << setw(12) << \textcolor{stringliteral}{"Type"} << \textcolor{charliteral}{'|'} << setw(12) << \textcolor{stringliteral}{"Amount"} << \textcolor{charliteral}{'|'} << setw(14) << \textcolor{stringliteral}{"Date"} << \textcolor{charliteral}{'|'} <<}
+\DoxyCodeLine{53         endl;}
+\DoxyCodeLine{54     cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{keywordflow}{if} (NULL != pRootElement)}
+\DoxyCodeLine{57     \{}
+\DoxyCodeLine{58         \textcolor{comment}{// Get 'Transactions' Child}}
+\DoxyCodeLine{59         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pTransactions = pRootElement-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"Transactions"});}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61         \textcolor{keywordflow}{if} (NULL != pTransactions)}
+\DoxyCodeLine{62         \{}
+\DoxyCodeLine{63             \textcolor{comment}{//Get 'transaction' Child}}
+\DoxyCodeLine{64             \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pTransaction = pTransactions-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"transaction"});}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66             \textcolor{keywordflow}{while} (pTransaction)}
+\DoxyCodeLine{67             \{}
+\DoxyCodeLine{68                 \textcolor{comment}{//Get 'AccountNo' Child}}
+\DoxyCodeLine{69                 \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccountNo = pTransaction-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"AccountNo"});}
+\DoxyCodeLine{70                 accountChar = pAccountNo-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}();}
+\DoxyCodeLine{71                 \textcolor{comment}{// Check for Matching Account Number}}
+\DoxyCodeLine{72                 \textcolor{keywordflow}{if} (accountChar == a)}
+\DoxyCodeLine{73                 \{}
+\DoxyCodeLine{74                     \textcolor{comment}{// Get 'type' Child}}
+\DoxyCodeLine{75                     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pType = pTransaction-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"type"});}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77                     \textcolor{keywordflow}{if} (NULL != pType)}
+\DoxyCodeLine{78                     \{}
+\DoxyCodeLine{79                         \textcolor{comment}{// Print out Type}}
+\DoxyCodeLine{80                         cout << \textcolor{charliteral}{'|'} << setw(12) << pType-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}();}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82                     \}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84                     \textcolor{comment}{//Get 'amount' Child}}
+\DoxyCodeLine{85                     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *name = pTransaction-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"amount"});}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87                     \textcolor{keywordflow}{if} (NULL != name)}
+\DoxyCodeLine{88                     \{}
+\DoxyCodeLine{89                         \textcolor{comment}{// convert string to *Char}}
+\DoxyCodeLine{90                         totalBalance += strtod(name-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}(), NULL);}
+\DoxyCodeLine{91                         strcpy(amountText, \textcolor{stringliteral}{"\$"});}
+\DoxyCodeLine{92                         strcat(amountText, name-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}());}
+\DoxyCodeLine{93                         \textcolor{comment}{// Print out Amount}}
+\DoxyCodeLine{94                         cout << \textcolor{charliteral}{'|'} << setw(12) << amountText;}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96                     \}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98                     \textcolor{comment}{// Get 'date' Child}}
+\DoxyCodeLine{99                     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *balance = pTransaction-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"date"});}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101                     \textcolor{keywordflow}{if} (NULL != balance)}
+\DoxyCodeLine{102                     \{}
+\DoxyCodeLine{103                         \textcolor{comment}{// Print out Balance}}
+\DoxyCodeLine{104                         cout << \textcolor{charliteral}{'|'} << setw(14) << balance-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}() << \textcolor{charliteral}{'|'};}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106                     \}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108                     std::cout << std::endl;}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110                 \}}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112                 \textcolor{comment}{//Next transaction}}
+\DoxyCodeLine{113                 pTransaction = pTransaction-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1264c86233328f0cd36297552d982f80}{NextSiblingElement}}(\textcolor{stringliteral}{"transaction"});}
+\DoxyCodeLine{114             \}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116             cout << endl;}
+\DoxyCodeLine{117             \textcolor{comment}{// Print out Total Balance}}
+\DoxyCodeLine{118             cout << \textcolor{stringliteral}{"Total Account Balance as of today is: \$"} << totalBalance;}
+\DoxyCodeLine{119             cout << endl;}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121             \textcolor{comment}{// Print Footer}}
+\DoxyCodeLine{122             cout << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{123             cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{124             cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/End Account Transactions-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{125             cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{126             cout << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{127         \}}
+\DoxyCodeLine{128     \}}
+\DoxyCodeLine{129 \}}
+
+\end{DoxyCode}
+
+
+References constants\+::data\+Path, tinyxml2\+::\+X\+M\+L\+Node\+::\+First\+Child\+Element(), tinyxml2\+::\+X\+M\+L\+Element\+::\+Get\+Text(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Load\+File(), tinyxml2\+::\+X\+M\+L\+Node\+::\+Next\+Sibling\+Element(), and tinyxml2\+::\+X\+M\+L\+Document\+::\+Root\+Element().
+
+
+
+Referenced by Accounts\+::\+Get\+Account().
+

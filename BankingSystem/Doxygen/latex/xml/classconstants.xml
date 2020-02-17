@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classconstants" kind="class" language="C++" prot="public">
+    <compoundname>constants</compoundname>
+    <includes refid="constants_8h" local="no">constants.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classconstants_1a566b0f322c6801a4ee4f64145f3ba91d" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char * constants::dataPath</definition>
+        <argsstring></argsstring>
+        <name>dataPath</name>
+        <initializer>= &quot;C:\\Users\\cb05314\\Documents\\TSU\\CPPT\\BankingSystem\\bin\\Debug\\data.xml&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/constants.h" line="8" column="23" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/constants.h" bodystart="8" bodyend="-1"/>
+        <referencedby refid="class_accounts_1a2043aec650956611653222f7e952683c" compoundref="_accounts_8cpp" startline="250" endline="293">Accounts::AcountExists</referencedby>
+        <referencedby refid="_accounts_8cpp_1a0dd23933bd3fdf8e34527907ba0aeb47" compoundref="_accounts_8cpp" startline="26" endline="129">bindTransaction</referencedby>
+        <referencedby refid="class_accounts_1a3ecaee83dc026b3bad8b69ae5b8d0598" compoundref="_accounts_8cpp" startline="136" endline="186">Accounts::Deposit</referencedby>
+        <referencedby refid="class_accounts_1a91ead45d60e894f7725444ebea347eb7" compoundref="_accounts_8cpp" startline="299" endline="404">Accounts::GetAccount</referencedby>
+        <referencedby refid="class_accounts_1a9b6de0158cd47be60ab16d5dd81e9e43" compoundref="_accounts_8cpp" startline="410" endline="475">Accounts::GetAccountBalance</referencedby>
+        <referencedby refid="class_accounts_1aa878135d898fc49e79ed3bf49d3a69b8" compoundref="_accounts_8cpp" startline="481" endline="582">Accounts::GetAllAccounts</referencedby>
+        <referencedby refid="class_users_1af3b5e4015df188df9f0dda9afa2f892d" compoundref="_users_8cpp" startline="16" endline="53">Users::GetPassword</referencedby>
+        <referencedby refid="class_accounts_1a79f7ab429e30a2a67705ebd97c309d0d" compoundref="_accounts_8cpp" startline="591" endline="643">Accounts::InsertAccount</referencedby>
+        <referencedby refid="class_accounts_1a44ff25c8dee341d9a3a9af4a13bd3467" compoundref="_accounts_8cpp" startline="193" endline="243">Accounts::Withdraw</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classconstants_1a889a6eaaa9585ec220d0b131a4f94c33" prot="public" static="yes" mutable="no">
+        <type>const string</type>
+        <definition>const string constants::adminUser</definition>
+        <argsstring></argsstring>
+        <name>adminUser</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/constants.h" line="9" column="24" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/constants.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/constants.h" line="6" column="1" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/constants.h" bodystart="5" bodyend="10"/>
+    <listofallmembers>
+      <member refid="classconstants_1a889a6eaaa9585ec220d0b131a4f94c33" prot="public" virt="non-virtual"><scope>constants</scope><name>adminUser</name></member>
+      <member refid="classconstants_1a566b0f322c6801a4ee4f64145f3ba91d" prot="public" virt="non-virtual"><scope>constants</scope><name>dataPath</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

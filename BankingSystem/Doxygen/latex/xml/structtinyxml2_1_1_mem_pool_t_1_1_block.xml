@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structtinyxml2_1_1_mem_pool_t_1_1_block" kind="struct" language="C++" prot="private">
+    <compoundname>tinyxml2::MemPoolT::Block</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtinyxml2_1_1_mem_pool_t_1_1_block_1a4f2589e877b60f26313e107433e550f7" prot="public" static="no" mutable="no">
+        <type>Item</type>
+        <definition>Item tinyxml2::MemPoolT&lt; ITEM_SIZE &gt;::Block::items[ITEMS_PER_BLOCK]</definition>
+        <argsstring>[ITEMS_PER_BLOCK]</argsstring>
+        <name>items</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/tinyxml2.h" line="448" column="14" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/tinyxml2.h" bodystart="448" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>tinyxml2::MemPoolT&lt; ITEM_SIZE &gt;::Item</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tinyxml2::MemPoolT&lt; ITEM_SIZE &gt;::Block</label>
+        <childnode refid="2" relation="usage">
+          <edgelabel>items</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/tinyxml2.h" line="447" column="16" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/tinyxml2.h" bodystart="447" bodyend="449"/>
+    <listofallmembers>
+      <member refid="structtinyxml2_1_1_mem_pool_t_1_1_block_1a4f2589e877b60f26313e107433e550f7" prot="public" virt="non-virtual"><scope>tinyxml2::MemPoolT::Block</scope><name>items</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

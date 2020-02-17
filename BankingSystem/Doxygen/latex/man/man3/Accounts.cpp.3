@@ -1,0 +1,151 @@
+.TH "C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Accounts.cpp" 3 "Sun Feb 16 2020" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Accounts.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'Accounts\&.h'\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <tinyxml2\&.h>\fP
+.br
+\fC#include <constants\&.h>\fP
+.br
+\fC#include <iomanip>\fP
+.br
+\fC#include <cstddef>\fP
+.br
+\fC#include <ctime>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBbindTransaction\fP (string a)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void bindTransaction (string a)"
+
+.PP
+Definition at line 26 of file Accounts\&.cpp\&.
+.PP
+.nf
+27 {
+28     // Build Header
+29     cout << "\n";
+30     cout << "------------------------------------------------------------------\n";
+31     cout << "------------------------Account Transactions----------------------\n";
+32     cout << "------------------------------------------------------------------\n";
+33     cout << "\n";
+34     string accountChar;
+35 
+36     XMLDocument doc;
+37     const char *path = constants::dataPath;
+38     double totalBalance;
+39     char amountText[100];
+40 
+41     // Load the XML file into the doc instance
+42     doc\&.LoadFile(path);
+43     // To get current system date
+44     time_t t = time(0);
+45     struct tm *timeStruct = localtime(&t);
+46 
+47     //Get The root Element
+48     XMLElement *pRootElement = doc\&.RootElement();
+49 
+50     // Print out the table header\&.
+51 
+52     cout << '|' << setw(12) << "Type" << '|' << setw(12) << "Amount" << '|' << setw(14) << "Date" << '|' <<
+53         endl;
+54     cout << "------------------------------------------\n";
+55 
+56     if (NULL != pRootElement)
+57     {
+58         // Get 'Transactions' Child
+59         XMLElement *pTransactions = pRootElement->FirstChildElement("Transactions");
+60 
+61         if (NULL != pTransactions)
+62         {
+63             //Get 'transaction' Child
+64             XMLElement *pTransaction = pTransactions->FirstChildElement("transaction");
+65 
+66             while (pTransaction)
+67             {
+68                 //Get 'AccountNo' Child
+69                 XMLElement *pAccountNo = pTransaction->FirstChildElement("AccountNo");
+70                 accountChar = pAccountNo->GetText();
+71                 // Check for Matching Account Number
+72                 if (accountChar == a)
+73                 {
+74                     // Get 'type' Child
+75                     XMLElement *pType = pTransaction->FirstChildElement("type");
+76 
+77                     if (NULL != pType)
+78                     {
+79                         // Print out Type
+80                         cout << '|' << setw(12) << pType->GetText();
+81 
+82                     }
+83 
+84                     //Get 'amount' Child
+85                     XMLElement *name = pTransaction->FirstChildElement("amount");
+86 
+87                     if (NULL != name)
+88                     {
+89                         // convert string to *Char
+90                         totalBalance += strtod(name->GetText(), NULL);
+91                         strcpy(amountText, "$");
+92                         strcat(amountText, name->GetText());
+93                         // Print out Amount
+94                         cout << '|' << setw(12) << amountText;
+95 
+96                     }
+97 
+98                     // Get 'date' Child
+99                     XMLElement *balance = pTransaction->FirstChildElement("date");
+100 
+101                     if (NULL != balance)
+102                     {
+103                         // Print out Balance
+104                         cout << '|' << setw(14) << balance->GetText() << '|';
+105 
+106                     }
+107 
+108                     std::cout << std::endl;
+109 
+110                 }
+111 
+112                 //Next transaction
+113                 pTransaction = pTransaction->NextSiblingElement("transaction");
+114             }
+115 
+116             cout << endl;
+117             // Print out Total Balance
+118             cout << "Total Account Balance as of today is: $" << totalBalance;
+119             cout << endl;
+120 
+121             // Print Footer
+122             cout << "\n";
+123             cout << "------------------------------------------------------------------\n";
+124             cout << "----------------------End Account Transactions--------------------\n";
+125             cout << "------------------------------------------------------------------\n";
+126             cout << "\n";
+127         }
+128     }
+129 }
+.fi
+.PP
+References constants::dataPath, tinyxml2::XMLNode::FirstChildElement(), tinyxml2::XMLElement::GetText(), tinyxml2::XMLDocument::LoadFile(), tinyxml2::XMLNode::NextSiblingElement(), and tinyxml2::XMLDocument::RootElement()\&.
+.PP
+Referenced by Accounts::GetAccount()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

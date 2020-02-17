@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="constants_8cpp" kind="file" language="C++">
+    <compoundname>constants.cpp</compoundname>
+    <includes refid="constants_8h" local="yes">constants.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>string</label>
+      </node>
+      <node id="2">
+        <label>constants.h</label>
+        <link refid="constants_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/constants.cpp</label>
+        <link refid="constants_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="constants_8cpp_1a7e4e8ebbcdc264a08472493010016d68" prot="public" static="no" mutable="no">
+        <type>const string</type>
+        <definition>const string adminUser</definition>
+        <argsstring></argsstring>
+        <name>adminUser</name>
+        <initializer>= &quot;Admin&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/constants.cpp" line="5" column="15" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/constants.cpp" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="constants_8h" kindref="compound">constants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Constants<sp/>class</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classconstants_1a566b0f322c6801a4ee4f64145f3ba91d" kindref="member">constants::dataPath</ref>=<sp/></highlight><highlight class="stringliteral">&quot;C:\\Users\\cb05314\\Documents\\TSU\\CPPT\\BankingSystem\\bin\\Debug\\data.xml&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="5" refid="constants_8cpp_1a7e4e8ebbcdc264a08472493010016d68" refkind="member"><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="constants_8cpp_1a7e4e8ebbcdc264a08472493010016d68" kindref="member">adminUser</ref>=<sp/></highlight><highlight class="stringliteral">&quot;Admin&quot;</highlight><highlight class="normal">;</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/constants.cpp"/>
+  </compounddef>
+</doxygen>

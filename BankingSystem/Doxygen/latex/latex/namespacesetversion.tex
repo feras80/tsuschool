@@ -1,0 +1,365 @@
+\hypertarget{namespacesetversion}{}\doxysection{setversion Namespace Reference}
+\label{namespacesetversion}\index{setversion@{setversion}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacesetversion_a08abc4b6f8c35c88ea79485d73429eac}{file\+Process}} (name, line\+Function)
+\item 
+def \mbox{\hyperlink{namespacesetversion_afe5c351c1364f7cc10742e0460a53da8}{echo\+Input}} (line)
+\item 
+def \mbox{\hyperlink{namespacesetversion_aad763bf4e57bfd9f30002ad6c6f00c05}{engine\+Rule}} (line)
+\begin{DoxyCompactList}\small\item\em Write the tinyxml.\+h \#\#\#\#. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesetversion_af3a89971492e609da42165f001e975ad}{macro\+Version\+Rule}} (line)
+\item 
+def \mbox{\hyperlink{namespacesetversion_a296e2062d9371d42abf656f713d5a298}{dox\+Rule}} (line)
+\begin{DoxyCompactList}\small\item\em Write the dox \#\#\#\#. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesetversion_a6a6fe4509007555c026a9188f2e99501}{cmake\+Rule1}} (line)
+\begin{DoxyCompactList}\small\item\em Write the \mbox{\hyperlink{_c_make_lists_8txt}{C\+Make\+Lists.\+txt}} \#\#\#\#. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesetversion_a54660fc372df334425f9db834096901c}{cmake\+Rule2}} (line)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacesetversion_a7f365ae027762888dbac546f795f11b6}{parser}} = optparse.\+Option\+Parser( \char`\"{}usage\+: \%prog \mbox{\hyperlink{namespacesetversion_ae82afcaf8ea50d2ae2202b348ad2102e}{major}} \mbox{\hyperlink{namespacesetversion_a48aeefa58cb2f71913238b479be49697}{minor}} \mbox{\hyperlink{namespacesetversion_a70e7c3697ff03858dde692219fb04127}{build}}\char`\"{} )
+\item 
+\mbox{\hyperlink{namespacesetversion_aff0ca20c6c03e73184ae0c96af1e4934}{options}}
+\item 
+\mbox{\hyperlink{namespacesetversion_a834ebd33a0a671de09a1b4cc112493b1}{args}}
+\item 
+\mbox{\hyperlink{namespacesetversion_ae82afcaf8ea50d2ae2202b348ad2102e}{major}} = \mbox{\hyperlink{namespacesetversion_a834ebd33a0a671de09a1b4cc112493b1}{args}}\mbox{[}0\mbox{]}
+\item 
+\mbox{\hyperlink{namespacesetversion_a48aeefa58cb2f71913238b479be49697}{minor}} = \mbox{\hyperlink{namespacesetversion_a834ebd33a0a671de09a1b4cc112493b1}{args}}\mbox{[}1\mbox{]}
+\item 
+\mbox{\hyperlink{namespacesetversion_a70e7c3697ff03858dde692219fb04127}{build}} = \mbox{\hyperlink{namespacesetversion_a834ebd33a0a671de09a1b4cc112493b1}{args}}\mbox{[}2\mbox{]}
+\item 
+string \mbox{\hyperlink{namespacesetversion_af432161da69abc709976b691f715b362}{version\+Str}} = \mbox{\hyperlink{namespacesetversion_ae82afcaf8ea50d2ae2202b348ad2102e}{major}} + \char`\"{}.\char`\"{} + \mbox{\hyperlink{namespacesetversion_a48aeefa58cb2f71913238b479be49697}{minor}} + \char`\"{}.\char`\"{} + \mbox{\hyperlink{namespacesetversion_a70e7c3697ff03858dde692219fb04127}{build}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacesetversion_a6a6fe4509007555c026a9188f2e99501}\label{namespacesetversion_a6a6fe4509007555c026a9188f2e99501}} 
+\index{setversion@{setversion}!cmakeRule1@{cmakeRule1}}
+\index{cmakeRule1@{cmakeRule1}!setversion@{setversion}}
+\doxysubsubsection{\texorpdfstring{cmakeRule1()}{cmakeRule1()}}
+{\footnotesize\ttfamily def setversion.\+cmake\+Rule1 (\begin{DoxyParamCaption}\item[{}]{line }\end{DoxyParamCaption})}
+
+
+
+Write the \mbox{\hyperlink{_c_make_lists_8txt}{C\+Make\+Lists.\+txt}} \#\#\#\#. 
+
+
+
+Definition at line 111 of file setversion.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{111 \textcolor{keyword}{def }\mbox{\hyperlink{namespacesetversion_a6a6fe4509007555c026a9188f2e99501}{cmakeRule1}}( line ):}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     matchVersion = \textcolor{stringliteral}{"set(GENERIC\_LIB\_VERSION"}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115     \textcolor{keywordflow}{if} line[0:len(matchVersion)] == matchVersion:}
+\DoxyCodeLine{116         print( \textcolor{stringliteral}{"1)tinyxml2.h Major found"} )}
+\DoxyCodeLine{117         \textcolor{keywordflow}{return} matchVersion + \textcolor{stringliteral}{" \(\backslash\)""} + major + \textcolor{stringliteral}{"."} + minor + \textcolor{stringliteral}{"."} + build + \textcolor{stringliteral}{"\(\backslash\)")"} + \textcolor{stringliteral}{"\(\backslash\)n"}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{120         \textcolor{keywordflow}{return} line;}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \mbox{\hyperlink{namespacesetversion_a08abc4b6f8c35c88ea79485d73429eac}{fileProcess}}( \textcolor{stringliteral}{"CMakeLists.txt"}, cmakeRule1 )}
+\DoxyCodeLine{123 }
+
+\end{DoxyCode}
+
+
+References file\+Process().
+
+\mbox{\Hypertarget{namespacesetversion_a54660fc372df334425f9db834096901c}\label{namespacesetversion_a54660fc372df334425f9db834096901c}} 
+\index{setversion@{setversion}!cmakeRule2@{cmakeRule2}}
+\index{cmakeRule2@{cmakeRule2}!setversion@{setversion}}
+\doxysubsubsection{\texorpdfstring{cmakeRule2()}{cmakeRule2()}}
+{\footnotesize\ttfamily def setversion.\+cmake\+Rule2 (\begin{DoxyParamCaption}\item[{}]{line }\end{DoxyParamCaption})}
+
+
+
+Definition at line 124 of file setversion.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{124 \textcolor{keyword}{def }\mbox{\hyperlink{namespacesetversion_a54660fc372df334425f9db834096901c}{cmakeRule2}}( line ):}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126     matchSoversion = \textcolor{stringliteral}{"set(GENERIC\_LIB\_SOVERSION"}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128     \textcolor{keywordflow}{if} line[0:len(matchSoversion)] == matchSoversion:}
+\DoxyCodeLine{129         print( \textcolor{stringliteral}{"1)tinyxml2.h Major found"} )}
+\DoxyCodeLine{130         \textcolor{keywordflow}{return} matchSoversion + \textcolor{stringliteral}{" \(\backslash\)""} + major + \textcolor{stringliteral}{"\(\backslash\)")"} + \textcolor{stringliteral}{"\(\backslash\)n"}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{133         \textcolor{keywordflow}{return} line;}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \mbox{\hyperlink{namespacesetversion_a08abc4b6f8c35c88ea79485d73429eac}{fileProcess}}( \textcolor{stringliteral}{"CMakeLists.txt"}, cmakeRule2 )}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 print( \textcolor{stringliteral}{"Release note:"} )}
+\DoxyCodeLine{138 print( \textcolor{stringliteral}{'1. Build.   g++ -\/Wall -\/DTINYXML2\_DEBUG tinyxml2.cpp xmltest.cpp -\/o gccxmltest.exe'} )}
+\DoxyCodeLine{139 print( \textcolor{stringliteral}{'2. Commit.  git commit -\/am"setting the version to '} + versionStr + \textcolor{stringliteral}{'"'} )}
+\DoxyCodeLine{140 print( \textcolor{stringliteral}{'3. Tag.     git tag '} + versionStr )}
+\DoxyCodeLine{141 print( \textcolor{stringliteral}{'   OR       git tag -\/a '} + versionStr + \textcolor{stringliteral}{' -\/m [tag message]'} )}
+\DoxyCodeLine{142 print( \textcolor{stringliteral}{'Remember to "git push" both code and tag. For the tag:'} )}
+\DoxyCodeLine{143 print( \textcolor{stringliteral}{'git push origin [tagname]'})}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145  }
+
+\end{DoxyCode}
+
+
+References file\+Process().
+
+\mbox{\Hypertarget{namespacesetversion_a296e2062d9371d42abf656f713d5a298}\label{namespacesetversion_a296e2062d9371d42abf656f713d5a298}} 
+\index{setversion@{setversion}!doxRule@{doxRule}}
+\index{doxRule@{doxRule}!setversion@{setversion}}
+\doxysubsubsection{\texorpdfstring{doxRule()}{doxRule()}}
+{\footnotesize\ttfamily def setversion.\+dox\+Rule (\begin{DoxyParamCaption}\item[{}]{line }\end{DoxyParamCaption})}
+
+
+
+Write the dox \#\#\#\#. 
+
+
+
+Definition at line 95 of file setversion.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{95 \textcolor{keyword}{def }\mbox{\hyperlink{namespacesetversion_a296e2062d9371d42abf656f713d5a298}{doxRule}}( line ):}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     match = \textcolor{stringliteral}{"PROJECT\_NUMBER"}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{keywordflow}{if} line[0:len( match )] == match:}
+\DoxyCodeLine{100         print( \textcolor{stringliteral}{"dox project found"} )}
+\DoxyCodeLine{101         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"PROJECT\_NUMBER = "} + major + \textcolor{stringliteral}{"."} + minor + \textcolor{stringliteral}{"."} + build + \textcolor{stringliteral}{"\(\backslash\)n"}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{104         \textcolor{keywordflow}{return} line;}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \mbox{\hyperlink{namespacesetversion_a08abc4b6f8c35c88ea79485d73429eac}{fileProcess}}( \textcolor{stringliteral}{"dox"}, doxRule )}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 }
+
+\end{DoxyCode}
+
+
+References file\+Process().
+
+\mbox{\Hypertarget{namespacesetversion_afe5c351c1364f7cc10742e0460a53da8}\label{namespacesetversion_afe5c351c1364f7cc10742e0460a53da8}} 
+\index{setversion@{setversion}!echoInput@{echoInput}}
+\index{echoInput@{echoInput}!setversion@{setversion}}
+\doxysubsubsection{\texorpdfstring{echoInput()}{echoInput()}}
+{\footnotesize\ttfamily def setversion.\+echo\+Input (\begin{DoxyParamCaption}\item[{}]{line }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file setversion.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29 \textcolor{keyword}{def }\mbox{\hyperlink{namespacesetversion_afe5c351c1364f7cc10742e0460a53da8}{echoInput}}( line ):}
+\DoxyCodeLine{30     \textcolor{keywordflow}{return} line}
+\DoxyCodeLine{31 }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacesetversion_aad763bf4e57bfd9f30002ad6c6f00c05}\label{namespacesetversion_aad763bf4e57bfd9f30002ad6c6f00c05}} 
+\index{setversion@{setversion}!engineRule@{engineRule}}
+\index{engineRule@{engineRule}!setversion@{setversion}}
+\doxysubsubsection{\texorpdfstring{engineRule()}{engineRule()}}
+{\footnotesize\ttfamily def setversion.\+engine\+Rule (\begin{DoxyParamCaption}\item[{}]{line }\end{DoxyParamCaption})}
+
+
+
+Write the tinyxml.\+h \#\#\#\#. 
+
+
+
+Definition at line 47 of file setversion.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{47 \textcolor{keyword}{def }\mbox{\hyperlink{namespacesetversion_aad763bf4e57bfd9f30002ad6c6f00c05}{engineRule}}( line ):}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     matchMajor = \textcolor{stringliteral}{"static const int TIXML2\_MAJOR\_VERSION"}}
+\DoxyCodeLine{50     matchMinor = \textcolor{stringliteral}{"static const int TIXML2\_MINOR\_VERSION"}}
+\DoxyCodeLine{51     matchBuild = \textcolor{stringliteral}{"static const int TIXML2\_PATCH\_VERSION"}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \textcolor{keywordflow}{if} line[0:len(matchMajor)] == matchMajor:}
+\DoxyCodeLine{54         print( \textcolor{stringliteral}{"1)tinyxml2.h Major found"} )}
+\DoxyCodeLine{55         \textcolor{keywordflow}{return} matchMajor + \textcolor{stringliteral}{" = "} + major + \textcolor{stringliteral}{";\(\backslash\)n"}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{keywordflow}{elif} line[0:len(matchMinor)] == matchMinor:}
+\DoxyCodeLine{58         print( \textcolor{stringliteral}{"2)tinyxml2.h Minor found"} )}
+\DoxyCodeLine{59         \textcolor{keywordflow}{return} matchMinor + \textcolor{stringliteral}{" = "} + minor + \textcolor{stringliteral}{";\(\backslash\)n"}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{keywordflow}{elif} line[0:len(matchBuild)] == matchBuild:}
+\DoxyCodeLine{62         print( \textcolor{stringliteral}{"3)tinyxml2.h Build found"} )}
+\DoxyCodeLine{63         \textcolor{keywordflow}{return} matchBuild + \textcolor{stringliteral}{" = "} + build + \textcolor{stringliteral}{";\(\backslash\)n"}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{66         \textcolor{keywordflow}{return} line;}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \mbox{\hyperlink{namespacesetversion_a08abc4b6f8c35c88ea79485d73429eac}{fileProcess}}( \textcolor{stringliteral}{"tinyxml2.h"}, engineRule )}
+\DoxyCodeLine{69 }
+
+\end{DoxyCode}
+
+
+References file\+Process().
+
+\mbox{\Hypertarget{namespacesetversion_a08abc4b6f8c35c88ea79485d73429eac}\label{namespacesetversion_a08abc4b6f8c35c88ea79485d73429eac}} 
+\index{setversion@{setversion}!fileProcess@{fileProcess}}
+\index{fileProcess@{fileProcess}!setversion@{setversion}}
+\doxysubsubsection{\texorpdfstring{fileProcess()}{fileProcess()}}
+{\footnotesize\ttfamily def setversion.\+file\+Process (\begin{DoxyParamCaption}\item[{}]{name,  }\item[{}]{line\+Function }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file setversion.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8 \textcolor{keyword}{def }\mbox{\hyperlink{namespacesetversion_a08abc4b6f8c35c88ea79485d73429eac}{fileProcess}}( name, lineFunction ):}
+\DoxyCodeLine{9     filestream = open( name, \textcolor{stringliteral}{'r'} )}
+\DoxyCodeLine{10     \textcolor{keywordflow}{if} filestream.closed:}
+\DoxyCodeLine{11         print( \textcolor{stringliteral}{"file "} + name + \textcolor{stringliteral}{" not open."} )}
+\DoxyCodeLine{12         \textcolor{keywordflow}{return}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14     output = \textcolor{stringliteral}{""}}
+\DoxyCodeLine{15     print( \textcolor{stringliteral}{"-\/-\/-\/ Processing "} + name + \textcolor{stringliteral}{" -\/-\/-\/-\/-\/-\/-\/-\/-\/"} )}
+\DoxyCodeLine{16     \textcolor{keywordflow}{while} 1:}
+\DoxyCodeLine{17         line = filestream.readline()}
+\DoxyCodeLine{18         \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} line: \textcolor{keywordflow}{break}}
+\DoxyCodeLine{19         output += lineFunction( line )}
+\DoxyCodeLine{20     filestream.close()}
+\DoxyCodeLine{21     }
+\DoxyCodeLine{22     \textcolor{keywordflow}{if} \textcolor{keywordflow}{not} output: \textcolor{keywordflow}{return}           \textcolor{comment}{\# basic error checking}}
+\DoxyCodeLine{23     }
+\DoxyCodeLine{24     print( \textcolor{stringliteral}{"Writing file "} + name )}
+\DoxyCodeLine{25     filestream = open( name, \textcolor{stringliteral}{"w"} );}
+\DoxyCodeLine{26     filestream.write( output );}
+\DoxyCodeLine{27     filestream.close()}
+\DoxyCodeLine{28     }
+
+\end{DoxyCode}
+
+
+Referenced by cmake\+Rule1(), cmake\+Rule2(), dox\+Rule(), engine\+Rule(), and macro\+Version\+Rule().
+
+\mbox{\Hypertarget{namespacesetversion_af3a89971492e609da42165f001e975ad}\label{namespacesetversion_af3a89971492e609da42165f001e975ad}} 
+\index{setversion@{setversion}!macroVersionRule@{macroVersionRule}}
+\index{macroVersionRule@{macroVersionRule}!setversion@{setversion}}
+\doxysubsubsection{\texorpdfstring{macroVersionRule()}{macroVersionRule()}}
+{\footnotesize\ttfamily def setversion.\+macro\+Version\+Rule (\begin{DoxyParamCaption}\item[{}]{line }\end{DoxyParamCaption})}
+
+
+
+Definition at line 70 of file setversion.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{70 \textcolor{keyword}{def }\mbox{\hyperlink{namespacesetversion_af3a89971492e609da42165f001e975ad}{macroVersionRule}}( line ):}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     matchMajor = \textcolor{stringliteral}{"\#define TINYXML2\_MAJOR\_VERSION"}}
+\DoxyCodeLine{73     matchMinor = \textcolor{stringliteral}{"\#define TINYXML2\_MINOR\_VERSION"}}
+\DoxyCodeLine{74     matchBuild = \textcolor{stringliteral}{"\#define TINYXML2\_PATCH\_VERSION"}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{keywordflow}{if} line[0:len(matchMajor)] == matchMajor:}
+\DoxyCodeLine{77         print( \textcolor{stringliteral}{"1)macro Major found"} )}
+\DoxyCodeLine{78         \textcolor{keywordflow}{return} matchMajor + \textcolor{stringliteral}{" "} + major + \textcolor{stringliteral}{"\(\backslash\)n"}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     \textcolor{keywordflow}{elif} line[0:len(matchMinor)] == matchMinor:}
+\DoxyCodeLine{81         print( \textcolor{stringliteral}{"2)macro Minor found"} )}
+\DoxyCodeLine{82         \textcolor{keywordflow}{return} matchMinor + \textcolor{stringliteral}{" "} + minor + \textcolor{stringliteral}{"\(\backslash\)n"}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{keywordflow}{elif} line[0:len(matchBuild)] == matchBuild:}
+\DoxyCodeLine{85         print( \textcolor{stringliteral}{"3)macro Build found"} )}
+\DoxyCodeLine{86         \textcolor{keywordflow}{return} matchBuild + \textcolor{stringliteral}{" "} + build + \textcolor{stringliteral}{"\(\backslash\)n"}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{89         \textcolor{keywordflow}{return} line;}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \mbox{\hyperlink{namespacesetversion_a08abc4b6f8c35c88ea79485d73429eac}{fileProcess}}(\textcolor{stringliteral}{"tinyxml2.h"}, macroVersionRule)}
+\DoxyCodeLine{92 }
+
+\end{DoxyCode}
+
+
+References file\+Process().
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacesetversion_a834ebd33a0a671de09a1b4cc112493b1}\label{namespacesetversion_a834ebd33a0a671de09a1b4cc112493b1}} 
+\index{setversion@{setversion}!args@{args}}
+\index{args@{args}!setversion@{setversion}}
+\doxysubsubsection{\texorpdfstring{args}{args}}
+{\footnotesize\ttfamily setversion.\+args}
+
+
+
+Definition at line 33 of file setversion.\+py.
+
+\mbox{\Hypertarget{namespacesetversion_a70e7c3697ff03858dde692219fb04127}\label{namespacesetversion_a70e7c3697ff03858dde692219fb04127}} 
+\index{setversion@{setversion}!build@{build}}
+\index{build@{build}!setversion@{setversion}}
+\doxysubsubsection{\texorpdfstring{build}{build}}
+{\footnotesize\ttfamily setversion.\+build = \mbox{\hyperlink{namespacesetversion_a834ebd33a0a671de09a1b4cc112493b1}{args}}\mbox{[}2\mbox{]}}
+
+
+
+Definition at line 39 of file setversion.\+py.
+
+\mbox{\Hypertarget{namespacesetversion_ae82afcaf8ea50d2ae2202b348ad2102e}\label{namespacesetversion_ae82afcaf8ea50d2ae2202b348ad2102e}} 
+\index{setversion@{setversion}!major@{major}}
+\index{major@{major}!setversion@{setversion}}
+\doxysubsubsection{\texorpdfstring{major}{major}}
+{\footnotesize\ttfamily setversion.\+major = \mbox{\hyperlink{namespacesetversion_a834ebd33a0a671de09a1b4cc112493b1}{args}}\mbox{[}0\mbox{]}}
+
+
+
+Definition at line 37 of file setversion.\+py.
+
+\mbox{\Hypertarget{namespacesetversion_a48aeefa58cb2f71913238b479be49697}\label{namespacesetversion_a48aeefa58cb2f71913238b479be49697}} 
+\index{setversion@{setversion}!minor@{minor}}
+\index{minor@{minor}!setversion@{setversion}}
+\doxysubsubsection{\texorpdfstring{minor}{minor}}
+{\footnotesize\ttfamily setversion.\+minor = \mbox{\hyperlink{namespacesetversion_a834ebd33a0a671de09a1b4cc112493b1}{args}}\mbox{[}1\mbox{]}}
+
+
+
+Definition at line 38 of file setversion.\+py.
+
+\mbox{\Hypertarget{namespacesetversion_aff0ca20c6c03e73184ae0c96af1e4934}\label{namespacesetversion_aff0ca20c6c03e73184ae0c96af1e4934}} 
+\index{setversion@{setversion}!options@{options}}
+\index{options@{options}!setversion@{setversion}}
+\doxysubsubsection{\texorpdfstring{options}{options}}
+{\footnotesize\ttfamily setversion.\+options}
+
+
+
+Definition at line 33 of file setversion.\+py.
+
+\mbox{\Hypertarget{namespacesetversion_a7f365ae027762888dbac546f795f11b6}\label{namespacesetversion_a7f365ae027762888dbac546f795f11b6}} 
+\index{setversion@{setversion}!parser@{parser}}
+\index{parser@{parser}!setversion@{setversion}}
+\doxysubsubsection{\texorpdfstring{parser}{parser}}
+{\footnotesize\ttfamily setversion.\+parser = optparse.\+Option\+Parser( \char`\"{}usage\+: \%prog \mbox{\hyperlink{namespacesetversion_ae82afcaf8ea50d2ae2202b348ad2102e}{major}} \mbox{\hyperlink{namespacesetversion_a48aeefa58cb2f71913238b479be49697}{minor}} \mbox{\hyperlink{namespacesetversion_a70e7c3697ff03858dde692219fb04127}{build}}\char`\"{} )}
+
+
+
+Definition at line 32 of file setversion.\+py.
+
+\mbox{\Hypertarget{namespacesetversion_af432161da69abc709976b691f715b362}\label{namespacesetversion_af432161da69abc709976b691f715b362}} 
+\index{setversion@{setversion}!versionStr@{versionStr}}
+\index{versionStr@{versionStr}!setversion@{setversion}}
+\doxysubsubsection{\texorpdfstring{versionStr}{versionStr}}
+{\footnotesize\ttfamily string setversion.\+version\+Str = \mbox{\hyperlink{namespacesetversion_ae82afcaf8ea50d2ae2202b348ad2102e}{major}} + \char`\"{}.\char`\"{} + \mbox{\hyperlink{namespacesetversion_a48aeefa58cb2f71913238b479be49697}{minor}} + \char`\"{}.\char`\"{} + \mbox{\hyperlink{namespacesetversion_a70e7c3697ff03858dde692219fb04127}{build}}}
+
+
+
+Definition at line 40 of file setversion.\+py.
+

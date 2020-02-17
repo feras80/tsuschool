@@ -1,0 +1,315 @@
+.TH "C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" 3 "Sun Feb 16 2020" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <windows\&.h>\fP
+.br
+\fC#include <Employee\&.h>\fP
+.br
+\fC#include <tinyxml2\&.h>\fP
+.br
+\fC#include <Users\&.h>\fP
+.br
+\fC#include <Accounts\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBHeader\fP ()"
+.br
+.ti -1c
+.RI "void \fBmainMenu\fP ()"
+.br
+.ti -1c
+.RI "int \fBmain\fP ()"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void Header ()"
+
+.PP
+Definition at line 14 of file main\&.cpp\&.
+.PP
+.nf
+15 {
+16     system("Color A");
+17 
+18     cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+19     cout << "\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.Welcome to the Banking System\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\&.\n";
+20     cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+21     cout << endl;
+22 }
+.fi
+.PP
+Referenced by main(), and mainMenu()\&.
+.SS "int main ()"
+
+.PP
+Definition at line 238 of file main\&.cpp\&.
+.PP
+.nf
+239 {
+240     string ch;
+241     // Init Users Instance
+242     Users user;
+243     //Display the Header
+244     Header();
+245     // Prompt the user to enter a password
+246     cout << "Enter your password:";
+247     cin >> ch;
+248     cout << endl;
+249 
+250     if (ch == user\&.GetPassword())
+251     {
+252         //Valid password
+253         mainMenu();
+254 
+255     }
+256     else
+257     {
+258         //Invalid password
+259         cout << "You are not permitted to access this system\n";
+260 
+261     }
+262 }
+.fi
+.PP
+References Users::GetPassword(), Header(), and mainMenu()\&.
+.SS "void mainMenu ()"
+
+.PP
+Definition at line 26 of file main\&.cpp\&.
+.PP
+.nf
+27 {
+28     int ch;
+29     // Init Accounts instance
+30     Accounts account;
+31     while (1)
+32     {
+33         // Variables
+34         char c;
+35         string accountNumber;
+36         string accountType;
+37         string customerName;
+38         string accountBalance;
+39         bool accountExists;
+40         // Print out main menu choices
+41         do {
+42             system("cls");
+43             Header();
+44             cout << " 1\&. Create Account\n\ ";
+45             cout << "2\&. View Account\n\ ";
+46             cout << "3\&. Account List\n\ ";
+47             cout << "4\&. Deposit\n\ ";
+48             cout << "5\&. Withdraw\n\ ";
+49             cout << "6\&. Account Balance\n\ ";
+50             cout << "7\&. Exit \n\ ";
+51             cout << endl;
+52             // Prompt the user the enter a choice
+53             cout << "Enter your choice : \n\ ";
+54 
+55             cin >> ch;
+56             cout << endl;
+57 
+58             cout << endl;
+59             switch (ch)
+60             {
+61                 case 1:
+62                     // Clear screen
+63                     system("cls");
+64                     do {
+65                         //Change color
+66                         system("Color B");
+67                         // Display Header
+68                         Header();
+69                         // Prompt the user to enter new account information
+70                         cout << "Enter Account Number(Must be unique):";
+71                         cin >> accountNumber;
+72                         cout << endl;
+73                         cout << "Enter Account Type(Checking or Saving):";
+74                         cin >> accountType;
+75                         cout << endl;
+76                         cout << "Enter customer name:";
+77                         cin >> customerName;
+78                         cout << endl;
+79                         cout << "Enter account balance:";
+80                         cin >> accountBalance;
+81 
+82                         // Call InsertAccount Function
+83                         account\&.InsertAccount(accountNumber, accountType, customerName, accountBalance);
+84                         cout << endl;
+85                         cout << "Account has been created!";
+86                         cout << endl;
+87 
+88                         cout << "Back to main menu?('y' or 'n')\n";
+89 
+90                         cin >> c;
+91                     }
+92 
+93                     while (c == 'n');
+94                     break;
+95                 case 2:
+96                     //Clear screen
+97                     system("cls");
+98                     do {
+99                         //Change color
+100                         system("Color B");
+101                         //Display Header
+102                         Header();
+103                         //Prompt the user to enter account number
+104                         cout << "Enter Account Number: ";
+105                         cin >> accountNumber;
+106                         //Call GetAccount Function
+107                         account\&.GetAccount(accountNumber);
+108                         cout << "Back to main menu?('y' or 'n')\n";
+109 
+110                         cin >> c;
+111                     }
+112 
+113                     while (c == 'n');
+114                     break;
+115                 case 3:
+116                     //Clear screen
+117                     system("cls");
+118                     //Display header
+119                     Header();
+120                     do {
+121                         //Call GetAllAccounts Function
+122                         account\&.GetAllAccounts();
+123                         cout << "\n";
+124 
+125                         cout << "Back to main menu?('y' or 'n')\n";
+126 
+127                         cin >> c;
+128                     }
+129 
+130                     while (c == 'n');
+131 
+132                     break;
+133                 case 4:
+134 
+135                     do {
+136                         //Clear screen
+137                         system("cls");
+138                         //Change color
+139                         system("Color B");
+140                         //Display Header
+141                         Header();
+142                         //Prompt the user to enter deposit information
+143                         cout << "Enter Account Number: ";
+144                         cin >> accountNumber;
+145                         cout << "Enter Deposit Amount: ";
+146                         cin >> accountBalance;
+147                         //Check if account exists
+148                         accountExists = account\&.AcountExists(accountNumber);
+149 
+150                         if (accountExists == false)
+151                         {
+152                             cout << "Account Does not exist\&.";
+153                             cout << endl;
+154                         }
+155                         else
+156                         {
+157                             // Call Deposit function
+158                             account\&.Deposit(accountNumber, accountBalance);
+159                             cout << "Amount has been deposited\&.";
+160                         }
+161 
+162                         cout << endl << endl;
+163                         cout << "Back to main menu?('y' or 'n')\n";
+164 
+165                         cin >> c;
+166                     }
+167 
+168                     while (c == 'n');
+169                     break;
+170                 case 5:
+171                     do {
+172                         //Clear screen
+173                         system("cls");
+174                         //Change color
+175                         system("Color B");
+176                         //Display Header
+177                         Header();
+178                         // Prompt the user to enter withdrawal information
+179                         cout << "Enter Account Number: ";
+180                         cin >> accountNumber;
+181                         cout << "Enter Amount to Withdraw (Must be negative amount): ";
+182                         cin >> accountBalance;
+183                         // Check if account exists
+184                         accountExists = account\&.AcountExists(accountNumber);
+185 
+186                         if (accountExists == false)
+187                         {
+188                             cout << "Account Does not exist\&.";
+189                             cout << endl;
+190                         }
+191                         else
+192                         {
+193                             // Call Withdraw Function
+194                             account\&.Withdraw(accountNumber, accountBalance);
+195                             cout << "Amount has been withdrawn\&.";
+196                         }
+197 
+198                         cout << endl << endl;
+199                         cout << "Back to main menu?('y' or 'n')\n";
+200 
+201                         cin >> c;
+202                     }
+203 
+204                     while (c == 'n');
+205                     break;
+206                 case 6:
+207                     //Clear screen
+208                     system("cls");
+209                     do {
+210                         //Change color
+211                         system("Color B");
+212                         //Display Header
+213                         Header();
+214                         // Prompt the user to enter an account number
+215                         cout << "Enter Account Number: ";
+216                         cin >> accountNumber;
+217                         //Call GetAccountBalance function
+218                         account\&.GetAccountBalance(accountNumber);
+219                         cout << "Back to main menu?('y' or 'n')\n";
+220 
+221                         cin >> c;
+222                     }
+223 
+224                     while (c == 'n');
+225                     break;
+226                 case 7:
+227                     //Exit the application
+228                     exit(0);
+229                     break;
+230             }
+231         }
+232 
+233         while (ch <= 7);
+234     }
+235 }
+.fi
+.PP
+References Accounts::AcountExists(), Accounts::Deposit(), Accounts::GetAccount(), Accounts::GetAccountBalance(), Accounts::GetAllAccounts(), Header(), Accounts::InsertAccount(), and Accounts::Withdraw()\&.
+.PP
+Referenced by main()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

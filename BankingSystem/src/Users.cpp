@@ -1,49 +1,55 @@
 #include "Users.h"
-
 #include <tinyxml2.h>
-
 #include <iostream>
-
 #include <constants.h>
-
 using namespace std;
 using namespace tinyxml2;
-Users::Users() {
-  GetPassword();
+// Class Constructor
+Users::Users()
+{
+	GetPassword();
 
 }
-string Users::GetPassword() {
-  string result;
-  XMLDocument doc;
-  const char * path = constants::dataPath;
 
-  //doc.LoadFile( "\\bin\\Debug\\data.xml");
-  doc.LoadFile(path);
-  XMLElement *  pRootElement = doc.RootElement();
+// To return a password
+// Returns a string
+string Users::GetPassword()
+{
+	string result;
+	XMLDocument doc;
+	const char *path = constants::dataPath;
 
-  if (NULL != pRootElement) {
-    // set of &lt;person&gt; tags
-    XMLElement * pUsers = pRootElement-> FirstChildElement("users");
+	// Load the XML file into the Doc instance
+	doc.LoadFile(path);
+	//Get root Element
+	XMLElement *pRootElement = doc.RootElement();
 
-    if (NULL != pUsers) {
-      XMLElement * pUser = pUsers -> FirstChildElement("user");
+	if (NULL != pRootElement)
+	{
+		//Get 'users' Child
+		XMLElement *pUsers = pRootElement->FirstChildElement("users");
 
-      while (pUser) {
-        XMLElement * l_pForename = pUser -> FirstChildElement("password");
+		if (NULL != pUsers)
+		{
+			// Get 'user' Child
+			XMLElement *pUser = pUsers->FirstChildElement("user");
 
-        result = l_pForename -> GetText();
+			while (pUser)
+			{
+				// Get 'password' Child
+				XMLElement *pPassword = pUser->FirstChildElement("password");
 
+				result = pPassword->GetText();
 
-        std::cout << std::endl;
-        return result;
+				std::cout << std::endl;
+				//Return result
+				return result;
 
-      }
-    }
-  }
+			}
+		}
+	}
 
-  return result;
+	return result;
 }
 
-Users::~Users() {
-
-}
+Users::~Users() {}

@@ -1,0 +1,112 @@
+\hypertarget{class_x_m_l_printer_h_t_m_l5}{}\doxysection{X\+M\+L\+Printer\+H\+T\+M\+L5 Class Reference}
+\label{class_x_m_l_printer_h_t_m_l5}\index{XMLPrinterHTML5@{XMLPrinterHTML5}}
+Inheritance diagram for X\+M\+L\+Printer\+H\+T\+M\+L5\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_x_m_l_printer_h_t_m_l5}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_x_m_l_printer_h_t_m_l5_af9799bf2b32e719bdf65f99b3e447dbf}{X\+M\+L\+Printer\+H\+T\+M\+L5}} (F\+I\+LE $\ast$file=0, bool compact=false, int depth=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_x_m_l_printer_h_t_m_l5_ad4fb1a95802016bdd4ca457c483ba042}{Close\+Element}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_x_m_l_printer_h_t_m_l5_a58575b4b925b41bf9a1ef6c22f0853c7}{is\+Void\+Element}} (const char $\ast$name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 58 of file html5-\/printer.\+cpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_x_m_l_printer_h_t_m_l5_af9799bf2b32e719bdf65f99b3e447dbf}\label{class_x_m_l_printer_h_t_m_l5_af9799bf2b32e719bdf65f99b3e447dbf}} 
+\index{XMLPrinterHTML5@{XMLPrinterHTML5}!XMLPrinterHTML5@{XMLPrinterHTML5}}
+\index{XMLPrinterHTML5@{XMLPrinterHTML5}!XMLPrinterHTML5@{XMLPrinterHTML5}}
+\doxysubsubsection{\texorpdfstring{XMLPrinterHTML5()}{XMLPrinterHTML5()}}
+{\footnotesize\ttfamily X\+M\+L\+Printer\+H\+T\+M\+L5\+::\+X\+M\+L\+Printer\+H\+T\+M\+L5 (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{file = {\ttfamily 0},  }\item[{bool}]{compact = {\ttfamily false},  }\item[{int}]{depth = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 61 of file html5-\/printer.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{61                                                                         :}
+\DoxyCodeLine{62         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_printer_aa6d3841c069085f5b8a27bc7103c04f7}{XMLPrinter}} (file, compact, depth)}
+\DoxyCodeLine{63     \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_x_m_l_printer_h_t_m_l5_ad4fb1a95802016bdd4ca457c483ba042}\label{class_x_m_l_printer_h_t_m_l5_ad4fb1a95802016bdd4ca457c483ba042}} 
+\index{XMLPrinterHTML5@{XMLPrinterHTML5}!CloseElement@{CloseElement}}
+\index{CloseElement@{CloseElement}!XMLPrinterHTML5@{XMLPrinterHTML5}}
+\doxysubsubsection{\texorpdfstring{CloseElement()}{CloseElement()}}
+{\footnotesize\ttfamily virtual void X\+M\+L\+Printer\+H\+T\+M\+L5\+::\+Close\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 66 of file html5-\/printer.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{66                                  \{}
+\DoxyCodeLine{67         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_printer_ac07169d58b465214a2b1fa306e617c26}{\_elementJustOpened}} \&\& !\mbox{\hyperlink{class_x_m_l_printer_h_t_m_l5_a58575b4b925b41bf9a1ef6c22f0853c7}{isVoidElement}} (\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_printer_ae16fb198af6e8ba0f8ef0644ca988fae}{\_stack}}.\mbox{\hyperlink{classtinyxml2_1_1_dyn_array_a5e4e1e408e646688503dec77c77c9d59}{PeekTop}}())) \{}
+\DoxyCodeLine{68             \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_printer_ac6e2c72c5d796f5b4de6ce81ca95e3fa}{SealElementIfJustOpened}}();}
+\DoxyCodeLine{69             \}}
+\DoxyCodeLine{70         XMLPrinter::CloseElement();}
+\DoxyCodeLine{71     \}}
+
+\end{DoxyCode}
+
+
+References tinyxml2\+::\+X\+M\+L\+Printer\+::\+Close\+Element().
+
+\mbox{\Hypertarget{class_x_m_l_printer_h_t_m_l5_a58575b4b925b41bf9a1ef6c22f0853c7}\label{class_x_m_l_printer_h_t_m_l5_a58575b4b925b41bf9a1ef6c22f0853c7}} 
+\index{XMLPrinterHTML5@{XMLPrinterHTML5}!isVoidElement@{isVoidElement}}
+\index{isVoidElement@{isVoidElement}!XMLPrinterHTML5@{XMLPrinterHTML5}}
+\doxysubsubsection{\texorpdfstring{isVoidElement()}{isVoidElement()}}
+{\footnotesize\ttfamily virtual bool X\+M\+L\+Printer\+H\+T\+M\+L5\+::is\+Void\+Element (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 73 of file html5-\/printer.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{73                                                   \{}
+\DoxyCodeLine{74 \textcolor{comment}{// Complete list of all HTML5 "void elements",}}
+\DoxyCodeLine{75 \textcolor{comment}{// http://dev.w3.org/html5/markup/syntax.html}}
+\DoxyCodeLine{76         \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char} *list[] = \{}
+\DoxyCodeLine{77             \textcolor{stringliteral}{"area"}, \textcolor{stringliteral}{"base"}, \textcolor{stringliteral}{"br"}, \textcolor{stringliteral}{"col"}, \textcolor{stringliteral}{"command"}, \textcolor{stringliteral}{"embed"}, \textcolor{stringliteral}{"hr"}, \textcolor{stringliteral}{"img"},}
+\DoxyCodeLine{78             \textcolor{stringliteral}{"input"}, \textcolor{stringliteral}{"keygen"}, \textcolor{stringliteral}{"link"}, \textcolor{stringliteral}{"meta"}, \textcolor{stringliteral}{"param"}, \textcolor{stringliteral}{"source"}, \textcolor{stringliteral}{"track"}, \textcolor{stringliteral}{"wbr"},}
+\DoxyCodeLine{79             NULL}
+\DoxyCodeLine{80         \};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{comment}{// I could use 'bsearch', but I don't have MSVC to test on (it would work with gcc/libc).}}
+\DoxyCodeLine{83         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keywordtype}{char} **p = list; *p; ++p) \{}
+\DoxyCodeLine{84             \textcolor{keywordflow}{if} (!strcasecmp (name, *p)) \{}
+\DoxyCodeLine{85                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{86             \}}
+\DoxyCodeLine{87         \}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{90     \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cb05314/\+Documents/\+T\+S\+U/\+C\+P\+P\+T/\+Banking\+System/tinyxml2-\/master/contrib/\mbox{\hyperlink{html5-printer_8cpp}{html5-\/printer.\+cpp}}\end{DoxyCompactItemize}
