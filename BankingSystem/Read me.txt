@@ -1,0 +1,5 @@
+1. Download the application from GetHub Repository
+2. Change the path of the xml data file in the file BankingSystem\src.constants.cpp
+3. Run the application
+4. Use the password myPass to login
+

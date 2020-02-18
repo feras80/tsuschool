@@ -1,7 +1,7 @@
 <file>
     <users>
         <user>
-            <Username>Andrew</Username>
+            <Username>Admin</Username>
             <password>myPass</password>
         </user>
     </users>
@@ -67,6 +67,13 @@
             <type>saving</type>
             <customer>Feras</customer>
             <balance>595</balance>
+            <openDate>01/01/2020</openDate>
+        </Account>
+        <Account>
+            <AccountNo>13</AccountNo>
+            <type>Saving</type>
+            <customer>Sean</customer>
+            <balance>399</balance>
             <openDate>01/01/2020</openDate>
         </Account>
     </Accounts>
@@ -154,6 +161,18 @@
             <type>Withdrawal</type>
             <amount>-55</amount>
             <date>02/15/20</date>
+        </transaction>
+        <transaction>
+            <AccountNo>13</AccountNo>
+            <type>Deposit</type>
+            <amount>200</amount>
+            <date>02/17/20</date>
+        </transaction>
+        <transaction>
+            <AccountNo>13</AccountNo>
+            <type>Withdrawal</type>
+            <amount>-100</amount>
+            <date>02/17/20</date>
         </transaction>
     </Transactions>
 </file>
