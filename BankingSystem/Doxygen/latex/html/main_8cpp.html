@@ -82,6 +82,7 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp File Reference</div>  </div>
@@ -92,13 +93,18 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;sys/types.h&gt;</code><br />
 <code>#include &lt;windows.h&gt;</code><br />
-<code>#include &lt;Employee.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="tinyxml2_8h_source.html">tinyxml2.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="_users_8h_source.html">Users.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="_accounts_8h_source.html">Accounts.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="constants_8h_source.html">constants.h</a>&gt;</code><br />
 </div>
 <p><a href="main_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:aeca034f67218340ecb2261a22c2f3dcd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aeca034f67218340ecb2261a22c2f3dcd">BUFSIZE</a>&#160;&#160;&#160;MAX_PATH</td></tr>
+<tr class="separator:aeca034f67218340ecb2261a22c2f3dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a36e2097fc280b614200149c851afd1b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a36e2097fc280b614200149c851afd1b6">Header</a> ()</td></tr>
@@ -108,6 +114,23 @@ Functions</h2></td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="aeca034f67218340ecb2261a22c2f3dcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeca034f67218340ecb2261a22c2f3dcd">&#9670;&nbsp;</a></span>BUFSIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUFSIZE&#160;&#160;&#160;MAX_PATH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00012">12</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a36e2097fc280b614200149c851afd1b6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a36e2097fc280b614200149c851afd1b6">&#9670;&nbsp;</a></span>Header()</h2>
@@ -158,26 +181,31 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordtype">string</span> ch;</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="comment">// Init Users Instance</span></div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <a class="code" href="class_users.html">Users</a> user;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="comment">//Display the Header</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <a class="code" href="main_8cpp.html#a36e2097fc280b614200149c851afd1b6">Header</a>();</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="comment">// Prompt the user to enter a password</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Enter your password:&quot;</span>;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    cin &gt;&gt; ch;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    cout &lt;&lt; endl;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordflow">if</span> (ch == user.<a class="code" href="class_users.html#af3b5e4015df188df9f0dda9afa2f892d">GetPassword</a>())</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    {</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="comment">//Valid password</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <a class="code" href="main_8cpp.html#ab3002fe8e0074c9e2ecb5b835e5e819f">mainMenu</a>();</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <a class="code" href="classconstants.html">constants</a> <a class="code" href="classconstants.html">constants</a>;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="comment">//Display the Header</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <a class="code" href="main_8cpp.html#a36e2097fc280b614200149c851afd1b6">Header</a>();</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="comment">// Prompt the user to enter a password</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Enter your password:&quot;</span>;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    cin &gt;&gt; ch;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    cout &lt;&lt; endl;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    }</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    {</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="comment">//Invalid password</span></div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;You are not permitted to access this system\n&quot;</span>;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    }</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;}</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordflow">if</span> (ch == user.<a class="code" href="class_users.html#af3b5e4015df188df9f0dda9afa2f892d">GetPassword</a>())</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    {</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="comment">//Valid password</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <a class="code" href="main_8cpp.html#ab3002fe8e0074c9e2ecb5b835e5e819f">mainMenu</a>();</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    }</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    {</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="comment">//Invalid password</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;You are not permitted to access this system\n&quot;</span>;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    }</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="_users_8cpp_source.html#l00016">Users::GetPassword()</a>, <a class="el" href="main_8cpp_source.html#l00014">Header()</a>, and <a class="el" href="main_8cpp_source.html#l00026">mainMenu()</a>.</p>
 
@@ -409,7 +437,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    }</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="_accounts_8cpp_source.html#l00250">Accounts::AcountExists()</a>, <a class="el" href="_accounts_8cpp_source.html#l00136">Accounts::Deposit()</a>, <a class="el" href="_accounts_8cpp_source.html#l00299">Accounts::GetAccount()</a>, <a class="el" href="_accounts_8cpp_source.html#l00410">Accounts::GetAccountBalance()</a>, <a class="el" href="_accounts_8cpp_source.html#l00481">Accounts::GetAllAccounts()</a>, <a class="el" href="main_8cpp_source.html#l00014">Header()</a>, <a class="el" href="_accounts_8cpp_source.html#l00591">Accounts::InsertAccount()</a>, and <a class="el" href="_accounts_8cpp_source.html#l00193">Accounts::Withdraw()</a>.</p>
+<p class="reference">References <a class="el" href="_accounts_8cpp_source.html#l00252">Accounts::AcountExists()</a>, <a class="el" href="_accounts_8cpp_source.html#l00137">Accounts::Deposit()</a>, <a class="el" href="_accounts_8cpp_source.html#l00303">Accounts::GetAccount()</a>, <a class="el" href="_accounts_8cpp_source.html#l00417">Accounts::GetAccountBalance()</a>, <a class="el" href="_accounts_8cpp_source.html#l00489">Accounts::GetAllAccounts()</a>, <a class="el" href="main_8cpp_source.html#l00014">Header()</a>, <a class="el" href="_accounts_8cpp_source.html#l00600">Accounts::InsertAccount()</a>, and <a class="el" href="_accounts_8cpp_source.html#l00194">Accounts::Withdraw()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="main_8cpp_source.html#l00238">main()</a>.</p>
 
@@ -417,17 +445,18 @@ Functions</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_accounts_html_a79f7ab429e30a2a67705ebd97c309d0d"><div class="ttname"><a href="class_accounts.html#a79f7ab429e30a2a67705ebd97c309d0d">Accounts::InsertAccount</a></div><div class="ttdeci">void InsertAccount(string accountNumber, string accountType, string customerName, string accountBalance)</div><div class="ttdef"><b>Definition:</b> <a href="_accounts_8cpp_source.html#l00591">Accounts.cpp:591</a></div></div>
+<div class="ttc" id="aclass_accounts_html_a79f7ab429e30a2a67705ebd97c309d0d"><div class="ttname"><a href="class_accounts.html#a79f7ab429e30a2a67705ebd97c309d0d">Accounts::InsertAccount</a></div><div class="ttdeci">void InsertAccount(string accountNumber, string accountType, string customerName, string accountBalance)</div><div class="ttdef"><b>Definition:</b> <a href="_accounts_8cpp_source.html#l00600">Accounts.cpp:600</a></div></div>
 <div class="ttc" id="amain_8cpp_html_ab3002fe8e0074c9e2ecb5b835e5e819f"><div class="ttname"><a href="main_8cpp.html#ab3002fe8e0074c9e2ecb5b835e5e819f">mainMenu</a></div><div class="ttdeci">void mainMenu()</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00026">main.cpp:26</a></div></div>
-<div class="ttc" id="aclass_accounts_html_a44ff25c8dee341d9a3a9af4a13bd3467"><div class="ttname"><a href="class_accounts.html#a44ff25c8dee341d9a3a9af4a13bd3467">Accounts::Withdraw</a></div><div class="ttdeci">void Withdraw(string a, string amount)</div><div class="ttdef"><b>Definition:</b> <a href="_accounts_8cpp_source.html#l00193">Accounts.cpp:193</a></div></div>
-<div class="ttc" id="aclass_accounts_html_a3ecaee83dc026b3bad8b69ae5b8d0598"><div class="ttname"><a href="class_accounts.html#a3ecaee83dc026b3bad8b69ae5b8d0598">Accounts::Deposit</a></div><div class="ttdeci">void Deposit(string a, string amount)</div><div class="ttdef"><b>Definition:</b> <a href="_accounts_8cpp_source.html#l00136">Accounts.cpp:136</a></div></div>
+<div class="ttc" id="aclass_accounts_html_a44ff25c8dee341d9a3a9af4a13bd3467"><div class="ttname"><a href="class_accounts.html#a44ff25c8dee341d9a3a9af4a13bd3467">Accounts::Withdraw</a></div><div class="ttdeci">void Withdraw(string a, string amount)</div><div class="ttdef"><b>Definition:</b> <a href="_accounts_8cpp_source.html#l00194">Accounts.cpp:194</a></div></div>
+<div class="ttc" id="aclassconstants_html"><div class="ttname"><a href="classconstants.html">constants</a></div><div class="ttdef"><b>Definition:</b> <a href="constants_8h_source.html#l00005">constants.h:5</a></div></div>
+<div class="ttc" id="aclass_accounts_html_a3ecaee83dc026b3bad8b69ae5b8d0598"><div class="ttname"><a href="class_accounts.html#a3ecaee83dc026b3bad8b69ae5b8d0598">Accounts::Deposit</a></div><div class="ttdeci">void Deposit(string a, string amount)</div><div class="ttdef"><b>Definition:</b> <a href="_accounts_8cpp_source.html#l00137">Accounts.cpp:137</a></div></div>
 <div class="ttc" id="aclass_users_html_af3b5e4015df188df9f0dda9afa2f892d"><div class="ttname"><a href="class_users.html#af3b5e4015df188df9f0dda9afa2f892d">Users::GetPassword</a></div><div class="ttdeci">string GetPassword()</div><div class="ttdef"><b>Definition:</b> <a href="_users_8cpp_source.html#l00016">Users.cpp:16</a></div></div>
-<div class="ttc" id="aclass_accounts_html_a91ead45d60e894f7725444ebea347eb7"><div class="ttname"><a href="class_accounts.html#a91ead45d60e894f7725444ebea347eb7">Accounts::GetAccount</a></div><div class="ttdeci">void GetAccount(string a)</div><div class="ttdef"><b>Definition:</b> <a href="_accounts_8cpp_source.html#l00299">Accounts.cpp:299</a></div></div>
-<div class="ttc" id="aclass_accounts_html_aa878135d898fc49e79ed3bf49d3a69b8"><div class="ttname"><a href="class_accounts.html#aa878135d898fc49e79ed3bf49d3a69b8">Accounts::GetAllAccounts</a></div><div class="ttdeci">void GetAllAccounts()</div><div class="ttdef"><b>Definition:</b> <a href="_accounts_8cpp_source.html#l00481">Accounts.cpp:481</a></div></div>
-<div class="ttc" id="aclass_accounts_html_a2043aec650956611653222f7e952683c"><div class="ttname"><a href="class_accounts.html#a2043aec650956611653222f7e952683c">Accounts::AcountExists</a></div><div class="ttdeci">bool AcountExists(string a)</div><div class="ttdef"><b>Definition:</b> <a href="_accounts_8cpp_source.html#l00250">Accounts.cpp:250</a></div></div>
-<div class="ttc" id="aclass_accounts_html_a9b6de0158cd47be60ab16d5dd81e9e43"><div class="ttname"><a href="class_accounts.html#a9b6de0158cd47be60ab16d5dd81e9e43">Accounts::GetAccountBalance</a></div><div class="ttdeci">void GetAccountBalance(string a)</div><div class="ttdef"><b>Definition:</b> <a href="_accounts_8cpp_source.html#l00410">Accounts.cpp:410</a></div></div>
+<div class="ttc" id="aclass_accounts_html_a91ead45d60e894f7725444ebea347eb7"><div class="ttname"><a href="class_accounts.html#a91ead45d60e894f7725444ebea347eb7">Accounts::GetAccount</a></div><div class="ttdeci">void GetAccount(string a)</div><div class="ttdef"><b>Definition:</b> <a href="_accounts_8cpp_source.html#l00303">Accounts.cpp:303</a></div></div>
+<div class="ttc" id="aclass_accounts_html_aa878135d898fc49e79ed3bf49d3a69b8"><div class="ttname"><a href="class_accounts.html#aa878135d898fc49e79ed3bf49d3a69b8">Accounts::GetAllAccounts</a></div><div class="ttdeci">void GetAllAccounts()</div><div class="ttdef"><b>Definition:</b> <a href="_accounts_8cpp_source.html#l00489">Accounts.cpp:489</a></div></div>
+<div class="ttc" id="aclass_accounts_html_a2043aec650956611653222f7e952683c"><div class="ttname"><a href="class_accounts.html#a2043aec650956611653222f7e952683c">Accounts::AcountExists</a></div><div class="ttdeci">bool AcountExists(string a)</div><div class="ttdef"><b>Definition:</b> <a href="_accounts_8cpp_source.html#l00252">Accounts.cpp:252</a></div></div>
+<div class="ttc" id="aclass_accounts_html_a9b6de0158cd47be60ab16d5dd81e9e43"><div class="ttname"><a href="class_accounts.html#a9b6de0158cd47be60ab16d5dd81e9e43">Accounts::GetAccountBalance</a></div><div class="ttdeci">void GetAccountBalance(string a)</div><div class="ttdef"><b>Definition:</b> <a href="_accounts_8cpp_source.html#l00417">Accounts.cpp:417</a></div></div>
 <div class="ttc" id="amain_8cpp_html_a36e2097fc280b614200149c851afd1b6"><div class="ttname"><a href="main_8cpp.html#a36e2097fc280b614200149c851afd1b6">Header</a></div><div class="ttdeci">void Header()</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00014">main.cpp:14</a></div></div>
-<div class="ttc" id="aclass_users_html"><div class="ttname"><a href="class_users.html">Users</a></div><div class="ttdef"><b>Definition:</b> <a href="_users_8h_source.html#l00008">Users.h:8</a></div></div>
+<div class="ttc" id="aclass_users_html"><div class="ttname"><a href="class_users.html">Users</a></div><div class="ttdef"><b>Definition:</b> <a href="_users_8h_source.html#l00007">Users.h:7</a></div></div>
 <div class="ttc" id="aclass_accounts_html"><div class="ttname"><a href="class_accounts.html">Accounts</a></div><div class="ttdef"><b>Definition:</b> <a href="_accounts_8h_source.html#l00006">Accounts.h:6</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

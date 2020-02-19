@@ -997,12 +997,12 @@ QueryAttribute( &quot;foo&quot;, &amp;value );        // if &quot;foo&quot; isn&
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/tinyxml2.h" line="1538" column="16"/>
-        <referencedby refid="class_accounts_1a2043aec650956611653222f7e952683c" compoundref="_accounts_8cpp" startline="250" endline="293">Accounts::AcountExists</referencedby>
-        <referencedby refid="_accounts_8cpp_1a0dd23933bd3fdf8e34527907ba0aeb47" compoundref="_accounts_8cpp" startline="26" endline="129">bindTransaction</referencedby>
-        <referencedby refid="class_accounts_1a91ead45d60e894f7725444ebea347eb7" compoundref="_accounts_8cpp" startline="299" endline="404">Accounts::GetAccount</referencedby>
-        <referencedby refid="class_accounts_1a9b6de0158cd47be60ab16d5dd81e9e43" compoundref="_accounts_8cpp" startline="410" endline="475">Accounts::GetAccountBalance</referencedby>
-        <referencedby refid="class_accounts_1aa878135d898fc49e79ed3bf49d3a69b8" compoundref="_accounts_8cpp" startline="481" endline="582">Accounts::GetAllAccounts</referencedby>
-        <referencedby refid="class_users_1af3b5e4015df188df9f0dda9afa2f892d" compoundref="_users_8cpp" startline="16" endline="53">Users::GetPassword</referencedby>
+        <referencedby refid="class_accounts_1a2043aec650956611653222f7e952683c" compoundref="_accounts_8cpp" startline="252" endline="297">Accounts::AcountExists</referencedby>
+        <referencedby refid="_accounts_8cpp_1a0dd23933bd3fdf8e34527907ba0aeb47" compoundref="_accounts_8cpp" startline="26" endline="130">bindTransaction</referencedby>
+        <referencedby refid="class_accounts_1a91ead45d60e894f7725444ebea347eb7" compoundref="_accounts_8cpp" startline="303" endline="411">Accounts::GetAccount</referencedby>
+        <referencedby refid="class_accounts_1a9b6de0158cd47be60ab16d5dd81e9e43" compoundref="_accounts_8cpp" startline="417" endline="483">Accounts::GetAccountBalance</referencedby>
+        <referencedby refid="class_accounts_1aa878135d898fc49e79ed3bf49d3a69b8" compoundref="_accounts_8cpp" startline="489" endline="591">Accounts::GetAllAccounts</referencedby>
+        <referencedby refid="class_users_1af3b5e4015df188df9f0dda9afa2f892d" compoundref="_users_8cpp" startline="16" endline="55">Users::GetPassword</referencedby>
       </memberdef>
       <memberdef kind="function" id="classtinyxml2_1_1_x_m_l_element_1a1f9c2cd61b72af5ae708d37b7ad283ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1033,9 +1033,9 @@ QueryAttribute( &quot;foo&quot;, &amp;value );        // if &quot;foo&quot; isn&
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/tinyxml2.h" line="1574" column="6"/>
-        <referencedby refid="class_accounts_1a3ecaee83dc026b3bad8b69ae5b8d0598" compoundref="_accounts_8cpp" startline="136" endline="186">Accounts::Deposit</referencedby>
-        <referencedby refid="class_accounts_1a79f7ab429e30a2a67705ebd97c309d0d" compoundref="_accounts_8cpp" startline="591" endline="643">Accounts::InsertAccount</referencedby>
-        <referencedby refid="class_accounts_1a44ff25c8dee341d9a3a9af4a13bd3467" compoundref="_accounts_8cpp" startline="193" endline="243">Accounts::Withdraw</referencedby>
+        <referencedby refid="class_accounts_1a3ecaee83dc026b3bad8b69ae5b8d0598" compoundref="_accounts_8cpp" startline="137" endline="187">Accounts::Deposit</referencedby>
+        <referencedby refid="class_accounts_1a79f7ab429e30a2a67705ebd97c309d0d" compoundref="_accounts_8cpp" startline="600" endline="653">Accounts::InsertAccount</referencedby>
+        <referencedby refid="class_accounts_1a44ff25c8dee341d9a3a9af4a13bd3467" compoundref="_accounts_8cpp" startline="194" endline="245">Accounts::Withdraw</referencedby>
       </memberdef>
       <memberdef kind="function" id="classtinyxml2_1_1_x_m_l_element_1aeae8917b5ea6060b3c08d4e3d8d632d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>

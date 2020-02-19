@@ -18,7 +18,7 @@ string \mbox{\hyperlink{class_users_af3b5e4015df188df9f0dda9afa2f892d}{Get\+Pass
 \doxysubsection{Detailed Description}
 
 
-Definition at line 8 of file Users.\+h.
+Definition at line 7 of file Users.\+h.
 
 
 
@@ -49,11 +49,11 @@ Definition at line 8 of file Users.\+cpp.
 
 
 
-Definition at line 55 of file Users.\+cpp.
+Definition at line 57 of file Users.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{55 \{\}}
+\DoxyCodeLine{57 \{\}}
 
 \end{DoxyCode}
 
@@ -72,47 +72,49 @@ Definition at line 16 of file Users.\+cpp.
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{17 \{}
-\DoxyCodeLine{18     \textcolor{keywordtype}{string} result;}
-\DoxyCodeLine{19     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document}{XMLDocument}} doc;}
-\DoxyCodeLine{20     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *path = \mbox{\hyperlink{classconstants_a566b0f322c6801a4ee4f64145f3ba91d}{constants::dataPath}};}
-\DoxyCodeLine{21 }
-\DoxyCodeLine{22     \textcolor{comment}{// Load the XML file into the Doc instance}}
-\DoxyCodeLine{23     doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a2ebd4647a8af5fc6831b294ac26a150a}{LoadFile}}(path);}
-\DoxyCodeLine{24     \textcolor{comment}{//Get root Element}}
-\DoxyCodeLine{25     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pRootElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_ad2b70320d3c2a071c2f36928edff3e1c}{RootElement}}();}
-\DoxyCodeLine{26 }
-\DoxyCodeLine{27     \textcolor{keywordflow}{if} (NULL != pRootElement)}
-\DoxyCodeLine{28     \{}
-\DoxyCodeLine{29         \textcolor{comment}{//Get 'users' Child}}
-\DoxyCodeLine{30         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pUsers = pRootElement-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"users"});}
-\DoxyCodeLine{31 }
-\DoxyCodeLine{32         \textcolor{keywordflow}{if} (NULL != pUsers)}
-\DoxyCodeLine{33         \{}
-\DoxyCodeLine{34             \textcolor{comment}{// Get 'user' Child}}
-\DoxyCodeLine{35             \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pUser = pUsers-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"user"});}
-\DoxyCodeLine{36 }
-\DoxyCodeLine{37             \textcolor{keywordflow}{while} (pUser)}
-\DoxyCodeLine{38             \{}
-\DoxyCodeLine{39                 \textcolor{comment}{// Get 'password' Child}}
-\DoxyCodeLine{40                 \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pPassword = pUser-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"password"});}
-\DoxyCodeLine{41 }
-\DoxyCodeLine{42                 result = pPassword-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}();}
+\DoxyCodeLine{18     \mbox{\hyperlink{classconstants}{constants}} \mbox{\hyperlink{classconstants}{constants}};}
+\DoxyCodeLine{19     \textcolor{keywordtype}{string} result;}
+\DoxyCodeLine{20     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document}{XMLDocument}} doc;}
+\DoxyCodeLine{21     \textcolor{keywordtype}{char}* pathChar[1000];}
+\DoxyCodeLine{22     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *path = \mbox{\hyperlink{classconstants}{constants}}.\mbox{\hyperlink{classconstants_a91b4da1fb34bc7ef659c4e29b72abe51}{GetPath}}();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \textcolor{comment}{// Load the XML file into the Doc instance}}
+\DoxyCodeLine{25     doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a2ebd4647a8af5fc6831b294ac26a150a}{LoadFile}}(path);}
+\DoxyCodeLine{26     \textcolor{comment}{//Get root Element}}
+\DoxyCodeLine{27     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pRootElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_ad2b70320d3c2a071c2f36928edff3e1c}{RootElement}}();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keywordflow}{if} (NULL != pRootElement)}
+\DoxyCodeLine{30     \{}
+\DoxyCodeLine{31         \textcolor{comment}{//Get 'users' Child}}
+\DoxyCodeLine{32         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pUsers = pRootElement-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"users"});}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34         \textcolor{keywordflow}{if} (NULL != pUsers)}
+\DoxyCodeLine{35         \{}
+\DoxyCodeLine{36             \textcolor{comment}{// Get 'user' Child}}
+\DoxyCodeLine{37             \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pUser = pUsers-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"user"});}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39             \textcolor{keywordflow}{while} (pUser)}
+\DoxyCodeLine{40             \{}
+\DoxyCodeLine{41                 \textcolor{comment}{// Get 'password' Child}}
+\DoxyCodeLine{42                 \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pPassword = pUser-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"password"});}
 \DoxyCodeLine{43 }
-\DoxyCodeLine{44                 std::cout << std::endl;}
-\DoxyCodeLine{45                 \textcolor{comment}{//Return result}}
-\DoxyCodeLine{46                 \textcolor{keywordflow}{return} result;}
-\DoxyCodeLine{47 }
-\DoxyCodeLine{48             \}}
-\DoxyCodeLine{49         \}}
-\DoxyCodeLine{50     \}}
-\DoxyCodeLine{51 }
-\DoxyCodeLine{52     \textcolor{keywordflow}{return} result;}
-\DoxyCodeLine{53 \}}
+\DoxyCodeLine{44                 result = pPassword-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46                 std::cout << std::endl;}
+\DoxyCodeLine{47                 \textcolor{comment}{//Return result}}
+\DoxyCodeLine{48                 \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50             \}}
+\DoxyCodeLine{51         \}}
+\DoxyCodeLine{52     \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{55 \}}
 
 \end{DoxyCode}
 
 
-References constants\+::data\+Path, tinyxml2\+::\+X\+M\+L\+Node\+::\+First\+Child\+Element(), tinyxml2\+::\+X\+M\+L\+Element\+::\+Get\+Text(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Load\+File(), and tinyxml2\+::\+X\+M\+L\+Document\+::\+Root\+Element().
+References tinyxml2\+::\+X\+M\+L\+Node\+::\+First\+Child\+Element(), constants\+::\+Get\+Path(), tinyxml2\+::\+X\+M\+L\+Element\+::\+Get\+Text(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Load\+File(), and tinyxml2\+::\+X\+M\+L\+Document\+::\+Root\+Element().
 
 
 

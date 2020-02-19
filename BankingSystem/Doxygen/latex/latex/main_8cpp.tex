@@ -5,10 +5,15 @@
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$sys/types.\+h$>$}\newline
 {\ttfamily \#include $<$windows.\+h$>$}\newline
-{\ttfamily \#include $<$Employee.\+h$>$}\newline
 {\ttfamily \#include $<$tinyxml2.\+h$>$}\newline
 {\ttfamily \#include $<$Users.\+h$>$}\newline
 {\ttfamily \#include $<$Accounts.\+h$>$}\newline
+{\ttfamily \#include $<$constants.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_aeca034f67218340ecb2261a22c2f3dcd}{B\+U\+F\+S\+I\+ZE}}~M\+A\+X\+\_\+\+P\+A\+TH
+\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -18,6 +23,19 @@ void \mbox{\hyperlink{main_8cpp_ab3002fe8e0074c9e2ecb5b835e5e819f}{main\+Menu}} 
 \item 
 int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8cpp_aeca034f67218340ecb2261a22c2f3dcd}\label{main_8cpp_aeca034f67218340ecb2261a22c2f3dcd}} 
+\index{main.cpp@{main.cpp}!BUFSIZE@{BUFSIZE}}
+\index{BUFSIZE@{BUFSIZE}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{BUFSIZE}{BUFSIZE}}
+{\footnotesize\ttfamily \#define B\+U\+F\+S\+I\+ZE~M\+A\+X\+\_\+\+P\+A\+TH}
+
+
+
+Definition at line 12 of file main.\+cpp.
+
 
 
 \doxysubsection{Function Documentation}
@@ -63,26 +81,31 @@ Definition at line 238 of file main.\+cpp.
 \DoxyCodeLine{240     \textcolor{keywordtype}{string} ch;}
 \DoxyCodeLine{241     \textcolor{comment}{// Init Users Instance}}
 \DoxyCodeLine{242     \mbox{\hyperlink{class_users}{Users}} user;}
-\DoxyCodeLine{243     \textcolor{comment}{//Display the Header}}
-\DoxyCodeLine{244     \mbox{\hyperlink{main_8cpp_a36e2097fc280b614200149c851afd1b6}{Header}}();}
-\DoxyCodeLine{245     \textcolor{comment}{// Prompt the user to enter a password}}
-\DoxyCodeLine{246     cout << \textcolor{stringliteral}{"Enter your password:"};}
-\DoxyCodeLine{247     cin >> ch;}
-\DoxyCodeLine{248     cout << endl;}
-\DoxyCodeLine{249 }
-\DoxyCodeLine{250     \textcolor{keywordflow}{if} (ch == user.\mbox{\hyperlink{class_users_af3b5e4015df188df9f0dda9afa2f892d}{GetPassword}}())}
-\DoxyCodeLine{251     \{}
-\DoxyCodeLine{252         \textcolor{comment}{//Valid password}}
-\DoxyCodeLine{253         \mbox{\hyperlink{main_8cpp_ab3002fe8e0074c9e2ecb5b835e5e819f}{mainMenu}}();}
+\DoxyCodeLine{243     \mbox{\hyperlink{classconstants}{constants}} \mbox{\hyperlink{classconstants}{constants}};}
+\DoxyCodeLine{244     \textcolor{comment}{//Display the Header}}
+\DoxyCodeLine{245     \mbox{\hyperlink{main_8cpp_a36e2097fc280b614200149c851afd1b6}{Header}}();}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247     \textcolor{comment}{// Prompt the user to enter a password}}
+\DoxyCodeLine{248     cout << \textcolor{stringliteral}{"Enter your password:"};}
+\DoxyCodeLine{249     cin >> ch;}
+\DoxyCodeLine{250     cout << endl;}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253 }
 \DoxyCodeLine{254 }
-\DoxyCodeLine{255     \}}
-\DoxyCodeLine{256     \textcolor{keywordflow}{else}}
-\DoxyCodeLine{257     \{}
-\DoxyCodeLine{258         \textcolor{comment}{//Invalid password}}
-\DoxyCodeLine{259         cout << \textcolor{stringliteral}{"You are not permitted to access this system\(\backslash\)n"};}
-\DoxyCodeLine{260 }
-\DoxyCodeLine{261     \}}
-\DoxyCodeLine{262 \}}
+\DoxyCodeLine{255     \textcolor{keywordflow}{if} (ch == user.\mbox{\hyperlink{class_users_af3b5e4015df188df9f0dda9afa2f892d}{GetPassword}}())}
+\DoxyCodeLine{256     \{}
+\DoxyCodeLine{257         \textcolor{comment}{//Valid password}}
+\DoxyCodeLine{258         \mbox{\hyperlink{main_8cpp_ab3002fe8e0074c9e2ecb5b835e5e819f}{mainMenu}}();}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260     \}}
+\DoxyCodeLine{261     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{262     \{}
+\DoxyCodeLine{263         \textcolor{comment}{//Invalid password}}
+\DoxyCodeLine{264         cout << \textcolor{stringliteral}{"You are not permitted to access this system\(\backslash\)n"};}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266     \}}
+\DoxyCodeLine{267 \}}
 
 \end{DoxyCode}
 

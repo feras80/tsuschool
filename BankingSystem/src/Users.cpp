@@ -15,9 +15,11 @@ Users::Users()
 // Returns a string
 string Users::GetPassword()
 {
+    constants constants;
 	string result;
 	XMLDocument doc;
-	const char *path = constants::dataPath;
+	char* pathChar[1000];
+	const char *path = constants.GetPath();
 
 	// Load the XML file into the Doc instance
 	doc.LoadFile(path);

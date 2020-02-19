@@ -7,58 +7,64 @@
     <includes local="no">stdlib.h</includes>
     <includes local="no">sys/types.h</includes>
     <includes local="no">windows.h</includes>
-    <includes local="no">Employee.h</includes>
     <includes refid="tinyxml2_8h" local="no">tinyxml2.h</includes>
     <includes refid="_users_8h" local="no">Users.h</includes>
     <includes refid="_accounts_8h" local="no">Accounts.h</includes>
+    <includes refid="constants_8h" local="no">constants.h</includes>
     <incdepgraph>
       <node id="6">
         <label>windows.h</label>
       </node>
-      <node id="14">
+      <node id="13">
         <label>stdint.h</label>
       </node>
       <node id="4">
         <label>stdlib.h</label>
       </node>
-      <node id="16">
+      <node id="15">
         <label>string</label>
       </node>
-      <node id="15">
+      <node id="17">
+        <label>constants.h</label>
+        <link refid="constants_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
         <label>Users.h</label>
         <link refid="_users_8h"/>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
       </node>
       <node id="5">
         <label>sys/types.h</label>
       </node>
-      <node id="17">
+      <node id="16">
         <label>Accounts.h</label>
         <link refid="_accounts_8h"/>
-        <childnode refid="16" relation="include">
+        <childnode refid="15" relation="include">
         </childnode>
       </node>
-      <node id="11">
+      <node id="10">
         <label>cstdio</label>
       </node>
-      <node id="12">
+      <node id="11">
         <label>cstdlib</label>
       </node>
-      <node id="9">
+      <node id="8">
         <label>cctype</label>
       </node>
       <node id="2">
         <label>iostream</label>
       </node>
-      <node id="10">
+      <node id="9">
         <label>climits</label>
       </node>
-      <node id="8">
+      <node id="7">
         <label>tinyxml2.h</label>
         <link refid="tinyxml2_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
         <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
@@ -68,8 +74,6 @@
         <childnode refid="12" relation="include">
         </childnode>
         <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -87,9 +91,9 @@
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
-        <childnode refid="8" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
@@ -97,13 +101,23 @@
       <node id="3">
         <label>stdio.h</label>
       </node>
-      <node id="13">
+      <node id="12">
         <label>cstring</label>
       </node>
-      <node id="7">
-        <label>Employee.h</label>
-      </node>
     </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="main_8cpp_1aeca034f67218340ecb2261a22c2f3dcd" prot="public" static="no">
+        <name>BUFSIZE</name>
+        <initializer>MAX_PATH</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" line="12" column="9" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="func">
       <memberdef kind="function" id="main_8cpp_1a36e2097fc280b614200149c851afd1b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -117,7 +131,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" line="14" column="6" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" bodystart="14" bodyend="22"/>
-        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="238" endline="262">main</referencedby>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="238" endline="267">main</referencedby>
         <referencedby refid="main_8cpp_1ab3002fe8e0074c9e2ecb5b835e5e819f" compoundref="main_8cpp" startline="26" endline="235">mainMenu</referencedby>
       </memberdef>
       <memberdef kind="function" id="main_8cpp_1ab3002fe8e0074c9e2ecb5b835e5e819f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -132,15 +146,15 @@
         <inbodydescription>
         </inbodydescription>
         <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" line="26" column="6" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" bodystart="26" bodyend="235"/>
-        <references refid="class_accounts_1a2043aec650956611653222f7e952683c" compoundref="_accounts_8cpp" startline="250" endline="293">Accounts::AcountExists</references>
-        <references refid="class_accounts_1a3ecaee83dc026b3bad8b69ae5b8d0598" compoundref="_accounts_8cpp" startline="136" endline="186">Accounts::Deposit</references>
-        <references refid="class_accounts_1a91ead45d60e894f7725444ebea347eb7" compoundref="_accounts_8cpp" startline="299" endline="404">Accounts::GetAccount</references>
-        <references refid="class_accounts_1a9b6de0158cd47be60ab16d5dd81e9e43" compoundref="_accounts_8cpp" startline="410" endline="475">Accounts::GetAccountBalance</references>
-        <references refid="class_accounts_1aa878135d898fc49e79ed3bf49d3a69b8" compoundref="_accounts_8cpp" startline="481" endline="582">Accounts::GetAllAccounts</references>
+        <references refid="class_accounts_1a2043aec650956611653222f7e952683c" compoundref="_accounts_8cpp" startline="252" endline="297">Accounts::AcountExists</references>
+        <references refid="class_accounts_1a3ecaee83dc026b3bad8b69ae5b8d0598" compoundref="_accounts_8cpp" startline="137" endline="187">Accounts::Deposit</references>
+        <references refid="class_accounts_1a91ead45d60e894f7725444ebea347eb7" compoundref="_accounts_8cpp" startline="303" endline="411">Accounts::GetAccount</references>
+        <references refid="class_accounts_1a9b6de0158cd47be60ab16d5dd81e9e43" compoundref="_accounts_8cpp" startline="417" endline="483">Accounts::GetAccountBalance</references>
+        <references refid="class_accounts_1aa878135d898fc49e79ed3bf49d3a69b8" compoundref="_accounts_8cpp" startline="489" endline="591">Accounts::GetAllAccounts</references>
         <references refid="main_8cpp_1a36e2097fc280b614200149c851afd1b6" compoundref="main_8cpp" startline="14" endline="22">Header</references>
-        <references refid="class_accounts_1a79f7ab429e30a2a67705ebd97c309d0d" compoundref="_accounts_8cpp" startline="591" endline="643">Accounts::InsertAccount</references>
-        <references refid="class_accounts_1a44ff25c8dee341d9a3a9af4a13bd3467" compoundref="_accounts_8cpp" startline="193" endline="243">Accounts::Withdraw</references>
-        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="238" endline="262">main</referencedby>
+        <references refid="class_accounts_1a79f7ab429e30a2a67705ebd97c309d0d" compoundref="_accounts_8cpp" startline="600" endline="653">Accounts::InsertAccount</references>
+        <references refid="class_accounts_1a44ff25c8dee341d9a3a9af4a13bd3467" compoundref="_accounts_8cpp" startline="194" endline="245">Accounts::Withdraw</references>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="238" endline="267">main</referencedby>
       </memberdef>
       <memberdef kind="function" id="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -153,8 +167,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" line="238" column="5" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" bodystart="238" bodyend="262"/>
-        <references refid="class_users_1af3b5e4015df188df9f0dda9afa2f892d" compoundref="_users_8cpp" startline="16" endline="53">Users::GetPassword</references>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" line="238" column="5" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" bodystart="238" bodyend="267"/>
+        <references refid="class_users_1af3b5e4015df188df9f0dda9afa2f892d" compoundref="_users_8cpp" startline="16" endline="55">Users::GetPassword</references>
         <references refid="main_8cpp_1a36e2097fc280b614200149c851afd1b6" compoundref="main_8cpp" startline="14" endline="22">Header</references>
         <references refid="main_8cpp_1ab3002fe8e0074c9e2ecb5b835e5e819f" compoundref="main_8cpp" startline="26" endline="235">mainMenu</references>
       </memberdef>
@@ -169,13 +183,13 @@
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;windows.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Employee.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="tinyxml2_8h" kindref="compound">tinyxml2.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_users_8h" kindref="compound">Users.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_accounts_8h" kindref="compound">Accounts.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="tinyxml2_8h" kindref="compound">tinyxml2.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_users_8h" kindref="compound">Users.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_accounts_8h" kindref="compound">Accounts.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="constants_8h" kindref="compound">constants.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacetinyxml2" kindref="compound">tinyxml2</ref>;</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="main_8cpp_1aeca034f67218340ecb2261a22c2f3dcd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BUFSIZE<sp/>MAX_PATH</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>to<sp/>Generate<sp/>the<sp/>Header<sp/>for<sp/>the<sp/>application</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14" refid="main_8cpp_1a36e2097fc280b614200149c851afd1b6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a36e2097fc280b614200149c851afd1b6" kindref="member">Header</ref>()</highlight></codeline>
 <codeline lineno="15"><highlight class="normal">{</highlight></codeline>
@@ -406,26 +420,31 @@
 <codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>ch;</highlight></codeline>
 <codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Init<sp/>Users<sp/>Instance</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_users" kindref="compound">Users</ref><sp/>user;</highlight></codeline>
-<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Display<sp/>the<sp/>Header</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a36e2097fc280b614200149c851afd1b6" kindref="member">Header</ref>();</highlight></codeline>
-<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Prompt<sp/>the<sp/>user<sp/>to<sp/>enter<sp/>a<sp/>password</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Enter<sp/>your<sp/>password:&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>cin<sp/>&gt;&gt;<sp/>ch;</highlight></codeline>
-<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
-<codeline lineno="249"><highlight class="normal"></highlight></codeline>
-<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ch<sp/>==<sp/>user.<ref refid="class_users_1af3b5e4015df188df9f0dda9afa2f892d" kindref="member">GetPassword</ref>())</highlight></codeline>
-<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Valid<sp/>password</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ab3002fe8e0074c9e2ecb5b835e5e819f" kindref="member">mainMenu</ref>();</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classconstants" kindref="compound">constants</ref><sp/><ref refid="classconstants" kindref="compound">constants</ref>;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Display<sp/>the<sp/>Header</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1a36e2097fc280b614200149c851afd1b6" kindref="member">Header</ref>();</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Prompt<sp/>the<sp/>user<sp/>to<sp/>enter<sp/>a<sp/>password</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Enter<sp/>your<sp/>password:&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>cin<sp/>&gt;&gt;<sp/>ch;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
 <codeline lineno="254"><highlight class="normal"></highlight></codeline>
-<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Invalid<sp/>password</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;You<sp/>are<sp/>not<sp/>permitted<sp/>to<sp/>access<sp/>this<sp/>system\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="260"><highlight class="normal"></highlight></codeline>
-<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="262"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ch<sp/>==<sp/>user.<ref refid="class_users_1af3b5e4015df188df9f0dda9afa2f892d" kindref="member">GetPassword</ref>())</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Valid<sp/>password</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8cpp_1ab3002fe8e0074c9e2ecb5b835e5e819f" kindref="member">mainMenu</ref>();</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Invalid<sp/>password</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;You<sp/>are<sp/>not<sp/>permitted<sp/>to<sp/>access<sp/>this<sp/>system\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="267"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp"/>
   </compounddef>

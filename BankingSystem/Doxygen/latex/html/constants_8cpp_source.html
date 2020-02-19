@@ -86,14 +86,36 @@ $(document).ready(function(){initNavTree('constants_8cpp_source.html',''); initR
 </div><!--header-->
 <div class="contents">
 <a href="constants_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="constants_8h.html">constants.h</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Constants class</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classconstants.html#a566b0f322c6801a4ee4f64145f3ba91d">constants::dataPath</a>= <span class="stringliteral">&quot;C:\\Users\\cb05314\\Documents\\TSU\\CPPT\\BankingSystem\\bin\\Debug\\data.xml&quot;</span>;</div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="constants_8cpp.html#a7e4e8ebbcdc264a08472493010016d68">    5</a></span>&#160; <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="constants_8cpp.html#a7e4e8ebbcdc264a08472493010016d68">adminUser</a>= <span class="stringliteral">&quot;Admin&quot;</span>;</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;windows.h&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="constants_8cpp.html#aeca034f67218340ecb2261a22c2f3dcd">    3</a></span>&#160;<span class="preprocessor">#define BUFSIZE MAX_PATH</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// Constants class</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classconstants.html#a9be0748cd713f4a465b548e0c44458ee">    6</a></span>&#160;<a class="code" href="classconstants.html#a9be0748cd713f4a465b548e0c44458ee">constants::constants</a>()</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<a class="code" href="classconstants.html#a91b4da1fb34bc7ef659c4e29b72abe51">GetPath</a>();</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// Returns executable path</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classconstants.html#a91b4da1fb34bc7ef659c4e29b72abe51">   13</a></span>&#160;<span class="keywordtype">char</span>* <a class="code" href="classconstants.html#a91b4da1fb34bc7ef659c4e29b72abe51">constants::GetPath</a>()</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">char</span> buffer[MAX_PATH];</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">string</span> strResult;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">char</span>* charResult;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    GetModuleFileName( NULL, buffer, MAX_PATH );</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    string::size_type pos = string( buffer ).find_last_of( <span class="stringliteral">&quot;\\/&quot;</span> );</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    strResult =  string( buffer ).substr( 0, pos) +<span class="stringliteral">&quot;\\data.xml&quot;</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    charResult=  strdup(strResult.c_str());</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> charResult;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="constants_8cpp.html#a7e4e8ebbcdc264a08472493010016d68">   26</a></span>&#160; <span class="keyword">const</span> <span class="keywordtype">string</span> <a class="code" href="constants_8cpp.html#a7e4e8ebbcdc264a08472493010016d68">adminUser</a>= <span class="stringliteral">&quot;Admin&quot;</span>;</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aconstants_8cpp_html_a7e4e8ebbcdc264a08472493010016d68"><div class="ttname"><a href="constants_8cpp.html#a7e4e8ebbcdc264a08472493010016d68">adminUser</a></div><div class="ttdeci">const string adminUser</div><div class="ttdef"><b>Definition:</b> <a href="constants_8cpp_source.html#l00005">constants.cpp:5</a></div></div>
-<div class="ttc" id="aclassconstants_html_a566b0f322c6801a4ee4f64145f3ba91d"><div class="ttname"><a href="classconstants.html#a566b0f322c6801a4ee4f64145f3ba91d">constants::dataPath</a></div><div class="ttdeci">static const char * dataPath</div><div class="ttdef"><b>Definition:</b> <a href="constants_8h_source.html#l00008">constants.h:8</a></div></div>
+<div class="ttc" id="aconstants_8cpp_html_a7e4e8ebbcdc264a08472493010016d68"><div class="ttname"><a href="constants_8cpp.html#a7e4e8ebbcdc264a08472493010016d68">adminUser</a></div><div class="ttdeci">const string adminUser</div><div class="ttdef"><b>Definition:</b> <a href="constants_8cpp_source.html#l00026">constants.cpp:26</a></div></div>
+<div class="ttc" id="aclassconstants_html_a9be0748cd713f4a465b548e0c44458ee"><div class="ttname"><a href="classconstants.html#a9be0748cd713f4a465b548e0c44458ee">constants::constants</a></div><div class="ttdeci">constants()</div><div class="ttdef"><b>Definition:</b> <a href="constants_8cpp_source.html#l00006">constants.cpp:6</a></div></div>
+<div class="ttc" id="aclassconstants_html_a91b4da1fb34bc7ef659c4e29b72abe51"><div class="ttname"><a href="classconstants.html#a91b4da1fb34bc7ef659c4e29b72abe51">constants::GetPath</a></div><div class="ttdeci">char * GetPath()</div><div class="ttdef"><b>Definition:</b> <a href="constants_8cpp_source.html#l00013">constants.cpp:13</a></div></div>
 <div class="ttc" id="aconstants_8h_html"><div class="ttname"><a href="constants_8h.html">constants.h</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -4,12 +4,21 @@
 
 {\ttfamily \#include $<$constants.\+h$>$}
 
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{classconstants_a91b4da1fb34bc7ef659c4e29b72abe51}{Get\+Path}} ()
+\item 
+\mbox{\hyperlink{classconstants_a9be0748cd713f4a465b548e0c44458ee}{constants}} ()
+\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static const char $\ast$ \mbox{\hyperlink{classconstants_a566b0f322c6801a4ee4f64145f3ba91d}{data\+Path}} = \char`\"{}C\+:\textbackslash{}\textbackslash{}\+Users\textbackslash{}\textbackslash{}cb05314\textbackslash{}\textbackslash{}\+Documents\textbackslash{}\textbackslash{}\+T\+S\+U\textbackslash{}\textbackslash{}\+C\+P\+P\+T\textbackslash{}\textbackslash{}\+Banking\+System\textbackslash{}\textbackslash{}bin\textbackslash{}\textbackslash{}\+Debug\textbackslash{}\textbackslash{}data.\+xml\char`\"{}
+static const char $\ast$ \mbox{\hyperlink{classconstants_a9a9dab4a084c267ee841cb49a815f323}{data\+Path}}
 \item 
 static const string \mbox{\hyperlink{classconstants_a889a6eaaa9585ec220d0b131a4f94c33}{admin\+User}}
+\item 
+static string \mbox{\hyperlink{classconstants_a9c7bcc7563f7448c64007a696dd536bd}{test}}
 \end{DoxyCompactItemize}
 
 
@@ -17,6 +26,64 @@ static const string \mbox{\hyperlink{classconstants_a889a6eaaa9585ec220d0b131a4f
 
 
 Definition at line 5 of file constants.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classconstants_a9be0748cd713f4a465b548e0c44458ee}\label{classconstants_a9be0748cd713f4a465b548e0c44458ee}} 
+\index{constants@{constants}!constants@{constants}}
+\index{constants@{constants}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{constants()}{constants()}}
+{\footnotesize\ttfamily constants\+::constants (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6 of file constants.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \mbox{\hyperlink{classconstants_a91b4da1fb34bc7ef659c4e29b72abe51}{GetPath}}();}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \}}
+
+\end{DoxyCode}
+
+
+References Get\+Path().
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classconstants_a91b4da1fb34bc7ef659c4e29b72abe51}\label{classconstants_a91b4da1fb34bc7ef659c4e29b72abe51}} 
+\index{constants@{constants}!GetPath@{GetPath}}
+\index{GetPath@{GetPath}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{GetPath()}{GetPath()}}
+{\footnotesize\ttfamily char $\ast$ constants\+::\+Get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file constants.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15     \textcolor{keywordtype}{char} buffer[MAX\_PATH];}
+\DoxyCodeLine{16     \textcolor{keywordtype}{string} strResult;}
+\DoxyCodeLine{17     \textcolor{keywordtype}{char}* charResult;}
+\DoxyCodeLine{18     GetModuleFileName( NULL, buffer, MAX\_PATH );}
+\DoxyCodeLine{19     string::size\_type pos = string( buffer ).find\_last\_of( \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)/"} );}
+\DoxyCodeLine{20     strResult =  string( buffer ).substr( 0, pos) +\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)data.xml"};}
+\DoxyCodeLine{21     charResult=  strdup(strResult.c\_str());}
+\DoxyCodeLine{22     \textcolor{keywordflow}{return} charResult;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \}}
+
+\end{DoxyCode}
+
+
+Referenced by Accounts\+::\+Acount\+Exists(), bind\+Transaction(), constants(), Accounts\+::\+Deposit(), Accounts\+::\+Get\+Account(), Accounts\+::\+Get\+Account\+Balance(), Accounts\+::\+Get\+All\+Accounts(), Users\+::\+Get\+Password(), Accounts\+::\+Insert\+Account(), and Accounts\+::\+Withdraw().
 
 
 
@@ -31,19 +98,25 @@ Definition at line 5 of file constants.\+h.
 
 Definition at line 9 of file constants.\+h.
 
-\mbox{\Hypertarget{classconstants_a566b0f322c6801a4ee4f64145f3ba91d}\label{classconstants_a566b0f322c6801a4ee4f64145f3ba91d}} 
+\mbox{\Hypertarget{classconstants_a9a9dab4a084c267ee841cb49a815f323}\label{classconstants_a9a9dab4a084c267ee841cb49a815f323}} 
 \index{constants@{constants}!dataPath@{dataPath}}
 \index{dataPath@{dataPath}!constants@{constants}}
 \doxysubsubsection{\texorpdfstring{dataPath}{dataPath}}
-{\footnotesize\ttfamily const char $\ast$ constants\+::data\+Path = \char`\"{}C\+:\textbackslash{}\textbackslash{}\+Users\textbackslash{}\textbackslash{}cb05314\textbackslash{}\textbackslash{}\+Documents\textbackslash{}\textbackslash{}\+T\+S\+U\textbackslash{}\textbackslash{}\+C\+P\+P\+T\textbackslash{}\textbackslash{}\+Banking\+System\textbackslash{}\textbackslash{}bin\textbackslash{}\textbackslash{}\+Debug\textbackslash{}\textbackslash{}data.\+xml\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily const char$\ast$ constants\+::data\+Path\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
 Definition at line 8 of file constants.\+h.
 
+\mbox{\Hypertarget{classconstants_a9c7bcc7563f7448c64007a696dd536bd}\label{classconstants_a9c7bcc7563f7448c64007a696dd536bd}} 
+\index{constants@{constants}!test@{test}}
+\index{test@{test}!constants@{constants}}
+\doxysubsubsection{\texorpdfstring{test}{test}}
+{\footnotesize\ttfamily string constants\+::test\hspace{0.3cm}{\ttfamily [static]}}
 
 
-Referenced by Accounts\+::\+Acount\+Exists(), bind\+Transaction(), Accounts\+::\+Deposit(), Accounts\+::\+Get\+Account(), Accounts\+::\+Get\+Account\+Balance(), Accounts\+::\+Get\+All\+Accounts(), Users\+::\+Get\+Password(), Accounts\+::\+Insert\+Account(), and Accounts\+::\+Withdraw().
+
+Definition at line 10 of file constants.\+h.
 
 
 

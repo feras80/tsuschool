@@ -3,7 +3,11 @@
   <compounddef id="constants_8cpp" kind="file" language="C++">
     <compoundname>constants.cpp</compoundname>
     <includes refid="constants_8h" local="yes">constants.h</includes>
+    <includes local="no">windows.h</includes>
     <incdepgraph>
+      <node id="4">
+        <label>windows.h</label>
+      </node>
       <node id="3">
         <label>string</label>
       </node>
@@ -18,8 +22,23 @@
         <link refid="constants_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
       </node>
     </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="constants_8cpp_1aeca034f67218340ecb2261a22c2f3dcd" prot="public" static="no">
+        <name>BUFSIZE</name>
+        <initializer>MAX_PATH</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/constants.cpp" line="3" column="11" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/constants.cpp" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="var">
       <memberdef kind="variable" id="constants_8cpp_1a7e4e8ebbcdc264a08472493010016d68" prot="public" static="no" mutable="no">
         <type>const string</type>
@@ -33,7 +52,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/constants.cpp" line="5" column="15" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/constants.cpp" bodystart="5" bodyend="-1"/>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/constants.cpp" line="26" column="15" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/constants.cpp" bodystart="26" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -42,10 +61,31 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="constants_8h" kindref="compound">constants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Constants<sp/>class</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classconstants_1a566b0f322c6801a4ee4f64145f3ba91d" kindref="member">constants::dataPath</ref>=<sp/></highlight><highlight class="stringliteral">&quot;C:\\Users\\cb05314\\Documents\\TSU\\CPPT\\BankingSystem\\bin\\Debug\\data.xml&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="5" refid="constants_8cpp_1a7e4e8ebbcdc264a08472493010016d68" refkind="member"><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="constants_8cpp_1a7e4e8ebbcdc264a08472493010016d68" kindref="member">adminUser</ref>=<sp/></highlight><highlight class="stringliteral">&quot;Admin&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;windows.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="constants_8cpp_1aeca034f67218340ecb2261a22c2f3dcd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BUFSIZE<sp/>MAX_PATH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Constants<sp/>class</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="classconstants_1a9be0748cd713f4a465b548e0c44458ee" refkind="member"><highlight class="normal"><ref refid="classconstants_1a9be0748cd713f4a465b548e0c44458ee" kindref="member">constants::constants</ref>()</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><ref refid="classconstants_1a91b4da1fb34bc7ef659c4e29b72abe51" kindref="member">GetPath</ref>();</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Returns<sp/>executable<sp/>path</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="classconstants_1a91b4da1fb34bc7ef659c4e29b72abe51" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classconstants_1a91b4da1fb34bc7ef659c4e29b72abe51" kindref="member">constants::GetPath</ref>()</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buffer[MAX_PATH];</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>strResult;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>charResult;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>GetModuleFileName(<sp/>NULL,<sp/>buffer,<sp/>MAX_PATH<sp/>);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>string::size_type<sp/>pos<sp/>=<sp/>string(<sp/>buffer<sp/>).find_last_of(<sp/></highlight><highlight class="stringliteral">&quot;\\/&quot;</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>strResult<sp/>=<sp/><sp/>string(<sp/>buffer<sp/>).substr(<sp/>0,<sp/>pos)<sp/>+</highlight><highlight class="stringliteral">&quot;\\data.xml&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>charResult=<sp/><sp/>strdup(strResult.c_str());</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>charResult;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="constants_8cpp_1a7e4e8ebbcdc264a08472493010016d68" refkind="member"><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="constants_8cpp_1a7e4e8ebbcdc264a08472493010016d68" kindref="member">adminUser</ref>=<sp/></highlight><highlight class="stringliteral">&quot;Admin&quot;</highlight><highlight class="normal">;</highlight></codeline>
     </programlisting>
     <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/constants.cpp"/>
   </compounddef>

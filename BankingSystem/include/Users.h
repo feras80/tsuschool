@@ -1,7 +1,6 @@
 #ifndef USERS_H
 #define USERS_H
 #include <string>
-#include <Employee.h>
 
 using namespace std;
 

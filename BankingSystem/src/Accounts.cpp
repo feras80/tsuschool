@@ -34,7 +34,8 @@ void bindTransaction(string a)
 	string accountChar;
 
 	XMLDocument doc;
-	const char *path = constants::dataPath;
+	constants constants;
+	const char *path = constants.GetPath();
 	double totalBalance;
 	char amountText[100];
 
@@ -137,9 +138,9 @@ void Accounts::Deposit(string a, string amount)
 {
 	char date[9];
 	_strdate(date);
-
+    constants constants;
 	XMLDocument doc;
-	const char *path = constants::dataPath;
+	const char *path = constants.GetPath();
 	char accountNumberChar[100];
 	char typeChar[100];
 
@@ -194,9 +195,10 @@ void Accounts::Withdraw(string a, string amount)
 {
 	char date[9];
 	_strdate(date);
+    constants constants;
 
 	XMLDocument doc;
-	const char *path = constants::dataPath;
+	const char *path = constants.GetPath();
 	char accountNumberChar[100];
 	char typeChar[100];
 	// Load the XML file into the Doc instance
@@ -251,7 +253,9 @@ bool Accounts::AcountExists(string a)
 {
 	XMLDocument doc;
 	string acountChar;
-	const char *path = constants::dataPath;
+    constants constants;
+
+	const char *path = constants.GetPath();
 
 	int i = 0;
 	// Load the XML file into the Doc instance
@@ -300,7 +304,9 @@ void Accounts::GetAccount(string a)
 {
 	string acountChar;
 	XMLDocument doc;
-	const char *path = constants::dataPath;
+    constants constants;
+
+	const char *path = constants.GetPath();
 	char amountText[100];
 	int i = 0;
 
@@ -368,6 +374,7 @@ void Accounts::GetAccount(string a)
 					{
 						// Convert to Char
 						strcpy(amountText, "$");
+
 						strcat(amountText, balance->GetText());
 						//Print out amount
 						cout << '|' << setw(10) << amountText << '|';
@@ -411,7 +418,8 @@ void Accounts::GetAccountBalance(string a)
 {
 	string acountChar;
 	XMLDocument doc;
-	const char *path = constants::dataPath;
+	constants constants;
+	const char *path = constants.GetPath();
 	char amountText[100];
 	int i = 0;
 
@@ -482,7 +490,8 @@ void Accounts::GetAllAccounts()
 {
 	string result;
 	XMLDocument doc;
-	const char *path = constants::dataPath;
+	constants constants;
+	const char *path = constants.GetPath();
 	char amountText[100];
 
 	// Load the XML file into the Doc instance
@@ -591,7 +600,8 @@ void Accounts::GetAllAccounts()
 void Accounts::InsertAccount(string accountNumber, string accountType, string customerName, string accountBalance)
 {
 	XMLDocument doc;
-	const char *path = constants::dataPath;
+	constants constants;
+	const char *path = constants.GetPath();
 	char accountNumberChar[100];
 	char typeChar[100];
 

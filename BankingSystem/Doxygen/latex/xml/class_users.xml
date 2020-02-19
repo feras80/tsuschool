@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Users.h" line="11" column="9" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Users.cpp" bodystart="8" bodyend="12"/>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Users.h" line="10" column="9" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Users.cpp" bodystart="8" bodyend="12"/>
       </memberdef>
       <memberdef kind="function" id="class_users_1a33ff9aadcaef989bf3c8570358f791f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Users.h" line="12" column="9" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Users.cpp" bodystart="55" bodyend="55"/>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Users.h" line="11" column="9" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Users.cpp" bodystart="57" bodyend="57"/>
       </memberdef>
       <memberdef kind="function" id="class_users_1af3b5e4015df188df9f0dda9afa2f892d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>string</type>
@@ -41,20 +41,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Users.h" line="13" column="12" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Users.cpp" bodystart="16" bodyend="53"/>
-        <references refid="classconstants_1a566b0f322c6801a4ee4f64145f3ba91d" compoundref="constants_8h" startline="8">constants::dataPath</references>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Users.h" line="12" column="12" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Users.cpp" bodystart="16" bodyend="55"/>
         <references refid="classtinyxml2_1_1_x_m_l_node_1a1795a35852dc8aae877cc8ded986e59b">tinyxml2::XMLNode::FirstChildElement</references>
+        <references refid="classconstants_1a91b4da1fb34bc7ef659c4e29b72abe51" compoundref="constants_8cpp" startline="13" endline="24">constants::GetPath</references>
         <references refid="classtinyxml2_1_1_x_m_l_element_1a6d5c8d115561ade4e4456b71d91b6f51">tinyxml2::XMLElement::GetText</references>
         <references refid="classtinyxml2_1_1_x_m_l_document_1a2ebd4647a8af5fc6831b294ac26a150a">tinyxml2::XMLDocument::LoadFile</references>
         <references refid="classtinyxml2_1_1_x_m_l_document_1ad2b70320d3c2a071c2f36928edff3e1c" compoundref="tinyxml2_8h" startline="1785" endline="1787">tinyxml2::XMLDocument::RootElement</references>
-        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="238" endline="262">main</referencedby>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="238" endline="267">main</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Users.h" line="9" column="1" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Users.h" bodystart="8" bodyend="14"/>
+    <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Users.h" line="8" column="1" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Users.h" bodystart="7" bodyend="13"/>
     <listofallmembers>
       <member refid="class_users_1af3b5e4015df188df9f0dda9afa2f892d" prot="public" virt="non-virtual"><scope>Users</scope><name>GetPassword</name></member>
       <member refid="class_users_1af1f5c371c3f1e7f9b14210ed0d3718bc" prot="public" virt="non-virtual"><scope>Users</scope><name>Users</name></member>

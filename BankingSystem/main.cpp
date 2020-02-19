@@ -3,13 +3,13 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <windows.h>
-#include <Employee.h>
 #include <tinyxml2.h>
 #include <Users.h>
 #include <Accounts.h>
+#include <constants.h>
 using namespace std;
 using namespace tinyxml2;
-
+#define BUFSIZE MAX_PATH
 // to Generate the Header for the application
 void Header()
 {
@@ -240,12 +240,17 @@ int main()
 	string ch;
 	// Init Users Instance
 	Users user;
+	constants constants;
 	//Display the Header
 	Header();
+
 	// Prompt the user to enter a password
 	cout << "Enter your password:";
 	cin >> ch;
 	cout << endl;
+
+
+
 
 	if (ch == user.GetPassword())
 	{
