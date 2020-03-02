@@ -2,6 +2,7 @@
 #include <tinyxml2.h>
 #include <iostream>
 #include <constants.h>
+#include <Helper.h>
 using namespace std;
 using namespace tinyxml2;
 // Class Constructor
@@ -20,28 +21,29 @@ string Users::GetPassword()
 	XMLDocument doc;
 	char* pathChar[1000];
 	const char *path = constants.GetPath();
-
+Helper helper;
 	// Load the XML file into the Doc instance
 	doc.LoadFile(path);
 	//Get root Element
-	XMLElement *pRootElement = doc.RootElement();
+
+	XMLElement *pRootElement =  doc.RootElement();
 
 	if (NULL != pRootElement)
 	{
 		//Get 'users' Child
-		XMLElement *pUsers = pRootElement->FirstChildElement("users");
+	XMLElement *pUsers = helper.GetFirstChildElement(pRootElement,"users");
 
 		if (NULL != pUsers)
 		{
 			// Get 'user' Child
-			XMLElement *pUser = pUsers->FirstChildElement("user");
+			XMLElement *pUser = helper.GetFirstChildElement(pUsers,"user");
 
 			while (pUser)
 			{
 				// Get 'password' Child
-				XMLElement *pPassword = pUser->FirstChildElement("password");
+             XMLElement *pPassword = helper.GetFirstChildElement(pUser,"password");
 
-				result = pPassword->GetText();
+				result = helper.GetElementText(pPassword);
 
 				std::cout << std::endl;
 				//Return result

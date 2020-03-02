@@ -37,11 +37,16 @@
 		</Compiler>
 		<Unit filename="bin/Debug/data.xml" />
 		<Unit filename="include/Accounts.h" />
+		<Unit filename="include/Enums.h" />
+		<Unit filename="include/Helper.h" />
+		<Unit filename="include/Security.h" />
 		<Unit filename="include/Users.h" />
 		<Unit filename="include/constants.h" />
 		<Unit filename="include/tinyxml2.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Accounts.cpp" />
+		<Unit filename="src/Helper.cpp" />
+		<Unit filename="src/Security.cpp" />
 		<Unit filename="src/Users.cpp" />
 		<Unit filename="src/constants.cpp" />
 		<Unit filename="tinyxml2-master/tinyxml2.cpp" />

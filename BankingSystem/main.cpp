@@ -7,9 +7,12 @@
 #include <Users.h>
 #include <Accounts.h>
 #include <constants.h>
+#include <security.h>
 using namespace std;
 using namespace tinyxml2;
 #define BUFSIZE MAX_PATH
+#include <fstream>
+const std::string alphabet = "abcdefghijklmnopqrstuvwxyz" ;
 // to Generate the Header for the application
 void Header()
 {
@@ -241,6 +244,7 @@ int main()
 	// Init Users Instance
 	Users user;
 	constants constants;
+
 	//Display the Header
 	Header();
 
@@ -248,9 +252,6 @@ int main()
 	cout << "Enter your password:";
 	cin >> ch;
 	cout << endl;
-
-
-
 
 	if (ch == user.GetPassword())
 	{

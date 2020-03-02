@@ -6,6 +6,8 @@
 #include <iomanip>
 #include <cstddef>
 #include <ctime>
+#include <Helper.h>
+#include <Enums.h>
 using namespace std;
 using namespace tinyxml2;
 
@@ -17,7 +19,15 @@ Accounts::Accounts()
 	void GetAccountBalance(string a);
 	void Deposit(string a, string amount);
 	void Withdraw(string a, string amount);
+
 }
+
+Helper helper;
+
+enum Position
+{
+	AfterChild, EndChild, FirstChild
+};
 
 //To return all Transaction for a Selected Account.
 //Parameters:
@@ -44,7 +54,6 @@ void bindTransaction(string a)
 	// To get current system date
 	time_t t = time(0);
 	struct tm *timeStruct = localtime(&t);
-
 	//Get The root Element
 	XMLElement *pRootElement = doc.RootElement();
 
@@ -57,52 +66,52 @@ void bindTransaction(string a)
 	if (NULL != pRootElement)
 	{
 		// Get 'Transactions' Child
-		XMLElement *pTransactions = pRootElement->FirstChildElement("Transactions");
+		XMLElement *pTransactions = helper.GetFirstChildElement(pRootElement, "Transactions");
 
 		if (NULL != pTransactions)
 		{
 			//Get 'transaction' Child
-			XMLElement *pTransaction = pTransactions->FirstChildElement("transaction");
+			XMLElement *pTransaction = helper.GetFirstChildElement(pTransactions, "transaction");
 
 			while (pTransaction)
 			{
 				//Get 'AccountNo' Child
-				XMLElement *pAccountNo = pTransaction->FirstChildElement("AccountNo");
-				accountChar = pAccountNo->GetText();
+				XMLElement *pAccountNo = helper.GetFirstChildElement(pTransaction, "AccountNo");
+				accountChar = helper.GetElementText(pAccountNo);
 				// Check for Matching Account Number
 				if (accountChar == a)
 				{
 					// Get 'type' Child
-					XMLElement *pType = pTransaction->FirstChildElement("type");
+					XMLElement *pType = helper.GetFirstChildElement(pTransaction, "type");
 
 					if (NULL != pType)
 					{
 						// Print out Type
-						cout << '|' << setw(12) << pType->GetText();
+						cout << '|' << setw(12) << helper.GetElementText(pType);
 
 					}
 
 					//Get 'amount' Child
-					XMLElement *name = pTransaction->FirstChildElement("amount");
+					XMLElement *name = helper.GetFirstChildElement(pTransaction, "amount");
 
 					if (NULL != name)
 					{
 						// convert string to *Char
-						totalBalance += strtod(name->GetText(), NULL);
+						totalBalance += strtod(helper.GetElementText(name), NULL);
 						strcpy(amountText, "$");
-						strcat(amountText, name->GetText());
+						strcat(amountText, helper.GetElementText(name));
 						// Print out Amount
 						cout << '|' << setw(12) << amountText;
 
 					}
 
 					// Get 'date' Child
-					XMLElement *balance = pTransaction->FirstChildElement("date");
+					XMLElement *date = helper.GetFirstChildElement(pTransaction, "date");
 
-					if (NULL != balance)
+					if (NULL != date)
 					{
 						// Print out Balance
-						cout << '|' << setw(14) << balance->GetText() << '|';
+						cout << '|' << setw(14) << helper.GetElementText(date) << '|';
 
 					}
 
@@ -111,7 +120,7 @@ void bindTransaction(string a)
 				}
 
 				//Next transaction
-				pTransaction = pTransaction->NextSiblingElement("transaction");
+				pTransaction = helper.GetNextSiblingElement(pTransaction, "transaction");
 			}
 
 			cout << endl;
@@ -138,7 +147,7 @@ void Accounts::Deposit(string a, string amount)
 {
 	char date[9];
 	_strdate(date);
-    constants constants;
+	constants constants;
 	XMLDocument doc;
 	const char *path = constants.GetPath();
 	char accountNumberChar[100];
@@ -150,34 +159,38 @@ void Accounts::Deposit(string a, string amount)
 	// Get root Element
 	XMLElement *pTop = doc.RootElement();
 	// Get 'Transactions' Child
-	XMLElement *pTransactions = pTop->FirstChildElement("Transactions");
+	XMLElement *pTransactions = helper.GetFirstChildElement(pTop, "Transactions");
+
 	//Create new Element
 	XMLNode *pRoot = doc.NewElement("transaction");
 	//Insert new Element
 	pTransactions->InsertEndChild(pRoot);
+
 	//Create new Element
 	XMLElement *pElement = doc.NewElement("AccountNo");
 	//Set new Element Text
-	pElement->SetText(strdup(a.c_str()));	// AccountNo
+	helper.SetElementText(pElement, strdup(a.c_str()));	// AccountNo
 	// Insert new Element
-	pRoot->InsertEndChild(pElement);
+	helper.InsertChild(pRoot, pElement, "EndChild");
+
 	//Create new element
 	pElement = doc.NewElement("type");
 	// Set new Element Text
-	pElement->SetText("Deposit");	// type
+	helper.SetElementText(pElement, "Deposit");	// type
 	// Insert new Element
 	pRoot->InsertEndChild(pElement);
+
 	//Create new Element
 	pElement = doc.NewElement("amount");
 	// Set new Element Text
-	pElement->SetText(strdup(amount.c_str()));	// Amount
+	helper.SetElementText(pElement, strdup(amount.c_str()));	// Amount
 	// Insert new element
 	pRoot->InsertEndChild(pElement);
 
 	//Create new Element
 	pElement = doc.NewElement("date");
 	//set new Element Text
-	pElement->SetText(strdup(date));	// Date
+	helper.SetElementText(pElement, strdup(date));	// Amount
 	//Insert new Element
 	pRoot->InsertEndChild(pElement);
 
@@ -195,7 +208,7 @@ void Accounts::Withdraw(string a, string amount)
 {
 	char date[9];
 	_strdate(date);
-    constants constants;
+	constants constants;
 
 	XMLDocument doc;
 	const char *path = constants.GetPath();
@@ -206,7 +219,7 @@ void Accounts::Withdraw(string a, string amount)
 	// Get root Element// Check for Matching Account Number
 	XMLElement *pTop = doc.RootElement();
 	//Get 'Transactions' Child
-	XMLElement *pTransactions = pTop->FirstChildElement("Transactions");
+	XMLElement *pTransactions = helper.GetFirstChildElement(pTop, "Transactions");	// pTop->FirstChildElement("Transactions");
 
 	//Create new Element
 	XMLNode *pRoot = doc.NewElement("transaction");
@@ -216,26 +229,28 @@ void Accounts::Withdraw(string a, string amount)
 	//Create new Element
 	XMLElement *pElement = doc.NewElement("AccountNo");
 	// Set new Element Text
-	pElement->SetText(strdup(a.c_str()));	// AccountNo
+	helper.SetElementText(pElement, strdup(a.c_str()));	// AccountNo
 	//Insert new Element
 	pRoot->InsertEndChild(pElement);
-	//Create new Element
 
+	//Create new Element
 	pElement = doc.NewElement("type");
 	//Set new element Text
-	pElement->SetText("Withdrawal");	// type
+	helper.SetElementText(pElement, "Withdrawal");	// type
 	//Insert new Element
 	pRoot->InsertEndChild(pElement);
+
 	//Create new Element
 	pElement = doc.NewElement("amount");
 	//Set new Element Text
-	pElement->SetText(strdup(amount.c_str()));	// Amount
+	helper.SetElementText(pElement, strdup(amount.c_str()));	// Amount
 	//Insert new Element
 	pRoot->InsertEndChild(pElement);
+
 	// Create new Element
 	pElement = doc.NewElement("date");
 	//Set new Element Text
-	pElement->SetText(strdup(date));	// Date
+	helper.SetElementText(pElement, strdup(date));	// Date
 	//Insert new Element
 	pRoot->InsertEndChild(pElement);
 
@@ -253,7 +268,7 @@ bool Accounts::AcountExists(string a)
 {
 	XMLDocument doc;
 	string acountChar;
-    constants constants;
+	constants constants;
 
 	const char *path = constants.GetPath();
 
@@ -267,19 +282,19 @@ bool Accounts::AcountExists(string a)
 	if (NULL != pRootElement)
 	{
 		// Get 'Accounts' Child
-		XMLElement *pAccounts = pRootElement->FirstChildElement("Accounts");
+		XMLElement *pAccounts = helper.GetFirstChildElement(pRootElement, "Accounts");
 
 		if (NULL != pAccounts)
 		{
 			// Get 'Account' Child
-			XMLElement *pAccount = pAccounts->FirstChildElement("Account");
+			XMLElement *pAccount = helper.GetFirstChildElement(pAccounts, "Account");
 
 			while (pAccount)
 			{
 				// Get 'AccountNo' Child
-				XMLElement *pAccountNo = pAccount->FirstChildElement("AccountNo");
+				XMLElement *pAccountNo = helper.GetFirstChildElement(pAccount, "AccountNo");
 				// Get Child Text
-				acountChar = pAccountNo->GetText();
+				acountChar = helper.GetElementText(pAccountNo);
 				// Check for Matching Account Number
 				if (acountChar == a)
 				{
@@ -288,7 +303,7 @@ bool Accounts::AcountExists(string a)
 				}
 
 				//Next Account
-				pAccount = pAccount->NextSiblingElement("Account");
+				pAccount = helper.GetNextSiblingElement(pAccount, "Account");
 			}
 		}
 	}
@@ -304,7 +319,7 @@ void Accounts::GetAccount(string a)
 {
 	string acountChar;
 	XMLDocument doc;
-    constants constants;
+	constants constants;
 
 	const char *path = constants.GetPath();
 	char amountText[100];
@@ -329,65 +344,66 @@ void Accounts::GetAccount(string a)
 	if (NULL != pRootElement)
 	{
 		// Get 'Accounts' Child
-		XMLElement *pAccounts = pRootElement->FirstChildElement("Accounts");
+		XMLElement *pAccounts = helper.GetFirstChildElement(pRootElement, "Accounts");
 
 		if (NULL != pAccounts)
 		{
 			// Get 'Account' Child
-			XMLElement *pAccount = pAccounts->FirstChildElement("Account");
+			XMLElement *pAccount = helper.GetFirstChildElement(pAccounts, "Account");
 
 			while (pAccount)
 			{
 				// Get 'AccountNo' Child
-				XMLElement *pAccountNo = pAccount->FirstChildElement("AccountNo");
+				XMLElement *pAccountNo = helper.GetFirstChildElement(pAccount, "AccountNo");
 
-				acountChar = pAccountNo->GetText();
+				acountChar = helper.GetElementText(pAccountNo);
+
 				// Check for Matching Account Number
 				if (acountChar == a)
 				{
 					i++;
 					// Print out AccountNo
-					cout << '|' << setw(7) << pAccountNo->GetText();
+					cout << '|' << setw(7) << helper.GetElementText(pAccountNo);
 					XMLElement *pType = pAccount->FirstChildElement("type");
 
 					if (NULL != pType)
 					{
 						// Print out Type
-						cout << '|' << setw(12) << pType->GetText();
+						cout << '|' << setw(12) << helper.GetElementText(pType);
 
 					}
 
 					// Get 'customer' Child
-					XMLElement *name = pAccount->FirstChildElement("customer");
+					XMLElement *name = helper.GetFirstChildElement(pAccount, "customer");
 
 					if (NULL != name)
 					{
 						//Print out name
-						cout << '|' << setw(15) << name->GetText();
+						cout << '|' << setw(15) << helper.GetElementText(name);
 
 					}
 
 					// Get 'balance' Child
-					XMLElement *balance = pAccount->FirstChildElement("balance");
+					XMLElement *balance = helper.GetFirstChildElement(pAccount, "balance");
 
 					if (NULL != balance)
 					{
 						// Convert to Char
 						strcpy(amountText, "$");
 
-						strcat(amountText, balance->GetText());
+						strcat(amountText, helper.GetElementText(balance));
 						//Print out amount
 						cout << '|' << setw(10) << amountText << '|';
 
 					}
 
 					// Get 'openDate' Child
-					XMLElement *openDate = pAccount->FirstChildElement("openDate");
+					XMLElement *openDate = helper.GetFirstChildElement(pAccount, "openDate");
 
 					if (NULL != openDate)
 					{
 						// print out Open Date
-						cout << setw(12) << openDate->GetText() << '|';
+						cout << setw(12) << helper.GetElementText(openDate) << '|';
 
 					}
 
@@ -397,7 +413,7 @@ void Accounts::GetAccount(string a)
 				}
 
 				// Next Account
-				pAccount = pAccount->NextSiblingElement("Account");
+				pAccount = helper.GetNextSiblingElement(pAccount, "Account");
 			}
 
 			// Print message if account is not found
@@ -435,48 +451,48 @@ void Accounts::GetAccountBalance(string a)
 	if (NULL != pRootElement)
 	{
 		// Get 'Accounts' Child
-		XMLElement *pAccounts = pRootElement->FirstChildElement("Accounts");
+		XMLElement *pAccounts = helper.GetFirstChildElement(pRootElement, "Accounts");
 
 		if (NULL != pAccounts)
 		{
-			XMLElement *pAccount = pAccounts->FirstChildElement("Account");
+			XMLElement *pAccount = helper.GetFirstChildElement(pAccounts, "Account");
 
 			while (pAccount)
 			{
 				// Get 'AccountNo' child
-				XMLElement *pAccountNo = pAccount->FirstChildElement("AccountNo");
-				acountChar = pAccountNo->GetText();
+				XMLElement *pAccountNo = helper.GetFirstChildElement(pAccount, "AccountNo");
+				acountChar = helper.GetElementText(pAccountNo);
 				// Check for Matching Account Number
 				if (acountChar == a)
 				{
 					// Get 'type' Child
-					XMLElement *pType = pAccount->FirstChildElement("type");
+					XMLElement *pType = helper.GetFirstChildElement(pAccount, "type");
 
 					// Get 'customer' Child
-					XMLElement *name = pAccount->FirstChildElement("customer");
+					XMLElement *name = helper.GetFirstChildElement(pAccount, "customer");
 
 					// Get 'balance' Child
-					XMLElement *balance = pAccount->FirstChildElement("balance");
+					XMLElement *balance = helper.GetFirstChildElement(pAccount, "balance");
 
 					if (NULL != balance)
 					{
 						//Convert to *char
 						strcpy(amountText, "$");
-						strcat(amountText, balance->GetText());
+						strcat(amountText, helper.GetElementText(balance));
 						//Print out amount
 						cout << amountText << endl;
 
 					}
 
 					// Get 'openDate' Child
-					XMLElement *openDate = pAccount->FirstChildElement("openDate");
+					XMLElement *openDate = helper.GetFirstChildElement(pAccount, "openDate");
 
 					std::cout << std::endl;
 
 				}
 
 				//Next Account
-				pAccount = pAccount->NextSiblingElement("Account");
+				pAccount = helper.GetNextSiblingElement(pAccount, "Account");
 			}
 		}
 	}
@@ -512,64 +528,63 @@ void Accounts::GetAllAccounts()
 	if (NULL != pRootElement)
 	{
 		//Get 'Accounts' Child
-		XMLElement *pAccounts = pRootElement->FirstChildElement("Accounts");
+		XMLElement *pAccounts = helper.GetFirstChildElement(pRootElement, "Accounts");
 
 		if (NULL != pAccounts)
 		{
 			//Get 'Account' Child
-			XMLElement *pAccount = pAccounts->FirstChildElement("Account");
+			XMLElement *pAccount = helper.GetFirstChildElement(pAccounts, "Account");
 
 			while (pAccount)
 			{
 				// Get 'AccountNo' Child
-				XMLElement *pAccountNo = pAccount->FirstChildElement("AccountNo");
+				XMLElement *pAccountNo = helper.GetFirstChildElement(pAccount, "AccountNo");
 
 				if (NULL != pAccountNo)
 				{
 					//Print out AccountNo
-					cout << '|' << setw(7) << pAccountNo->GetText();
+					cout << '|' << setw(7) << helper.GetElementText(pAccountNo);
 
 				}
 
 				//Get 'type' Child
-				XMLElement *pType = pAccount->FirstChildElement("type");
+				XMLElement *pType = helper.GetFirstChildElement(pAccount, "type");
 
 				if (NULL != pType)
 				{
 					// Print out 'Tyoe'
-					cout << '|' << setw(12) << pType->GetText();
+					cout << '|' << setw(12) << helper.GetElementText(pType);
 				}
 
 				// Get 'customer' Child
-				XMLElement *name = pAccount->FirstChildElement("customer");
+				XMLElement *name = helper.GetFirstChildElement(pAccount, "customer");
 
 				if (NULL != name)
 				{
 					//Print out name
-					cout << '|' << setw(15) << name->GetText();
+					cout << '|' << setw(15) << helper.GetElementText(name);
 
 				}
 
 				// Get 'balance' Child
-				XMLElement *balance = pAccount->FirstChildElement("balance");
+				XMLElement *balance = helper.GetFirstChildElement(pAccount, "balance");
 
 				if (NULL != balance)
 				{
 					// Convert to *char
-					strcpy(amountText, "$");	// copy string one into the result.
-					strcat(amountText, balance->GetText());	// append string two to the result.
+					strcpy(amountText, "$");
+					strcat(amountText, helper.GetElementText(balance));
 					//Print out amount
 					cout << '|' << setw(10) << amountText << '|';
 
 				}
 
 				// Get 'openDate' Child
-				XMLElement *openDate = pAccount->FirstChildElement("openDate");
-
+				XMLElement *openDate = helper.GetFirstChildElement(pAccount, "openDate");
 				if (NULL != openDate)
 				{
 					//Print out openDate
-					cout << setw(12) << openDate->GetText() << '|';
+					cout << setw(12) << helper.GetElementText(openDate) << '|';
 
 				}
 
@@ -577,7 +592,7 @@ void Accounts::GetAllAccounts()
 				cout << "------------------------------------------------------------";
 				std::cout << std::endl;
 				// Next Account
-				pAccount = pAccount->NextSiblingElement("Account");
+				pAccount = helper.GetNextSiblingElement(pAccount, "Account");
 			}
 
 			//Print out Footer
@@ -611,39 +626,45 @@ void Accounts::InsertAccount(string accountNumber, string accountType, string cu
 	XMLElement *pTop = doc.RootElement();
 
 	// Get 'Accounts' Child
-	XMLElement *pAccounts = pTop->FirstChildElement("Accounts");
+	XMLElement *pAccounts = helper.GetFirstChildElement(pTop, "Accounts");
+
 	//Create new Element
 	XMLNode *pRoot = doc.NewElement("Account");
 	//Insert new Element
 	pAccounts->InsertEndChild(pRoot);
+
 	//Create new Element
 	XMLElement *pElement = doc.NewElement("AccountNo");
 	// Set new Element Text
-	pElement->SetText(strdup(accountNumber.c_str()));	// AccountNo
+	helper.SetElementText(pElement, strdup(accountNumber.c_str()));	// AccountNo
 	// Insert new Element
 	pRoot->InsertEndChild(pElement);
+
 	//Create new Element
 	pElement = doc.NewElement("type");
 	// Set new Element Text
-	pElement->SetText(strdup(accountType.c_str()));	// type
+	helper.SetElementText(pElement, strdup(accountType.c_str()));	// type
 	// Insert new Element
 	pRoot->InsertEndChild(pElement);
+
 	//Create new Element
 	pElement = doc.NewElement("customer");
 	// Set new element Text
-	pElement->SetText(strdup(customerName.c_str()));	// customer
+	helper.SetElementText(pElement, strdup(customerName.c_str()));	// customer
 	// Insert new Element
 	pRoot->InsertEndChild(pElement);
+
 	//Create new Element
 	pElement = doc.NewElement("balance");
 	// Set new Element Text
-	pElement->SetText(strdup(accountBalance.c_str()));	// balance
+	helper.SetElementText(pElement, strdup(accountBalance.c_str()));	// balance
 	// Insert new Element
 	pRoot->InsertEndChild(pElement);
+
 	//Create new Element
 	pElement = doc.NewElement("openDate");
 	// Set new Element Text
-	pElement->SetText("01/01/2020");	// openDate
+	helper.SetElementText(pElement, "03/01/2020");	// openDate
 	//Insert new Element
 	pRoot->InsertEndChild(pElement);
 

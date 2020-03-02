@@ -62,20 +62,6 @@
             <balance>balanceacou</balance>
             <openDate>01/01/2020</openDate>
         </Account>
-        <Account>
-            <AccountNo>10</AccountNo>
-            <type>saving</type>
-            <customer>Feras</customer>
-            <balance>595</balance>
-            <openDate>01/01/2020</openDate>
-        </Account>
-        <Account>
-            <AccountNo>13</AccountNo>
-            <type>Saving</type>
-            <customer>Sean</customer>
-            <balance>399</balance>
-            <openDate>01/01/2020</openDate>
-        </Account>
     </Accounts>
     <Transactions>
         <transaction>
@@ -86,93 +72,33 @@
         </transaction>
         <transaction>
             <AccountNo>2</AccountNo>
-            <type>Withdrawal</type>
-            <amount>-17.00</amount>
-            <date>05/04/2018</date>
+            <type>Deposit</type>
+            <amount>8</amount>
+            <date>03/01/20</date>
         </transaction>
         <transaction>
             <AccountNo>2</AccountNo>
             <type>Deposit</type>
-            <amount>16.99</amount>
-            <date>06/08/2018</date>
+            <amount>9</amount>
+            <date>03/01/20</date>
         </transaction>
         <transaction>
             <AccountNo>2</AccountNo>
             <type>Deposit</type>
-            <amount>37.99</amount>
-            <date>09/18/2018</date>
+            <amount>91</amount>
+            <date>03/01/20</date>
         </transaction>
         <transaction>
             <AccountNo>2</AccountNo>
             <type>Deposit</type>
-            <amount>17.00</amount>
-            <date>12/21/2019</date>
+            <amount>31</amount>
+            <date>03/01/20</date>
         </transaction>
         <transaction>
             <AccountNo>2</AccountNo>
             <type>Deposit</type>
-            <amount>55.00</amount>
-            <date>01/18/2019</date>
-        </transaction>
-        <transaction>
-            <AccountNo>2</AccountNo>
-            <type>Deposit</type>
-            <amount>79.00</amount>
-            <date>03/08/2019</date>
-        </transaction>
-        <transaction>
-            <AccountNo>2</AccountNo>
-            <type>Withdrawal</type>
-            <amount>-6.99</amount>
-            <date>07/22/2019</date>
-        </transaction>
-        <transaction>
-            <AccountNo>2</AccountNo>
-            <type>Deposit</type>
-            <amount>19.00</amount>
-            <date>11/30/2019</date>
-        </transaction>
-        <transaction>
-            <AccountNo>10</AccountNo>
-            <type>Deposit</type>
-            <amount>399</amount>
-            <date>02/15/20</date>
-        </transaction>
-        <transaction>
-            <AccountNo>10</AccountNo>
-            <type>Deposit</type>
-            <amount>361</amount>
-            <date>02/15/20</date>
-        </transaction>
-        <transaction>
-            <AccountNo>4</AccountNo>
-            <type>Deposit</type>
-            <amount>12</amount>
-            <date>02/15/20</date>
-        </transaction>
-        <transaction>
-            <AccountNo>8</AccountNo>
-            <type>Deposit</type>
-            <amount>-66</amount>
-            <date>02/15/20</date>
-        </transaction>
-        <transaction>
-            <AccountNo>8</AccountNo>
-            <type>Withdrawal</type>
-            <amount>-55</amount>
-            <date>02/15/20</date>
-        </transaction>
-        <transaction>
-            <AccountNo>13</AccountNo>
-            <type>Deposit</type>
-            <amount>200</amount>
-            <date>02/17/20</date>
-        </transaction>
-        <transaction>
-            <AccountNo>13</AccountNo>
-            <type>Withdrawal</type>
-            <amount>-100</amount>
-            <date>02/17/20</date>
+            <amount>11</amount>
+            <date>03/01/20</date>
         </transaction>
     </Transactions>
 </file>

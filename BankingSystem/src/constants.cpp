@@ -9,6 +9,7 @@ constants::constants()
 GetPath();
 
 }
+
 // Returns executable path
 char* constants::GetPath()
 {
