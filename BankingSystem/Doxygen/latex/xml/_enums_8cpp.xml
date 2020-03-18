@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="_enums_8cpp" kind="file" language="C++">
+    <compoundname>Enums.cpp</compoundname>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_enums_8cpp_1ab91b34ae619fcdfcba4522b4f335bf83" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Position</name>
+        <enumvalue id="_enums_8cpp_1ab91b34ae619fcdfcba4522b4f335bf83a9f5dbbc8c7f16548c7c3f0973139e00f" prot="public">
+          <name>AfterChild</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_enums_8cpp_1ab91b34ae619fcdfcba4522b4f335bf83a064b61cd8d707e0efffe9775d942aa33" prot="public">
+          <name>EndChild</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_enums_8cpp_1ab91b34ae619fcdfcba4522b4f335bf83a33c3a023996eba1884d2a6fb8ebbf2b7" prot="public">
+          <name>FirstChild</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_enums_8cpp_1ab91b34ae619fcdfcba4522b4f335bf83adfdd236ca597df5a4d2f5fa0d0f6ec93" prot="public">
+          <name>Male</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_enums_8cpp_1ab91b34ae619fcdfcba4522b4f335bf83a4fcdc3f409e8e27fbfd35bbd6472877c" prot="public">
+          <name>Female</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Enums.cpp" line="2" column="18" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Enums.cpp" bodystart="2" bodyend="3"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2" refid="_enums_8cpp_1ab91b34ae619fcdfcba4522b4f335bf83" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_accounts_8cpp_1ab91b34ae619fcdfcba4522b4f335bf83" kindref="member">Position</ref><sp/>{<sp/><ref refid="_enums_8cpp_1ab91b34ae619fcdfcba4522b4f335bf83adfdd236ca597df5a4d2f5fa0d0f6ec93" kindref="member">Male</ref>,</highlight></codeline>
+<codeline lineno="3" refid="_enums_8cpp_1ab91b34ae619fcdfcba4522b4f335bf83a4fcdc3f409e8e27fbfd35bbd6472877c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_enums_8cpp_1ab91b34ae619fcdfcba4522b4f335bf83a4fcdc3f409e8e27fbfd35bbd6472877c" kindref="member">Female</ref><sp/>};</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Enums.cpp"/>
+  </compounddef>
+</doxygen>

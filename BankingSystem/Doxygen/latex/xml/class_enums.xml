@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="class_enums" kind="class" language="C++" prot="public">
+    <compoundname>Enums</compoundname>
+    <includes refid="_enums_8h" local="no">Enums.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_enums_1a80d2ec94939e582c3458a9bb31214e06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Enums::Enums</definition>
+        <argsstring>()</argsstring>
+        <name>Enums</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Enums.h" line="8" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_enums_1ac21dececac30d80aca8932945b584a17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Enums::~Enums</definition>
+        <argsstring>()</argsstring>
+        <name>~Enums</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Enums.h" line="9" column="9"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Enums.h" line="6" column="1" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Enums.h" bodystart="5" bodyend="14"/>
+    <listofallmembers>
+      <member refid="class_enums_1a80d2ec94939e582c3458a9bb31214e06" prot="public" virt="non-virtual"><scope>Enums</scope><name>Enums</name></member>
+      <member refid="class_enums_1ac21dececac30d80aca8932945b584a17" prot="public" virt="non-virtual"><scope>Enums</scope><name>~Enums</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

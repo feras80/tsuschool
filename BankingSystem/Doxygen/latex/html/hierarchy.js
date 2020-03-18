@@ -1,12 +1,15 @@
 var hierarchy =
 [
     [ "Accounts", "class_accounts.html", null ],
+    [ "Applicant", "struct_applicant.html", null ],
     [ "constants", "classconstants.html", null ],
     [ "tinyxml2::DynArray< T, INITIAL_SIZE >", "classtinyxml2_1_1_dyn_array.html", null ],
     [ "tinyxml2::DynArray< Block *, 10 >", "classtinyxml2_1_1_dyn_array.html", null ],
     [ "tinyxml2::DynArray< char, 20 >", "classtinyxml2_1_1_dyn_array.html", null ],
     [ "tinyxml2::DynArray< const char *, 10 >", "classtinyxml2_1_1_dyn_array.html", null ],
     [ "tinyxml2::DynArray< tinyxml2::XMLNode *, 10 >", "classtinyxml2_1_1_dyn_array.html", null ],
+    [ "Enums", "class_enums.html", null ],
+    [ "Helper", "class_helper.html", null ],
     [ "tinyxml2::MemPool", "classtinyxml2_1_1_mem_pool.html", [
       [ "tinyxml2::MemPoolT< sizeof(tinyxml2::XMLAttribute) >", "classtinyxml2_1_1_mem_pool_t.html", null ],
       [ "tinyxml2::MemPoolT< sizeof(tinyxml2::XMLComment) >", "classtinyxml2_1_1_mem_pool_t.html", null ],
@@ -14,6 +17,7 @@ var hierarchy =
       [ "tinyxml2::MemPoolT< sizeof(tinyxml2::XMLText) >", "classtinyxml2_1_1_mem_pool_t.html", null ],
       [ "tinyxml2::MemPoolT< ITEM_SIZE >", "classtinyxml2_1_1_mem_pool_t.html", null ]
     ] ],
+    [ "Security", "class_security.html", null ],
     [ "tinyxml2::StrPair", "classtinyxml2_1_1_str_pair.html", null ],
     [ "Users", "class_users.html", null ],
     [ "tinyxml2::XMLAttribute", "classtinyxml2_1_1_x_m_l_attribute.html", null ],

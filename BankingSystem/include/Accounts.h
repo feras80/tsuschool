@@ -15,6 +15,7 @@ void InsertAccount(string accountNumber, string accountType, string customerName
 bool AcountExists(string a);
 void Deposit (string a , string amount);
 void Withdraw (string a , string amount);
+void CreditDecision(int income, int creditScore, int creditHistory);
 
 };
 

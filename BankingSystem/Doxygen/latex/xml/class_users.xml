@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Users.h" line="10" column="9" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Users.cpp" bodystart="8" bodyend="12"/>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Users.h" line="9" column="1" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Users.cpp" bodystart="9" bodyend="13"/>
       </memberdef>
       <memberdef kind="function" id="class_users_1a33ff9aadcaef989bf3c8570358f791f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Users.h" line="11" column="9" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Users.cpp" bodystart="57" bodyend="57"/>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Users.h" line="10" column="1" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Users.cpp" bodystart="67" bodyend="67"/>
       </memberdef>
       <memberdef kind="function" id="class_users_1af3b5e4015df188df9f0dda9afa2f892d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>string</type>
@@ -41,20 +41,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Users.h" line="12" column="12" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Users.cpp" bodystart="16" bodyend="55"/>
-        <references refid="classtinyxml2_1_1_x_m_l_node_1a1795a35852dc8aae877cc8ded986e59b">tinyxml2::XMLNode::FirstChildElement</references>
-        <references refid="classconstants_1a91b4da1fb34bc7ef659c4e29b72abe51" compoundref="constants_8cpp" startline="13" endline="24">constants::GetPath</references>
-        <references refid="classtinyxml2_1_1_x_m_l_element_1a6d5c8d115561ade4e4456b71d91b6f51">tinyxml2::XMLElement::GetText</references>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Users.h" line="11" column="8" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Users.cpp" bodystart="17" bodyend="65"/>
+        <references refid="_accounts_8cpp_1a0428e1b259bb7e03d0c08b293dfbe36f" compoundref="_accounts_8cpp" startline="26">constants</references>
+        <references refid="class_helper_1a22548e41ebfc416288f2ba00100fe024" compoundref="_helper_8cpp" startline="42" endline="45">Helper::GetElementText</references>
+        <references refid="class_helper_1adc9dda65b697a9054dfa1923fb65c7cc" compoundref="_helper_8cpp" startline="16" endline="19">Helper::GetFirstChildElement</references>
+        <references refid="classconstants_1a91b4da1fb34bc7ef659c4e29b72abe51" compoundref="constants_8cpp" startline="15" endline="33">constants::GetPath</references>
+        <references refid="_accounts_8cpp_1a25d594c8395a403b331b2f0ac5dea2ee" compoundref="_accounts_8cpp" startline="25">helper</references>
         <references refid="classtinyxml2_1_1_x_m_l_document_1a2ebd4647a8af5fc6831b294ac26a150a">tinyxml2::XMLDocument::LoadFile</references>
         <references refid="classtinyxml2_1_1_x_m_l_document_1ad2b70320d3c2a071c2f36928edff3e1c" compoundref="tinyxml2_8h" startline="1785" endline="1787">tinyxml2::XMLDocument::RootElement</references>
-        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="238" endline="267">main</referencedby>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="363" endline="397">main</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Users.h" line="8" column="1" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Users.h" bodystart="7" bodyend="13"/>
+    <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Users.h" line="7" column="1" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Users.h" bodystart="6" bodyend="12"/>
     <listofallmembers>
       <member refid="class_users_1af3b5e4015df188df9f0dda9afa2f892d" prot="public" virt="non-virtual"><scope>Users</scope><name>GetPassword</name></member>
       <member refid="class_users_1af1f5c371c3f1e7f9b14210ed0d3718bc" prot="public" virt="non-virtual"><scope>Users</scope><name>Users</name></member>

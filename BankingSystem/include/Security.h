@@ -1,19 +1,19 @@
 #ifndef SECURITY_H
 #define SECURITY_H
 #include <iostream>
-
 using namespace std;
 
 class Security
 {
-    public:
-        Security();
-        virtual ~Security();
-string Encrypt (string file);
-    protected:
+	public:
+		Security();
+	string Encrypt(string str);
+	string Decrypt(string str);
+	virtual~Security();
 
+	protected:
 
-    private:
+		private:
 };
 
-#endif // SECURITY_H
+#endif	// SECURITY_H

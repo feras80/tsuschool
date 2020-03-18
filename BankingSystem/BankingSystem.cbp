@@ -37,7 +37,6 @@
 		</Compiler>
 		<Unit filename="bin/Debug/data.xml" />
 		<Unit filename="include/Accounts.h" />
-		<Unit filename="include/Enums.h" />
 		<Unit filename="include/Helper.h" />
 		<Unit filename="include/Security.h" />
 		<Unit filename="include/Users.h" />

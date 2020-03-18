@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="struct_applicant" kind="struct" language="C++" prot="public">
+    <compoundname>Applicant</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_applicant_1a5a56d929e34a104b0fcd494d81942a24" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Applicant::applicantName</definition>
+        <argsstring></argsstring>
+        <name>applicantName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" line="20" column="8" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" bodystart="20" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1ab3002fe8e0074c9e2ecb5b835e5e819f" compoundref="main_8cpp" startline="77" endline="360">mainMenu</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_applicant_1ab4c28d0d28d181c2ca4e3394add5ce25" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string Applicant::hasAJob</definition>
+        <argsstring></argsstring>
+        <name>hasAJob</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" line="21" column="8" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" bodystart="21" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1ab3002fe8e0074c9e2ecb5b835e5e819f" compoundref="main_8cpp" startline="77" endline="360">mainMenu</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_applicant_1aa2e9dd194040f135215fa88b49bd17a2" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Applicant::income</definition>
+        <argsstring></argsstring>
+        <name>income</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" line="22" column="5" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" bodystart="22" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1ab3002fe8e0074c9e2ecb5b835e5e819f" compoundref="main_8cpp" startline="77" endline="360">mainMenu</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_applicant_1a634a676d7cc8cddddb6c0af0def59930" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Applicant::creditScore</definition>
+        <argsstring></argsstring>
+        <name>creditScore</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" line="23" column="5" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" bodystart="23" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1ab3002fe8e0074c9e2ecb5b835e5e819f" compoundref="main_8cpp" startline="77" endline="360">mainMenu</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_applicant_1aabae45a50e5b0b27163f6ec5482d9d4b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Applicant::creditHistory</definition>
+        <argsstring></argsstring>
+        <name>creditHistory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" line="24" column="5" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" bodystart="24" bodyend="-1"/>
+        <referencedby refid="main_8cpp_1ab3002fe8e0074c9e2ecb5b835e5e819f" compoundref="main_8cpp" startline="77" endline="360">mainMenu</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" line="19" column="1" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp" bodystart="18" bodyend="25"/>
+    <listofallmembers>
+      <member refid="struct_applicant_1a5a56d929e34a104b0fcd494d81942a24" prot="public" virt="non-virtual"><scope>Applicant</scope><name>applicantName</name></member>
+      <member refid="struct_applicant_1aabae45a50e5b0b27163f6ec5482d9d4b" prot="public" virt="non-virtual"><scope>Applicant</scope><name>creditHistory</name></member>
+      <member refid="struct_applicant_1a634a676d7cc8cddddb6c0af0def59930" prot="public" virt="non-virtual"><scope>Applicant</scope><name>creditScore</name></member>
+      <member refid="struct_applicant_1ab4c28d0d28d181c2ca4e3394add5ce25" prot="public" virt="non-virtual"><scope>Applicant</scope><name>hasAJob</name></member>
+      <member refid="struct_applicant_1aa2e9dd194040f135215fa88b49bd17a2" prot="public" virt="non-virtual"><scope>Applicant</scope><name>income</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

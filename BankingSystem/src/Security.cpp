@@ -10,60 +10,57 @@
 #include <iomanip>
 #include <cstddef>
 #include <ctime>
-
+#include <sstream>
 using namespace std;
 
 Security::Security()
 {
- string  Encrypt(string file);
-  string Decrypt(string file);
+	string Encrypt(string str);
+	string Decrypt(string str);
 }
-string Security::Encrypt(string file)
+
+string Security::Encrypt(string str)
 {
-    string str="";
-return str;
+	string result;
+	for (string::size_type i = 0; i < str.size(); i++)
+	{
+		result += int(str[i]);
 
+	}
 
+	return result;
 }
-
-string Decrypt(string file)
+// To decrypt a string
+string Security::Decrypt(string str)
 {
-    constants constants;
-
-   const char *fname = constants.GetPath();
-
-	char    sh, choice;
-	fstream fps, fpt;
-
-	fps.open(fname);
-   if(!fps)
+	string result = "";
+	string tempHold = "";
+	int tempHoldInt;
+	// loop through the string
+	for (string::size_type i = 0; i < str.size(); i++)
 	{
-		cout<<"Error in opening source file..!!";
-		cout<<"\nPress any key to exit...";
+		ostringstream oss;
+		oss << str[i];
+		tempHold += oss.str();
+		// If the size of the temp hold is 3, convert it to its ascii representation
+		if (tempHold.size() == 3)
+		{
+			char c;
 
-	}
-	fpt.open("temp.txt");
-	if(!fpt)
-	{
-		cout<<"Error in opening temp.txt file..!!";
-		fps.close();
-		cout<<"\nPress any key to exit...";
+			int number;
+			std::istringstream(tempHold) >> tempHoldInt;
 
+			c = char(tempHoldInt);
+			result += char(tempHoldInt);
+			tempHold = "";
+		}
 	}
-	while(fpt.eof()==0)
-	{
-		fpt>>sh;
-		sh=sh-100;
-		fps<<sh;
-	}
-	cout<<"File "<<fname<<" decrypted successfully..!!";
-	cout<<"\nPress any key to exit...";
-	fps.close();
-	fpt.close();
+
+	return result;
+
 }
-
 
 Security::~Security()
 {
-    //dtor
+	//dtor
 }

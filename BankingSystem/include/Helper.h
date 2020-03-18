@@ -19,8 +19,7 @@ class Helper
 	virtual~Helper();
 
 	protected:
-
-		private:
+    private:
 };
 
 #endif	// HELPER_H

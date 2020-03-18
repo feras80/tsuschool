@@ -8,8 +8,11 @@
     <includes local="no">cstdlib</includes>
     <includes local="no">cstring</includes>
     <includes local="no">stdint.h</includes>
+    <includedby refid="_helper_8h" local="no">C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Helper.h</includedby>
     <includedby refid="main_8cpp" local="no">C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp</includedby>
     <includedby refid="_accounts_8cpp" local="no">C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Accounts.cpp</includedby>
+    <includedby refid="_helper_8cpp" local="no">C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Helper.cpp</includedby>
+    <includedby refid="_security_8cpp" local="no">C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Security.cpp</includedby>
     <includedby refid="_users_8cpp" local="no">C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Users.cpp</includedby>
     <incdepgraph>
       <node id="7">
@@ -48,25 +51,49 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="4">
+      <node id="5">
         <label>C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Users.cpp</label>
         <link refid="_users_8cpp"/>
+      </node>
+      <node id="4">
+        <label>C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Helper.cpp</label>
+        <link refid="_helper_8cpp"/>
+      </node>
+      <node id="7">
+        <label>C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Security.cpp</label>
+        <link refid="_security_8cpp"/>
       </node>
       <node id="3">
         <label>C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Accounts.cpp</label>
         <link refid="_accounts_8cpp"/>
+      </node>
+      <node id="2">
+        <label>C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Helper.h</label>
+        <link refid="_helper_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/tinyxml2.h</label>
         <link refid="tinyxml2_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
       </node>
-      <node id="2">
+      <node id="6">
         <label>C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp</label>
         <link refid="main_8cpp"/>
       </node>
@@ -1365,7 +1392,7 @@
 <codeline lineno="1478"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtinyxml2_1_1_x_m_l_attribute" kindref="compound">XMLAttribute</ref>*<sp/>a<sp/>=<sp/>FindOrCreateAttribute(name);</highlight></codeline>
 <codeline lineno="1479"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a-&gt;<ref refid="classtinyxml2_1_1_x_m_l_attribute_1a406d2c4a13c7af99a65edb59dd9f7581" kindref="member">SetAttribute</ref>(value);</highlight></codeline>
 <codeline lineno="1480"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="1481"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="1481"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1483" refid="classtinyxml2_1_1_x_m_l_element_1aa848b696e6a75e4e545c6da9893b11e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classtinyxml2_1_1_x_m_l_element_1aa848b696e6a75e4e545c6da9893b11e1" kindref="member">SetAttribute</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>value<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
 <codeline lineno="1484"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtinyxml2_1_1_x_m_l_attribute" kindref="compound">XMLAttribute</ref>*<sp/>a<sp/>=<sp/>FindOrCreateAttribute(<sp/>name<sp/>);</highlight></codeline>
 <codeline lineno="1485"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a-&gt;<ref refid="classtinyxml2_1_1_x_m_l_attribute_1a406d2c4a13c7af99a65edb59dd9f7581" kindref="member">SetAttribute</ref>(<sp/>value<sp/>);</highlight></codeline>

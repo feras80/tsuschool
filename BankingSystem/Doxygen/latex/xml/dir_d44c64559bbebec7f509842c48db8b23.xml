@@ -4,6 +4,9 @@
     <compoundname>C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include</compoundname>
     <innerfile refid="_accounts_8h">Accounts.h</innerfile>
     <innerfile refid="constants_8h">constants.h</innerfile>
+    <innerfile refid="_enums_8h">Enums.h</innerfile>
+    <innerfile refid="_helper_8h">Helper.h</innerfile>
+    <innerfile refid="_security_8h">Security.h</innerfile>
     <innerfile refid="tinyxml2_8h">tinyxml2.h</innerfile>
     <innerfile refid="_users_8h">Users.h</innerfile>
     <briefdescription>

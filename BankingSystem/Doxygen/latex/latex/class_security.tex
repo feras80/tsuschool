@@ -1,0 +1,140 @@
+\hypertarget{class_security}{}\doxysection{Security Class Reference}
+\label{class_security}\index{Security@{Security}}
+
+
+{\ttfamily \#include $<$Security.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_security_adf21beb426ecd12c71c75aa8bd02e39f}{Security}} ()
+\item 
+string \mbox{\hyperlink{class_security_a87f7e59fbf6a8d2531e1da60d0a444af}{Encrypt}} (string str)
+\item 
+string \mbox{\hyperlink{class_security_aae21cc061dee73383f820857a77ba35f}{Decrypt}} (string str)
+\item 
+virtual \mbox{\hyperlink{class_security_a9c54a706f244f9a3d769615225654696}{$\sim$\+Security}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 6 of file Security.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_security_adf21beb426ecd12c71c75aa8bd02e39f}\label{class_security_adf21beb426ecd12c71c75aa8bd02e39f}} 
+\index{Security@{Security}!Security@{Security}}
+\index{Security@{Security}!Security@{Security}}
+\doxysubsubsection{\texorpdfstring{Security()}{Security()}}
+{\footnotesize\ttfamily Security\+::\+Security (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 16 of file Security.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_security_a87f7e59fbf6a8d2531e1da60d0a444af}{Encrypt}}(\textcolor{keywordtype}{string} str);}
+\DoxyCodeLine{19     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_security_aae21cc061dee73383f820857a77ba35f}{Decrypt}}(\textcolor{keywordtype}{string} str);}
+\DoxyCodeLine{20 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_security_a9c54a706f244f9a3d769615225654696}\label{class_security_a9c54a706f244f9a3d769615225654696}} 
+\index{Security@{Security}!````~Security@{$\sim$Security}}
+\index{````~Security@{$\sim$Security}!Security@{Security}}
+\doxysubsubsection{\texorpdfstring{$\sim$Security()}{~Security()}}
+{\footnotesize\ttfamily Security\+::$\sim$\+Security (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 63 of file Security.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{64 \{}
+\DoxyCodeLine{65     \textcolor{comment}{//dtor}}
+\DoxyCodeLine{66 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_security_aae21cc061dee73383f820857a77ba35f}\label{class_security_aae21cc061dee73383f820857a77ba35f}} 
+\index{Security@{Security}!Decrypt@{Decrypt}}
+\index{Decrypt@{Decrypt}!Security@{Security}}
+\doxysubsubsection{\texorpdfstring{Decrypt()}{Decrypt()}}
+{\footnotesize\ttfamily string Security\+::\+Decrypt (\begin{DoxyParamCaption}\item[{string}]{str }\end{DoxyParamCaption})}
+
+
+
+Definition at line 34 of file Security.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36     \textcolor{keywordtype}{string} result = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{37     \textcolor{keywordtype}{string} tempHold = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{38     \textcolor{keywordtype}{int} tempHoldInt;}
+\DoxyCodeLine{39     \textcolor{comment}{// loop through the string}}
+\DoxyCodeLine{40     \textcolor{keywordflow}{for} (string::size\_type i = 0; i < str.size(); i++)}
+\DoxyCodeLine{41     \{}
+\DoxyCodeLine{42         ostringstream oss;}
+\DoxyCodeLine{43         oss << str[i];}
+\DoxyCodeLine{44         tempHold += oss.str();}
+\DoxyCodeLine{45         \textcolor{comment}{// If the size of the temp hold is 3, convert it to its ascii representation}}
+\DoxyCodeLine{46         \textcolor{keywordflow}{if} (tempHold.size() == 3)}
+\DoxyCodeLine{47         \{}
+\DoxyCodeLine{48             \textcolor{keywordtype}{char} c;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50             \textcolor{keywordtype}{int} number;}
+\DoxyCodeLine{51             std::istringstream(tempHold) >> tempHoldInt;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53             c = char(tempHoldInt);}
+\DoxyCodeLine{54             result += char(tempHoldInt);}
+\DoxyCodeLine{55             tempHold = \textcolor{stringliteral}{""};}
+\DoxyCodeLine{56         \}}
+\DoxyCodeLine{57     \}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \}}
+
+\end{DoxyCode}
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{class_security_a87f7e59fbf6a8d2531e1da60d0a444af}\label{class_security_a87f7e59fbf6a8d2531e1da60d0a444af}} 
+\index{Security@{Security}!Encrypt@{Encrypt}}
+\index{Encrypt@{Encrypt}!Security@{Security}}
+\doxysubsubsection{\texorpdfstring{Encrypt()}{Encrypt()}}
+{\footnotesize\ttfamily string Security\+::\+Encrypt (\begin{DoxyParamCaption}\item[{string}]{str }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file Security.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24     \textcolor{keywordtype}{string} result;}
+\DoxyCodeLine{25     \textcolor{keywordflow}{for} (string::size\_type i = 0; i < str.size(); i++)}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27         result += int(str[i]);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{32 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cb05314/\+Documents/\+T\+S\+U/\+C\+P\+P\+T/\+Banking\+System/include/\mbox{\hyperlink{_security_8h}{Security.\+h}}\item 
+C\+:/\+Users/cb05314/\+Documents/\+T\+S\+U/\+C\+P\+P\+T/\+Banking\+System/src/\mbox{\hyperlink{_security_8cpp}{Security.\+cpp}}\end{DoxyCompactItemize}

@@ -5,6 +5,7 @@
     <includes local="no">string</includes>
     <includedby refid="main_8cpp" local="no">C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/main.cpp</includedby>
     <includedby refid="_accounts_8cpp" local="yes">C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Accounts.cpp</includedby>
+    <includedby refid="_security_8cpp" local="yes">C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Security.cpp</includedby>
     <incdepgraph>
       <node id="2">
         <label>string</label>
@@ -24,6 +25,12 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Security.cpp</label>
+        <link refid="_security_8cpp"/>
       </node>
       <node id="3">
         <label>C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Accounts.cpp</label>
@@ -58,10 +65,11 @@
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>AcountExists(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>a);</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Deposit<sp/>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>a<sp/>,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>amount);</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Withdraw<sp/>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>a<sp/>,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>amount);</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>ACCOUNTS_H</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CreditDecision(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>income,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>creditScore,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>creditHistory);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>ACCOUNTS_H</highlight></codeline>
     </programlisting>
     <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Accounts.h"/>
   </compounddef>

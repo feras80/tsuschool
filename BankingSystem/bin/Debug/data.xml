@@ -2,7 +2,7 @@
     <users>
         <user>
             <Username>Admin</Username>
-            <password>myPass</password>
+            <password>108101116109101105110</password>
         </user>
     </users>
     <Accounts>
@@ -61,6 +61,13 @@
             <customer>custoerame</customer>
             <balance>balanceacou</balance>
             <openDate>01/01/2020</openDate>
+        </Account>
+        <Account>
+            <AccountNo>94</AccountNo>
+            <type>Saving</type>
+            <customer>Fredy</customer>
+            <balance>525</balance>
+            <openDate>03/01/2020</openDate>
         </Account>
     </Accounts>
     <Transactions>

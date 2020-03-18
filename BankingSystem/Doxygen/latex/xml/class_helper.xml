@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="class_helper" kind="class" language="C++" prot="public">
+    <compoundname>Helper</compoundname>
+    <includes refid="_helper_8h" local="no">Helper.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_helper_1adc9dda65b697a9054dfa1923fb65c7cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref> *</type>
+        <definition>XMLElement * Helper::GetFirstChildElement</definition>
+        <argsstring>(XMLElement *parentElement, string elementName)</argsstring>
+        <name>GetFirstChildElement</name>
+        <param>
+          <type><ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref> *</type>
+          <declname>parentElement</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>elementName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Helper.h" line="12" column="16" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Helper.cpp" bodystart="16" bodyend="19"/>
+        <references refid="classtinyxml2_1_1_x_m_l_node_1a1795a35852dc8aae877cc8ded986e59b">tinyxml2::XMLNode::FirstChildElement</references>
+        <referencedby refid="class_accounts_1a2043aec650956611653222f7e952683c" compoundref="_accounts_8cpp" startline="287" endline="338">Accounts::AcountExists</referencedby>
+        <referencedby refid="_accounts_8cpp_1a0dd23933bd3fdf8e34527907ba0aeb47" compoundref="_accounts_8cpp" startline="38" endline="148">bindTransaction</referencedby>
+        <referencedby refid="class_accounts_1a3ecaee83dc026b3bad8b69ae5b8d0598" compoundref="_accounts_8cpp" startline="155" endline="215">Accounts::Deposit</referencedby>
+        <referencedby refid="class_accounts_1a91ead45d60e894f7725444ebea347eb7" compoundref="_accounts_8cpp" startline="344" endline="459">Accounts::GetAccount</referencedby>
+        <referencedby refid="class_accounts_1a9b6de0158cd47be60ab16d5dd81e9e43" compoundref="_accounts_8cpp" startline="465" endline="538">Accounts::GetAccountBalance</referencedby>
+        <referencedby refid="class_accounts_1aa878135d898fc49e79ed3bf49d3a69b8" compoundref="_accounts_8cpp" startline="544" endline="646">Accounts::GetAllAccounts</referencedby>
+        <referencedby refid="class_users_1af3b5e4015df188df9f0dda9afa2f892d" compoundref="_users_8cpp" startline="17" endline="65">Users::GetPassword</referencedby>
+        <referencedby refid="class_accounts_1a79f7ab429e30a2a67705ebd97c309d0d" compoundref="_accounts_8cpp" startline="655" endline="720">Accounts::InsertAccount</referencedby>
+        <referencedby refid="class_accounts_1a44ff25c8dee341d9a3a9af4a13bd3467" compoundref="_accounts_8cpp" startline="222" endline="280">Accounts::Withdraw</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_helper_1ac475ae5011f35483a9ed61ae9a7d7714" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref> *</type>
+        <definition>XMLElement* Helper::GetRootElement</definition>
+        <argsstring>(XMLDocument doc)</argsstring>
+        <name>GetRootElement</name>
+        <param>
+          <type><ref refid="classtinyxml2_1_1_x_m_l_document" kindref="compound">XMLDocument</ref></type>
+          <declname>doc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Helper.h" line="13" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_helper_1aaa090673587d923a585db99223f6fadf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref> *</type>
+        <definition>XMLElement * Helper::GetNextSiblingElement</definition>
+        <argsstring>(XMLElement *parentElement, string elementName)</argsstring>
+        <name>GetNextSiblingElement</name>
+        <param>
+          <type><ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref> *</type>
+          <declname>parentElement</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>elementName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Helper.h" line="14" column="12" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Helper.cpp" bodystart="21" bodyend="24"/>
+        <references refid="classtinyxml2_1_1_x_m_l_node_1a1264c86233328f0cd36297552d982f80">tinyxml2::XMLNode::NextSiblingElement</references>
+        <referencedby refid="class_accounts_1a2043aec650956611653222f7e952683c" compoundref="_accounts_8cpp" startline="287" endline="338">Accounts::AcountExists</referencedby>
+        <referencedby refid="_accounts_8cpp_1a0dd23933bd3fdf8e34527907ba0aeb47" compoundref="_accounts_8cpp" startline="38" endline="148">bindTransaction</referencedby>
+        <referencedby refid="class_accounts_1a91ead45d60e894f7725444ebea347eb7" compoundref="_accounts_8cpp" startline="344" endline="459">Accounts::GetAccount</referencedby>
+        <referencedby refid="class_accounts_1a9b6de0158cd47be60ab16d5dd81e9e43" compoundref="_accounts_8cpp" startline="465" endline="538">Accounts::GetAccountBalance</referencedby>
+        <referencedby refid="class_accounts_1aa878135d898fc49e79ed3bf49d3a69b8" compoundref="_accounts_8cpp" startline="544" endline="646">Accounts::GetAllAccounts</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_helper_1a22548e41ebfc416288f2ba00100fe024" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * Helper::GetElementText</definition>
+        <argsstring>(XMLElement *element)</argsstring>
+        <name>GetElementText</name>
+        <param>
+          <type><ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref> *</type>
+          <declname>element</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Helper.h" line="15" column="6" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Helper.cpp" bodystart="42" bodyend="45"/>
+        <references refid="classtinyxml2_1_1_x_m_l_element_1a6d5c8d115561ade4e4456b71d91b6f51">tinyxml2::XMLElement::GetText</references>
+        <referencedby refid="class_accounts_1a2043aec650956611653222f7e952683c" compoundref="_accounts_8cpp" startline="287" endline="338">Accounts::AcountExists</referencedby>
+        <referencedby refid="_accounts_8cpp_1a0dd23933bd3fdf8e34527907ba0aeb47" compoundref="_accounts_8cpp" startline="38" endline="148">bindTransaction</referencedby>
+        <referencedby refid="class_accounts_1a91ead45d60e894f7725444ebea347eb7" compoundref="_accounts_8cpp" startline="344" endline="459">Accounts::GetAccount</referencedby>
+        <referencedby refid="class_accounts_1a9b6de0158cd47be60ab16d5dd81e9e43" compoundref="_accounts_8cpp" startline="465" endline="538">Accounts::GetAccountBalance</referencedby>
+        <referencedby refid="class_accounts_1aa878135d898fc49e79ed3bf49d3a69b8" compoundref="_accounts_8cpp" startline="544" endline="646">Accounts::GetAllAccounts</referencedby>
+        <referencedby refid="class_users_1af3b5e4015df188df9f0dda9afa2f892d" compoundref="_users_8cpp" startline="17" endline="65">Users::GetPassword</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_helper_1afe657d2896a2be074945b5d1170043a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Helper::InsertChild</definition>
+        <argsstring>(XMLNode *parentElement, XMLElement *child, string position)</argsstring>
+        <name>InsertChild</name>
+        <param>
+          <type><ref refid="classtinyxml2_1_1_x_m_l_node" kindref="compound">XMLNode</ref> *</type>
+          <declname>parentElement</declname>
+        </param>
+        <param>
+          <type><ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref> *</type>
+          <declname>child</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Helper.h" line="16" column="6" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Helper.cpp" bodystart="26" bodyend="40"/>
+        <references refid="classtinyxml2_1_1_x_m_l_node_1a85adb8f0b7477eec30f9a41d420b09c2">tinyxml2::XMLNode::InsertAfterChild</references>
+        <references refid="classtinyxml2_1_1_x_m_l_node_1aeb249ed60f4e8bfad3709151c3ee4286">tinyxml2::XMLNode::InsertEndChild</references>
+        <references refid="classtinyxml2_1_1_x_m_l_node_1a8ff7dc071f3a1a6ae2ac25a37492865d">tinyxml2::XMLNode::InsertFirstChild</references>
+        <referencedby refid="class_accounts_1a3ecaee83dc026b3bad8b69ae5b8d0598" compoundref="_accounts_8cpp" startline="155" endline="215">Accounts::Deposit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_helper_1ab72db9fa2e41c23a63e699fe0642a0de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Helper::SetElementText</definition>
+        <argsstring>(XMLElement *element, string text)</argsstring>
+        <name>SetElementText</name>
+        <param>
+          <type><ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref> *</type>
+          <declname>element</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Helper.h" line="17" column="6" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Helper.cpp" bodystart="47" bodyend="50"/>
+        <references refid="classtinyxml2_1_1_x_m_l_element_1a1f9c2cd61b72af5ae708d37b7ad283ce">tinyxml2::XMLElement::SetText</references>
+        <referencedby refid="class_accounts_1a3ecaee83dc026b3bad8b69ae5b8d0598" compoundref="_accounts_8cpp" startline="155" endline="215">Accounts::Deposit</referencedby>
+        <referencedby refid="class_accounts_1a79f7ab429e30a2a67705ebd97c309d0d" compoundref="_accounts_8cpp" startline="655" endline="720">Accounts::InsertAccount</referencedby>
+        <referencedby refid="class_accounts_1a44ff25c8dee341d9a3a9af4a13bd3467" compoundref="_accounts_8cpp" startline="222" endline="280">Accounts::Withdraw</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_helper_1a59924530b7cfbc3d32134a1cf5de2a56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Helper::Helper</definition>
+        <argsstring>()</argsstring>
+        <name>Helper</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Helper.h" line="18" column="1" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Helper.cpp" bodystart="6" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_helper_1ad714e92b4bc40bee681e0713503c9b27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Helper::~Helper</definition>
+        <argsstring>()</argsstring>
+        <name>~Helper</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Helper.h" line="19" column="8" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Helper.cpp" bodystart="52" bodyend="52"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Helper.h" line="9" column="1" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Helper.h" bodystart="8" bodyend="23"/>
+    <listofallmembers>
+      <member refid="class_helper_1a22548e41ebfc416288f2ba00100fe024" prot="public" virt="non-virtual"><scope>Helper</scope><name>GetElementText</name></member>
+      <member refid="class_helper_1adc9dda65b697a9054dfa1923fb65c7cc" prot="public" virt="non-virtual"><scope>Helper</scope><name>GetFirstChildElement</name></member>
+      <member refid="class_helper_1aaa090673587d923a585db99223f6fadf" prot="public" virt="non-virtual"><scope>Helper</scope><name>GetNextSiblingElement</name></member>
+      <member refid="class_helper_1ac475ae5011f35483a9ed61ae9a7d7714" prot="public" virt="non-virtual"><scope>Helper</scope><name>GetRootElement</name></member>
+      <member refid="class_helper_1a59924530b7cfbc3d32134a1cf5de2a56" prot="public" virt="non-virtual"><scope>Helper</scope><name>Helper</name></member>
+      <member refid="class_helper_1afe657d2896a2be074945b5d1170043a1" prot="public" virt="non-virtual"><scope>Helper</scope><name>InsertChild</name></member>
+      <member refid="class_helper_1ab72db9fa2e41c23a63e699fe0642a0de" prot="public" virt="non-virtual"><scope>Helper</scope><name>SetElementText</name></member>
+      <member refid="class_helper_1ad714e92b4bc40bee681e0713503c9b27" prot="public" virt="non-virtual"><scope>Helper</scope><name>~Helper</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

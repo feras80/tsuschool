@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="_helper_8cpp" kind="file" language="C++">
+    <compoundname>Helper.cpp</compoundname>
+    <includes refid="_helper_8h" local="yes">Helper.h</includes>
+    <includes refid="tinyxml2_8h" local="no">tinyxml2.h</includes>
+    <includes local="no">iostream</includes>
+    <incdepgraph>
+      <node id="9">
+        <label>stdint.h</label>
+      </node>
+      <node id="1">
+        <label>C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Helper.cpp</label>
+        <link refid="_helper_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>cstdio</label>
+      </node>
+      <node id="7">
+        <label>cstdlib</label>
+      </node>
+      <node id="4">
+        <label>cctype</label>
+      </node>
+      <node id="10">
+        <label>iostream</label>
+      </node>
+      <node id="5">
+        <label>climits</label>
+      </node>
+      <node id="2">
+        <label>Helper.h</label>
+        <link refid="_helper_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tinyxml2.h</label>
+        <link refid="tinyxml2_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>cstring</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_helper_8h" kindref="compound">Helper.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="tinyxml2_8h" kindref="compound">tinyxml2.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacetinyxml2" kindref="compound">tinyxml2</ref>;</highlight></codeline>
+<codeline lineno="6" refid="class_helper_1a59924530b7cfbc3d32134a1cf5de2a56" refkind="member"><highlight class="normal"><ref refid="class_helper_1a59924530b7cfbc3d32134a1cf5de2a56" kindref="member">Helper::Helper</ref>()</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref>*<sp/>GetRootElement(<ref refid="classtinyxml2_1_1_x_m_l_document" kindref="compound">XMLDocument</ref><sp/>d);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref>*<sp/>GetFirstChildElement(<ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref><sp/>e,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>elementName);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*GetElementText(<ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref><sp/>*element);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*InsertChild(<ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref><sp/>*parentElement,<sp/><ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref><sp/>*child,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>position);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SetElementText(<ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref><sp/>*element,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>text);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="class_helper_1adc9dda65b697a9054dfa1923fb65c7cc" refkind="member"><highlight class="normal"><ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref><sp/>*<ref refid="class_helper_1adc9dda65b697a9054dfa1923fb65c7cc" kindref="member">Helper::GetFirstChildElement</ref>(<ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref><sp/>*parentElement,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>elementName)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>parentElement-&gt;<ref refid="classtinyxml2_1_1_x_m_l_node_1a1795a35852dc8aae877cc8ded986e59b" kindref="member">FirstChildElement</ref>(strdup(elementName.c_str()));</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="class_helper_1aaa090673587d923a585db99223f6fadf" refkind="member"><highlight class="normal"><ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref><sp/>*<ref refid="class_helper_1aaa090673587d923a585db99223f6fadf" kindref="member">Helper::GetNextSiblingElement</ref>(<ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref><sp/>*parentElement,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>elementName)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>parentElement-&gt;<ref refid="classtinyxml2_1_1_x_m_l_node_1a1264c86233328f0cd36297552d982f80" kindref="member">NextSiblingElement</ref>(strdup(elementName.c_str()));</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="class_helper_1afe657d2896a2be074945b5d1170043a1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_helper_1afe657d2896a2be074945b5d1170043a1" kindref="member">Helper::InsertChild</ref>(<ref refid="classtinyxml2_1_1_x_m_l_node" kindref="compound">XMLNode</ref><sp/>*parentElement,<sp/><ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref><sp/>*child,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>position)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(position<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;AfterChild&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>parentElement-&gt;<ref refid="classtinyxml2_1_1_x_m_l_node_1a85adb8f0b7477eec30f9a41d420b09c2" kindref="member">InsertAfterChild</ref>(child,<sp/>child);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(position<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;EndChild&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>parentElement-&gt;<ref refid="classtinyxml2_1_1_x_m_l_node_1aeb249ed60f4e8bfad3709151c3ee4286" kindref="member">InsertEndChild</ref>(child);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(position<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;FirstChild&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>parentElement-&gt;<ref refid="classtinyxml2_1_1_x_m_l_node_1a8ff7dc071f3a1a6ae2ac25a37492865d" kindref="member">InsertFirstChild</ref>(child);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="class_helper_1a22548e41ebfc416288f2ba00100fe024" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="class_helper_1a22548e41ebfc416288f2ba00100fe024" kindref="member">Helper::GetElementText</ref>(<ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref><sp/>*element)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>strdup(element-&gt;<ref refid="classtinyxml2_1_1_x_m_l_element_1a6d5c8d115561ade4e4456b71d91b6f51" kindref="member">GetText</ref>());</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="class_helper_1ab72db9fa2e41c23a63e699fe0642a0de" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_helper_1ab72db9fa2e41c23a63e699fe0642a0de" kindref="member">Helper::SetElementText</ref>(<ref refid="classtinyxml2_1_1_x_m_l_element" kindref="compound">XMLElement</ref><sp/>*element,<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>text)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>element-&gt;<ref refid="classtinyxml2_1_1_x_m_l_element_1a1f9c2cd61b72af5ae708d37b7ad283ce" kindref="member">SetText</ref>(strdup(text.c_str()));</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="class_helper_1ad714e92b4bc40bee681e0713503c9b27" refkind="member"><highlight class="normal"><ref refid="class_helper_1ad714e92b4bc40bee681e0713503c9b27" kindref="member">Helper::~Helper</ref>()<sp/>{}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Helper.cpp"/>
+  </compounddef>
+</doxygen>

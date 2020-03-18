@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['strpair_318',['StrPair',['../classtinyxml2_1_1_str_pair.html',1,'tinyxml2']]]
+  ['helper_351',['Helper',['../class_helper.html',1,'']]]
 ];

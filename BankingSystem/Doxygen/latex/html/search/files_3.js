@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['read_20me_2etxt_339',['Read me.txt',['../_read_01me_8txt.html',1,'']]]
+  ['helper_2ecpp_381',['Helper.cpp',['../_helper_8cpp.html',1,'']]],
+  ['helper_2eh_382',['Helper.h',['../_helper_8h.html',1,'']]]
 ];

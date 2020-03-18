@@ -16,44 +16,52 @@ Users::Users()
 // Returns a string
 string Users::GetPassword()
 {
-    constants constants;
-	string result;
-	XMLDocument doc;
-	char* pathChar[1000];
-	const char *path = constants.GetPath();
-Helper helper;
-	// Load the XML file into the Doc instance
-	doc.LoadFile(path);
-	//Get root Element
-
-	XMLElement *pRootElement =  doc.RootElement();
-
-	if (NULL != pRootElement)
+	try
 	{
-		//Get 'users' Child
-	XMLElement *pUsers = helper.GetFirstChildElement(pRootElement,"users");
+		constants constants;
+		string result;
+		XMLDocument doc;
+		char *pathChar[1000];
+		const char *path = constants.GetPath();
+		Helper helper;
+		// Load the XML file into the Doc instance
+		doc.LoadFile(path);
+		//Get root Element
 
-		if (NULL != pUsers)
+		XMLElement *pRootElement = doc.RootElement();
+
+		if (NULL != pRootElement)
 		{
-			// Get 'user' Child
-			XMLElement *pUser = helper.GetFirstChildElement(pUsers,"user");
+			//Get 'users' Child
+			XMLElement *pUsers = helper.GetFirstChildElement(pRootElement, "users");
 
-			while (pUser)
+			if (NULL != pUsers)
 			{
-				// Get 'password' Child
-             XMLElement *pPassword = helper.GetFirstChildElement(pUser,"password");
+				// Get 'user' Child
+				XMLElement *pUser = helper.GetFirstChildElement(pUsers, "user");
 
-				result = helper.GetElementText(pPassword);
+				while (pUser)
+				{
+					// Get 'password' Child
+					XMLElement *pPassword = helper.GetFirstChildElement(pUser, "password");
 
-				std::cout << std::endl;
-				//Return result
-				return result;
+					result = helper.GetElementText(pPassword);
 
+					std::cout << std::endl;
+					//Return result
+					return result;
+
+				}
 			}
 		}
+
+		return result;
 	}
 
-	return result;
+	catch (exception ex)
+	{
+		cout << "Error thrown. Please contact the system administrator";
+	}
 }
 
 Users::~Users() {}

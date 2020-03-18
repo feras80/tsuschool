@@ -8,10 +8,9 @@
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="normal">1.<sp/>Download<sp/>the<sp/>application<sp/>from<sp/>GetHub<sp/>Repository</highlight></codeline>
-<codeline lineno="2"><highlight class="normal">2.<sp/>Change<sp/>the<sp/>path<sp/>of<sp/>the<sp/>xml<sp/>data<sp/>file<sp/>in<sp/>the<sp/>file<sp/>BankingSystem\src.constants.cpp</highlight></codeline>
-<codeline lineno="3"><highlight class="normal">3.<sp/>Run<sp/>the<sp/>application</highlight></codeline>
-<codeline lineno="4"><highlight class="normal">4.<sp/>Use<sp/>the<sp/>password<sp/>myPass<sp/>to<sp/>login</highlight></codeline>
-<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal">2.<sp/>Run<sp/>the<sp/>application</highlight></codeline>
+<codeline lineno="3"><highlight class="normal">3.<sp/>Use<sp/>the<sp/>password<sp/></highlight><highlight class="stringliteral">&apos;myPass&apos;</highlight><highlight class="normal"><sp/>to<sp/>login</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/Read me.txt"/>
   </compounddef>

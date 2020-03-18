@@ -4,6 +4,9 @@
     <compoundname>C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src</compoundname>
     <innerfile refid="_accounts_8cpp">Accounts.cpp</innerfile>
     <innerfile refid="constants_8cpp">constants.cpp</innerfile>
+    <innerfile refid="_enums_8cpp">Enums.cpp</innerfile>
+    <innerfile refid="_helper_8cpp">Helper.cpp</innerfile>
+    <innerfile refid="_security_8cpp">Security.cpp</innerfile>
     <innerfile refid="_users_8cpp">Users.cpp</innerfile>
     <briefdescription>
     </briefdescription>

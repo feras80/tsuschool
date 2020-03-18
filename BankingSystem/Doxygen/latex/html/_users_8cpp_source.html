@@ -89,76 +89,90 @@ $(document).ready(function(){initNavTree('_users_8cpp_source.html',''); initResi
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="tinyxml2_8h.html">tinyxml2.h</a>&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="constants_8h.html">constants.h</a>&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacetinyxml2.html">tinyxml2</a>;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">// Class Constructor</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_users.html#af1f5c371c3f1e7f9b14210ed0d3718bc">    8</a></span>&#160;<a class="code" href="class_users.html#af1f5c371c3f1e7f9b14210ed0d3718bc">Users::Users</a>()</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    GetPassword();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// To return a password</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// Returns a string</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_users.html#af3b5e4015df188df9f0dda9afa2f892d">   16</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="class_users.html#af3b5e4015df188df9f0dda9afa2f892d">Users::GetPassword</a>()</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classconstants.html">constants</a> <a class="code" href="classconstants.html">constants</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">string</span> result;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classtinyxml2_1_1_x_m_l_document.html">XMLDocument</a> doc;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">char</span>* pathChar[1000];</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *path = <a class="code" href="classconstants.html">constants</a>.<a class="code" href="classconstants.html#a91b4da1fb34bc7ef659c4e29b72abe51">GetPath</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// Load the XML file into the Doc instance</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    doc.<a class="code" href="classtinyxml2_1_1_x_m_l_document.html#a2ebd4647a8af5fc6831b294ac26a150a">LoadFile</a>(path);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">//Get root Element</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classtinyxml2_1_1_x_m_l_element.html">XMLElement</a> *pRootElement = doc.<a class="code" href="classtinyxml2_1_1_x_m_l_document.html#ad2b70320d3c2a071c2f36928edff3e1c">RootElement</a>();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (NULL != pRootElement)</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="comment">//Get &#39;users&#39; Child</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="classtinyxml2_1_1_x_m_l_element.html">XMLElement</a> *pUsers = pRootElement-&gt;<a class="code" href="classtinyxml2_1_1_x_m_l_node.html#a1795a35852dc8aae877cc8ded986e59b">FirstChildElement</a>(<span class="stringliteral">&quot;users&quot;</span>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">if</span> (NULL != pUsers)</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="comment">// Get &#39;user&#39; Child</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <a class="code" href="classtinyxml2_1_1_x_m_l_element.html">XMLElement</a> *pUser = pUsers-&gt;<a class="code" href="classtinyxml2_1_1_x_m_l_node.html#a1795a35852dc8aae877cc8ded986e59b">FirstChildElement</a>(<span class="stringliteral">&quot;user&quot;</span>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">while</span> (pUser)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="comment">// Get &#39;password&#39; Child</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <a class="code" href="classtinyxml2_1_1_x_m_l_element.html">XMLElement</a> *pPassword = pUser-&gt;<a class="code" href="classtinyxml2_1_1_x_m_l_node.html#a1795a35852dc8aae877cc8ded986e59b">FirstChildElement</a>(<span class="stringliteral">&quot;password&quot;</span>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                result = pPassword-&gt;<a class="code" href="classtinyxml2_1_1_x_m_l_element.html#a6d5c8d115561ade4e4456b71d91b6f51">GetText</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="comment">//Return result</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_helper_8h.html">Helper.h</a>&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacetinyxml2.html">tinyxml2</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Class Constructor</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_users.html#af1f5c371c3f1e7f9b14210ed0d3718bc">    9</a></span>&#160;<a class="code" href="class_users.html#af1f5c371c3f1e7f9b14210ed0d3718bc">Users::Users</a>()</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    GetPassword();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// To return a password</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// Returns a string</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_users.html#af3b5e4015df188df9f0dda9afa2f892d">   17</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="class_users.html#af3b5e4015df188df9f0dda9afa2f892d">Users::GetPassword</a>()</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">try</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classconstants.html">constants</a> <a class="code" href="_accounts_8cpp.html#a0428e1b259bb7e03d0c08b293dfbe36f">constants</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">string</span> result;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classtinyxml2_1_1_x_m_l_document.html">XMLDocument</a> doc;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">char</span> *pathChar[1000];</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *path = <a class="code" href="classconstants.html">constants</a>.<a class="code" href="classconstants.html#a91b4da1fb34bc7ef659c4e29b72abe51">GetPath</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="class_helper.html">Helper</a> <a class="code" href="_accounts_8cpp.html#a25d594c8395a403b331b2f0ac5dea2ee">helper</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="comment">// Load the XML file into the Doc instance</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        doc.<a class="code" href="classtinyxml2_1_1_x_m_l_document.html#a2ebd4647a8af5fc6831b294ac26a150a">LoadFile</a>(path);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="comment">//Get root Element</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classtinyxml2_1_1_x_m_l_element.html">XMLElement</a> *pRootElement = doc.<a class="code" href="classtinyxml2_1_1_x_m_l_document.html#ad2b70320d3c2a071c2f36928edff3e1c">RootElement</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">if</span> (NULL != pRootElement)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="comment">//Get &#39;users&#39; Child</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="classtinyxml2_1_1_x_m_l_element.html">XMLElement</a> *pUsers = <a class="code" href="_accounts_8cpp.html#a25d594c8395a403b331b2f0ac5dea2ee">helper</a>.<a class="code" href="class_helper.html#adc9dda65b697a9054dfa1923fb65c7cc">GetFirstChildElement</a>(pRootElement, <span class="stringliteral">&quot;users&quot;</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">if</span> (NULL != pUsers)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="comment">// Get &#39;user&#39; Child</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="classtinyxml2_1_1_x_m_l_element.html">XMLElement</a> *pUser = <a class="code" href="_accounts_8cpp.html#a25d594c8395a403b331b2f0ac5dea2ee">helper</a>.<a class="code" href="class_helper.html#adc9dda65b697a9054dfa1923fb65c7cc">GetFirstChildElement</a>(pUsers, <span class="stringliteral">&quot;user&quot;</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">while</span> (pUser)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    <span class="comment">// Get &#39;password&#39; Child</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    <a class="code" href="classtinyxml2_1_1_x_m_l_element.html">XMLElement</a> *pPassword = <a class="code" href="_accounts_8cpp.html#a25d594c8395a403b331b2f0ac5dea2ee">helper</a>.<a class="code" href="class_helper.html#adc9dda65b697a9054dfa1923fb65c7cc">GetFirstChildElement</a>(pUser, <span class="stringliteral">&quot;password&quot;</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                    result = <a class="code" href="_accounts_8cpp.html#a25d594c8395a403b331b2f0ac5dea2ee">helper</a>.<a class="code" href="class_helper.html#a22548e41ebfc416288f2ba00100fe024">GetElementText</a>(pPassword);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    <span class="comment">//Return result</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    <span class="keywordflow">return</span> result;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_users.html#a33ff9aadcaef989bf3c8570358f791f6">   57</a></span>&#160;<a class="code" href="class_users.html#a33ff9aadcaef989bf3c8570358f791f6">Users::~Users</a>() {}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">catch</span> (exception ex)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;Error thrown. Please contact the system administrator&quot;</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_users.html#a33ff9aadcaef989bf3c8570358f791f6">   67</a></span>&#160;<a class="code" href="class_users.html#a33ff9aadcaef989bf3c8570358f791f6">Users::~Users</a>() {}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclass_helper_html"><div class="ttname"><a href="class_helper.html">Helper</a></div><div class="ttdef"><b>Definition:</b> <a href="_helper_8h_source.html#l00008">Helper.h:8</a></div></div>
 <div class="ttc" id="aclassconstants_html"><div class="ttname"><a href="classconstants.html">constants</a></div><div class="ttdef"><b>Definition:</b> <a href="constants_8h_source.html#l00005">constants.h:5</a></div></div>
-<div class="ttc" id="aclass_users_html_af1f5c371c3f1e7f9b14210ed0d3718bc"><div class="ttname"><a href="class_users.html#af1f5c371c3f1e7f9b14210ed0d3718bc">Users::Users</a></div><div class="ttdeci">Users()</div><div class="ttdef"><b>Definition:</b> <a href="_users_8cpp_source.html#l00008">Users.cpp:8</a></div></div>
+<div class="ttc" id="aclass_users_html_af1f5c371c3f1e7f9b14210ed0d3718bc"><div class="ttname"><a href="class_users.html#af1f5c371c3f1e7f9b14210ed0d3718bc">Users::Users</a></div><div class="ttdeci">Users()</div><div class="ttdef"><b>Definition:</b> <a href="_users_8cpp_source.html#l00009">Users.cpp:9</a></div></div>
 <div class="ttc" id="aclasstinyxml2_1_1_x_m_l_document_html"><div class="ttname"><a href="classtinyxml2_1_1_x_m_l_document.html">tinyxml2::XMLDocument</a></div><div class="ttdef"><b>Definition:</b> <a href="tinyxml2_8h_source.html#l01691">tinyxml2.h:1691</a></div></div>
-<div class="ttc" id="aclasstinyxml2_1_1_x_m_l_node_html_a1795a35852dc8aae877cc8ded986e59b"><div class="ttname"><a href="classtinyxml2_1_1_x_m_l_node.html#a1795a35852dc8aae877cc8ded986e59b">tinyxml2::XMLNode::FirstChildElement</a></div><div class="ttdeci">const XMLElement * FirstChildElement(const char *name=0) const</div></div>
-<div class="ttc" id="aclass_users_html_af3b5e4015df188df9f0dda9afa2f892d"><div class="ttname"><a href="class_users.html#af3b5e4015df188df9f0dda9afa2f892d">Users::GetPassword</a></div><div class="ttdeci">string GetPassword()</div><div class="ttdef"><b>Definition:</b> <a href="_users_8cpp_source.html#l00016">Users.cpp:16</a></div></div>
-<div class="ttc" id="aclassconstants_html_a91b4da1fb34bc7ef659c4e29b72abe51"><div class="ttname"><a href="classconstants.html#a91b4da1fb34bc7ef659c4e29b72abe51">constants::GetPath</a></div><div class="ttdeci">char * GetPath()</div><div class="ttdef"><b>Definition:</b> <a href="constants_8cpp_source.html#l00013">constants.cpp:13</a></div></div>
-<div class="ttc" id="aclass_users_html_a33ff9aadcaef989bf3c8570358f791f6"><div class="ttname"><a href="class_users.html#a33ff9aadcaef989bf3c8570358f791f6">Users::~Users</a></div><div class="ttdeci">~Users()</div><div class="ttdef"><b>Definition:</b> <a href="_users_8cpp_source.html#l00057">Users.cpp:57</a></div></div>
+<div class="ttc" id="a_accounts_8cpp_html_a25d594c8395a403b331b2f0ac5dea2ee"><div class="ttname"><a href="_accounts_8cpp.html#a25d594c8395a403b331b2f0ac5dea2ee">helper</a></div><div class="ttdeci">Helper helper</div><div class="ttdef"><b>Definition:</b> <a href="_accounts_8cpp_source.html#l00025">Accounts.cpp:25</a></div></div>
+<div class="ttc" id="aclass_users_html_af3b5e4015df188df9f0dda9afa2f892d"><div class="ttname"><a href="class_users.html#af3b5e4015df188df9f0dda9afa2f892d">Users::GetPassword</a></div><div class="ttdeci">string GetPassword()</div><div class="ttdef"><b>Definition:</b> <a href="_users_8cpp_source.html#l00017">Users.cpp:17</a></div></div>
+<div class="ttc" id="aclassconstants_html_a91b4da1fb34bc7ef659c4e29b72abe51"><div class="ttname"><a href="classconstants.html#a91b4da1fb34bc7ef659c4e29b72abe51">constants::GetPath</a></div><div class="ttdeci">char * GetPath()</div><div class="ttdef"><b>Definition:</b> <a href="constants_8cpp_source.html#l00015">constants.cpp:15</a></div></div>
+<div class="ttc" id="a_helper_8h_html"><div class="ttname"><a href="_helper_8h.html">Helper.h</a></div></div>
+<div class="ttc" id="aclass_users_html_a33ff9aadcaef989bf3c8570358f791f6"><div class="ttname"><a href="class_users.html#a33ff9aadcaef989bf3c8570358f791f6">Users::~Users</a></div><div class="ttdeci">~Users()</div><div class="ttdef"><b>Definition:</b> <a href="_users_8cpp_source.html#l00067">Users.cpp:67</a></div></div>
 <div class="ttc" id="aclasstinyxml2_1_1_x_m_l_document_html_a2ebd4647a8af5fc6831b294ac26a150a"><div class="ttname"><a href="classtinyxml2_1_1_x_m_l_document.html#a2ebd4647a8af5fc6831b294ac26a150a">tinyxml2::XMLDocument::LoadFile</a></div><div class="ttdeci">XMLError LoadFile(const char *filename)</div></div>
-<div class="ttc" id="aclasstinyxml2_1_1_x_m_l_element_html_a6d5c8d115561ade4e4456b71d91b6f51"><div class="ttname"><a href="classtinyxml2_1_1_x_m_l_element.html#a6d5c8d115561ade4e4456b71d91b6f51">tinyxml2::XMLElement::GetText</a></div><div class="ttdeci">const char * GetText() const</div></div>
 <div class="ttc" id="aconstants_8h_html"><div class="ttname"><a href="constants_8h.html">constants.h</a></div></div>
 <div class="ttc" id="anamespacetinyxml2_html"><div class="ttname"><a href="namespacetinyxml2.html">tinyxml2</a></div><div class="ttdef"><b>Definition:</b> <a href="tinyxml2_8h_source.html#l00116">tinyxml2.h:116</a></div></div>
 <div class="ttc" id="a_users_8h_html"><div class="ttname"><a href="_users_8h.html">Users.h</a></div></div>
+<div class="ttc" id="a_accounts_8cpp_html_a0428e1b259bb7e03d0c08b293dfbe36f"><div class="ttname"><a href="_accounts_8cpp.html#a0428e1b259bb7e03d0c08b293dfbe36f">constants</a></div><div class="ttdeci">constants constants</div><div class="ttdef"><b>Definition:</b> <a href="_accounts_8cpp_source.html#l00026">Accounts.cpp:26</a></div></div>
 <div class="ttc" id="atinyxml2_8h_html"><div class="ttname"><a href="tinyxml2_8h.html">tinyxml2.h</a></div></div>
 <div class="ttc" id="aclasstinyxml2_1_1_x_m_l_document_html_ad2b70320d3c2a071c2f36928edff3e1c"><div class="ttname"><a href="classtinyxml2_1_1_x_m_l_document.html#ad2b70320d3c2a071c2f36928edff3e1c">tinyxml2::XMLDocument::RootElement</a></div><div class="ttdeci">XMLElement * RootElement()</div><div class="ttdef"><b>Definition:</b> <a href="tinyxml2_8h_source.html#l01785">tinyxml2.h:1785</a></div></div>
+<div class="ttc" id="aclass_helper_html_a22548e41ebfc416288f2ba00100fe024"><div class="ttname"><a href="class_helper.html#a22548e41ebfc416288f2ba00100fe024">Helper::GetElementText</a></div><div class="ttdeci">char * GetElementText(XMLElement *element)</div><div class="ttdef"><b>Definition:</b> <a href="_helper_8cpp_source.html#l00042">Helper.cpp:42</a></div></div>
 <div class="ttc" id="aclasstinyxml2_1_1_x_m_l_element_html"><div class="ttname"><a href="classtinyxml2_1_1_x_m_l_element.html">tinyxml2::XMLElement</a></div><div class="ttdef"><b>Definition:</b> <a href="tinyxml2_8h_source.html#l01258">tinyxml2.h:1258</a></div></div>
+<div class="ttc" id="aclass_helper_html_adc9dda65b697a9054dfa1923fb65c7cc"><div class="ttname"><a href="class_helper.html#adc9dda65b697a9054dfa1923fb65c7cc">Helper::GetFirstChildElement</a></div><div class="ttdeci">XMLElement * GetFirstChildElement(XMLElement *parentElement, string elementName)</div><div class="ttdef"><b>Definition:</b> <a href="_helper_8cpp_source.html#l00016">Helper.cpp:16</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

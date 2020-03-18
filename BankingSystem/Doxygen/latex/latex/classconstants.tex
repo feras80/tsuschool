@@ -38,21 +38,16 @@ Definition at line 5 of file constants.\+h.
 
 
 
-Definition at line 6 of file constants.\+cpp.
+Definition at line 8 of file constants.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{7 \{}
-\DoxyCodeLine{8 }
-\DoxyCodeLine{9 \mbox{\hyperlink{classconstants_a91b4da1fb34bc7ef659c4e29b72abe51}{GetPath}}();}
-\DoxyCodeLine{10 }
-\DoxyCodeLine{11 \}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10     \mbox{\hyperlink{classconstants_a91b4da1fb34bc7ef659c4e29b72abe51}{GetPath}}();}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \}}
 
 \end{DoxyCode}
-
-
-References Get\+Path().
-
 
 
 \doxysubsection{Member Function Documentation}
@@ -64,26 +59,33 @@ References Get\+Path().
 
 
 
-Definition at line 13 of file constants.\+cpp.
+Definition at line 15 of file constants.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{14 \{}
-\DoxyCodeLine{15     \textcolor{keywordtype}{char} buffer[MAX\_PATH];}
-\DoxyCodeLine{16     \textcolor{keywordtype}{string} strResult;}
-\DoxyCodeLine{17     \textcolor{keywordtype}{char}* charResult;}
-\DoxyCodeLine{18     GetModuleFileName( NULL, buffer, MAX\_PATH );}
-\DoxyCodeLine{19     string::size\_type pos = string( buffer ).find\_last\_of( \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)/"} );}
-\DoxyCodeLine{20     strResult =  string( buffer ).substr( 0, pos) +\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)data.xml"};}
-\DoxyCodeLine{21     charResult=  strdup(strResult.c\_str());}
-\DoxyCodeLine{22     \textcolor{keywordflow}{return} charResult;}
-\DoxyCodeLine{23 }
-\DoxyCodeLine{24 \}}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{18     \{}
+\DoxyCodeLine{19         \textcolor{keywordtype}{char} buffer[MAX\_PATH];}
+\DoxyCodeLine{20         \textcolor{keywordtype}{string} strResult;}
+\DoxyCodeLine{21         \textcolor{keywordtype}{char} *charResult;}
+\DoxyCodeLine{22         GetModuleFileName(NULL, buffer, MAX\_PATH);}
+\DoxyCodeLine{23         string::size\_type pos = string(buffer).find\_last\_of(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)/"});}
+\DoxyCodeLine{24         strResult = string(buffer).substr(0, pos) + \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)data.xml"};}
+\DoxyCodeLine{25         charResult = strdup(strResult.c\_str());}
+\DoxyCodeLine{26         \textcolor{keywordflow}{return} charResult;}
+\DoxyCodeLine{27     \}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keywordflow}{catch} (exception ex)}
+\DoxyCodeLine{30     \{}
+\DoxyCodeLine{31         std::cout << \textcolor{stringliteral}{"Error thrown. Please contact the system administrator"};}
+\DoxyCodeLine{32     \}}
+\DoxyCodeLine{33 \}}
 
 \end{DoxyCode}
 
 
-Referenced by Accounts\+::\+Acount\+Exists(), bind\+Transaction(), constants(), Accounts\+::\+Deposit(), Accounts\+::\+Get\+Account(), Accounts\+::\+Get\+Account\+Balance(), Accounts\+::\+Get\+All\+Accounts(), Users\+::\+Get\+Password(), Accounts\+::\+Insert\+Account(), and Accounts\+::\+Withdraw().
+Referenced by Accounts\+::\+Acount\+Exists(), bind\+Transaction(), Accounts\+::\+Deposit(), Accounts\+::\+Get\+Account(), Accounts\+::\+Get\+Account\+Balance(), Accounts\+::\+Get\+All\+Accounts(), Users\+::\+Get\+Password(), Accounts\+::\+Insert\+Account(), and Accounts\+::\+Withdraw().
 
 
 
@@ -96,7 +98,7 @@ Referenced by Accounts\+::\+Acount\+Exists(), bind\+Transaction(), constants(), 
 
 
 
-Definition at line 9 of file constants.\+h.
+Definition at line 11 of file constants.\+h.
 
 \mbox{\Hypertarget{classconstants_a9a9dab4a084c267ee841cb49a815f323}\label{classconstants_a9a9dab4a084c267ee841cb49a815f323}} 
 \index{constants@{constants}!dataPath@{dataPath}}
@@ -106,7 +108,7 @@ Definition at line 9 of file constants.\+h.
 
 
 
-Definition at line 8 of file constants.\+h.
+Definition at line 9 of file constants.\+h.
 
 \mbox{\Hypertarget{classconstants_a9c7bcc7563f7448c64007a696dd536bd}\label{classconstants_a9c7bcc7563f7448c64007a696dd536bd}} 
 \index{constants@{constants}!test@{test}}
@@ -116,7 +118,7 @@ Definition at line 8 of file constants.\+h.
 
 
 
-Definition at line 10 of file constants.\+h.
+Definition at line 12 of file constants.\+h.
 
 
 

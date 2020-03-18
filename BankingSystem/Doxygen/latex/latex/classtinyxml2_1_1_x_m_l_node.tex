@@ -298,7 +298,7 @@ Definition at line 776 of file tinyxml2.\+h.
 
 Get the first child element, or optionally the first child element with the specified name. 
 
-Referenced by Accounts\+::\+Acount\+Exists(), bind\+Transaction(), Accounts\+::\+Deposit(), Accounts\+::\+Get\+Account(), Accounts\+::\+Get\+Account\+Balance(), Accounts\+::\+Get\+All\+Accounts(), Users\+::\+Get\+Password(), Accounts\+::\+Insert\+Account(), and Accounts\+::\+Withdraw().
+Referenced by Accounts\+::\+Get\+Account(), and Helper\+::\+Get\+First\+Child\+Element().
 
 \mbox{\Hypertarget{classtinyxml2_1_1_x_m_l_node_af343d1ef0b45c0020e62d784d7e67a68}\label{classtinyxml2_1_1_x_m_l_node_af343d1ef0b45c0020e62d784d7e67a68}} 
 \index{tinyxml2::XMLNode@{tinyxml2::XMLNode}!GetDocument@{GetDocument}}
@@ -392,7 +392,11 @@ Definition at line 940 of file tinyxml2.\+h.
 \doxysubsubsection{\texorpdfstring{InsertAfterChild()}{InsertAfterChild()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node}{X\+M\+L\+Node}}$\ast$ tinyxml2\+::\+X\+M\+L\+Node\+::\+Insert\+After\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node}{X\+M\+L\+Node}} $\ast$}]{after\+This,  }\item[{\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node}{X\+M\+L\+Node}} $\ast$}]{add\+This }\end{DoxyParamCaption})}
 
-Add a node after the specified child node. If the child node is already part of the document, it is moved from its old location to the new location. Returns the add\+This argument or 0 if the after\+This node is not a child of this node, or if the node does not belong to the same document. \mbox{\Hypertarget{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}\label{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}} 
+Add a node after the specified child node. If the child node is already part of the document, it is moved from its old location to the new location. Returns the add\+This argument or 0 if the after\+This node is not a child of this node, or if the node does not belong to the same document. 
+
+Referenced by Helper\+::\+Insert\+Child().
+
+\mbox{\Hypertarget{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}\label{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}} 
 \index{tinyxml2::XMLNode@{tinyxml2::XMLNode}!InsertEndChild@{InsertEndChild}}
 \index{InsertEndChild@{InsertEndChild}!tinyxml2::XMLNode@{tinyxml2::XMLNode}}
 \doxysubsubsection{\texorpdfstring{InsertEndChild()}{InsertEndChild()}}
@@ -400,7 +404,7 @@ Add a node after the specified child node. If the child node is already part of 
 
 Add a child node as the last (right) child. If the child node is already part of the document, it is moved from its old location to the new location. Returns the add\+This argument or 0 if the node does not belong to the same document. 
 
-Referenced by Accounts\+::\+Deposit(), Accounts\+::\+Insert\+Account(), and Accounts\+::\+Withdraw().
+Referenced by Accounts\+::\+Deposit(), Accounts\+::\+Insert\+Account(), Helper\+::\+Insert\+Child(), and Accounts\+::\+Withdraw().
 
 \mbox{\Hypertarget{classtinyxml2_1_1_x_m_l_node_a8ff7dc071f3a1a6ae2ac25a37492865d}\label{classtinyxml2_1_1_x_m_l_node_a8ff7dc071f3a1a6ae2ac25a37492865d}} 
 \index{tinyxml2::XMLNode@{tinyxml2::XMLNode}!InsertFirstChild@{InsertFirstChild}}
@@ -408,7 +412,11 @@ Referenced by Accounts\+::\+Deposit(), Accounts\+::\+Insert\+Account(), and Acco
 \doxysubsubsection{\texorpdfstring{InsertFirstChild()}{InsertFirstChild()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node}{X\+M\+L\+Node}}$\ast$ tinyxml2\+::\+X\+M\+L\+Node\+::\+Insert\+First\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node}{X\+M\+L\+Node}} $\ast$}]{add\+This }\end{DoxyParamCaption})}
 
-Add a child node as the first (left) child. If the child node is already part of the document, it is moved from its old location to the new location. Returns the add\+This argument or 0 if the node does not belong to the same document. \mbox{\Hypertarget{classtinyxml2_1_1_x_m_l_node_ad7552c8cb1dc0cb6f3bdc14a9d115dbf}\label{classtinyxml2_1_1_x_m_l_node_ad7552c8cb1dc0cb6f3bdc14a9d115dbf}} 
+Add a child node as the first (left) child. If the child node is already part of the document, it is moved from its old location to the new location. Returns the add\+This argument or 0 if the node does not belong to the same document. 
+
+Referenced by Helper\+::\+Insert\+Child().
+
+\mbox{\Hypertarget{classtinyxml2_1_1_x_m_l_node_ad7552c8cb1dc0cb6f3bdc14a9d115dbf}\label{classtinyxml2_1_1_x_m_l_node_ad7552c8cb1dc0cb6f3bdc14a9d115dbf}} 
 \index{tinyxml2::XMLNode@{tinyxml2::XMLNode}!LastChild@{LastChild}}
 \index{LastChild@{LastChild}!tinyxml2::XMLNode@{tinyxml2::XMLNode}}
 \doxysubsubsection{\texorpdfstring{LastChild()}{LastChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -553,7 +561,7 @@ Get the next (right) sibling element of this node, with an optionally supplied n
 
 
 
-Referenced by Accounts\+::\+Acount\+Exists(), bind\+Transaction(), Accounts\+::\+Get\+Account(), Accounts\+::\+Get\+Account\+Balance(), and Accounts\+::\+Get\+All\+Accounts().
+Referenced by Helper\+::\+Get\+Next\+Sibling\+Element().
 
 \mbox{\Hypertarget{classtinyxml2_1_1_x_m_l_node_ac3ab489e6e202a3cd1762d3b332e89d4}\label{classtinyxml2_1_1_x_m_l_node_ac3ab489e6e202a3cd1762d3b332e89d4}} 
 \index{tinyxml2::XMLNode@{tinyxml2::XMLNode}!NoChildren@{NoChildren}}

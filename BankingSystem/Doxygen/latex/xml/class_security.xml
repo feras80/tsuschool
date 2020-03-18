@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="class_security" kind="class" language="C++" prot="public">
+    <compoundname>Security</compoundname>
+    <includes refid="_security_8h" local="no">Security.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_security_1adf21beb426ecd12c71c75aa8bd02e39f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Security::Security</definition>
+        <argsstring>()</argsstring>
+        <name>Security</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Security.h" line="9" column="1" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Security.cpp" bodystart="16" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_security_1a87f7e59fbf6a8d2531e1da60d0a444af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string Security::Encrypt</definition>
+        <argsstring>(string str)</argsstring>
+        <name>Encrypt</name>
+        <param>
+          <type>string</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Security.h" line="10" column="8" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Security.cpp" bodystart="22" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_security_1aae21cc061dee73383f820857a77ba35f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string Security::Decrypt</definition>
+        <argsstring>(string str)</argsstring>
+        <name>Decrypt</name>
+        <param>
+          <type>string</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Security.h" line="11" column="8" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Security.cpp" bodystart="34" bodyend="61"/>
+        <referencedby refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" compoundref="main_8cpp" startline="363" endline="397">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_security_1a9c54a706f244f9a3d769615225654696" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Security::~Security</definition>
+        <argsstring>()</argsstring>
+        <name>~Security</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Security.h" line="12" column="8" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/src/Security.cpp" bodystart="63" bodyend="66"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Security.h" line="7" column="1" bodyfile="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/include/Security.h" bodystart="6" bodyend="17"/>
+    <listofallmembers>
+      <member refid="class_security_1aae21cc061dee73383f820857a77ba35f" prot="public" virt="non-virtual"><scope>Security</scope><name>Decrypt</name></member>
+      <member refid="class_security_1a87f7e59fbf6a8d2531e1da60d0a444af" prot="public" virt="non-virtual"><scope>Security</scope><name>Encrypt</name></member>
+      <member refid="class_security_1adf21beb426ecd12c71c75aa8bd02e39f" prot="public" virt="non-virtual"><scope>Security</scope><name>Security</name></member>
+      <member refid="class_security_1a9c54a706f244f9a3d769615225654696" prot="public" virt="non-virtual"><scope>Security</scope><name>~Security</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

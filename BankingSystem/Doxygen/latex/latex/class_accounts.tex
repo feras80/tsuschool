@@ -24,6 +24,8 @@ bool \mbox{\hyperlink{class_accounts_a2043aec650956611653222f7e952683c}{Acount\+
 void \mbox{\hyperlink{class_accounts_a3ecaee83dc026b3bad8b69ae5b8d0598}{Deposit}} (string a, string amount)
 \item 
 void \mbox{\hyperlink{class_accounts_a44ff25c8dee341d9a3a9af4a13bd3467}{Withdraw}} (string a, string amount)
+\item 
+void \mbox{\hyperlink{class_accounts_aa4aad7801ef09b9b3bf22cea7e40455b}{Credit\+Decision}} (int income, int credit\+Score, int credit\+History)
 \end{DoxyCompactItemize}
 
 
@@ -43,17 +45,18 @@ Definition at line 6 of file Accounts.\+h.
 
 
 
-Definition at line 13 of file Accounts.\+cpp.
+Definition at line 15 of file Accounts.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{14 \{}
-\DoxyCodeLine{15     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_accounts_aa878135d898fc49e79ed3bf49d3a69b8}{GetAllAccounts}}();}
-\DoxyCodeLine{16     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_accounts_a91ead45d60e894f7725444ebea347eb7}{GetAccount}}(\textcolor{keywordtype}{string} a);}
-\DoxyCodeLine{17     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_accounts_a9b6de0158cd47be60ab16d5dd81e9e43}{GetAccountBalance}}(\textcolor{keywordtype}{string} a);}
-\DoxyCodeLine{18     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_accounts_a3ecaee83dc026b3bad8b69ae5b8d0598}{Deposit}}(\textcolor{keywordtype}{string} a, \textcolor{keywordtype}{string} amount);}
-\DoxyCodeLine{19     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_accounts_a44ff25c8dee341d9a3a9af4a13bd3467}{Withdraw}}(\textcolor{keywordtype}{string} a, \textcolor{keywordtype}{string} amount);}
-\DoxyCodeLine{20 \}}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_accounts_aa878135d898fc49e79ed3bf49d3a69b8}{GetAllAccounts}}();}
+\DoxyCodeLine{18     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_accounts_a91ead45d60e894f7725444ebea347eb7}{GetAccount}}(\textcolor{keywordtype}{string} a);}
+\DoxyCodeLine{19     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_accounts_a9b6de0158cd47be60ab16d5dd81e9e43}{GetAccountBalance}}(\textcolor{keywordtype}{string} a);}
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_accounts_a3ecaee83dc026b3bad8b69ae5b8d0598}{Deposit}}(\textcolor{keywordtype}{string} a, \textcolor{keywordtype}{string} amount);}
+\DoxyCodeLine{21     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_accounts_a44ff25c8dee341d9a3a9af4a13bd3467}{Withdraw}}(\textcolor{keywordtype}{string} a, \textcolor{keywordtype}{string} amount);}
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_accounts_aa4aad7801ef09b9b3bf22cea7e40455b}{CreditDecision}}(\textcolor{keywordtype}{double} income, \textcolor{keywordtype}{int} creditScore, \textcolor{keywordtype}{int} creditHistory);}
+\DoxyCodeLine{23 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{class_accounts_a13d0560b86638e125cdcba905b517dc2}\label{class_accounts_a13d0560b86638e125cdcba905b517dc2}} 
@@ -64,11 +67,11 @@ Definition at line 13 of file Accounts.\+cpp.
 
 
 
-Definition at line 655 of file Accounts.\+cpp.
+Definition at line 802 of file Accounts.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{655 \{\}}
+\DoxyCodeLine{802 \{\}}
 
 \end{DoxyCode}
 
@@ -82,61 +85,156 @@ Definition at line 655 of file Accounts.\+cpp.
 
 
 
-Definition at line 252 of file Accounts.\+cpp.
+Definition at line 287 of file Accounts.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{253 \{}
-\DoxyCodeLine{254     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document}{XMLDocument}} doc;}
-\DoxyCodeLine{255     \textcolor{keywordtype}{string} acountChar;}
-\DoxyCodeLine{256     \mbox{\hyperlink{classconstants}{constants}} \mbox{\hyperlink{classconstants}{constants}};}
-\DoxyCodeLine{257 }
-\DoxyCodeLine{258     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *path = \mbox{\hyperlink{classconstants}{constants}}.\mbox{\hyperlink{classconstants_a91b4da1fb34bc7ef659c4e29b72abe51}{GetPath}}();}
-\DoxyCodeLine{259 }
-\DoxyCodeLine{260     \textcolor{keywordtype}{int} i = 0;}
-\DoxyCodeLine{261     \textcolor{comment}{// Load the XML file into the Doc instance}}
-\DoxyCodeLine{262     doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a2ebd4647a8af5fc6831b294ac26a150a}{LoadFile}}(path);}
-\DoxyCodeLine{263 }
-\DoxyCodeLine{264     \textcolor{comment}{// Get root Element}}
-\DoxyCodeLine{265     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pRootElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_ad2b70320d3c2a071c2f36928edff3e1c}{RootElement}}();}
-\DoxyCodeLine{266 }
-\DoxyCodeLine{267     \textcolor{keywordflow}{if} (NULL != pRootElement)}
-\DoxyCodeLine{268     \{}
-\DoxyCodeLine{269         \textcolor{comment}{// Get 'Accounts' Child}}
-\DoxyCodeLine{270         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccounts = pRootElement-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"Accounts"});}
-\DoxyCodeLine{271 }
-\DoxyCodeLine{272         \textcolor{keywordflow}{if} (NULL != pAccounts)}
-\DoxyCodeLine{273         \{}
-\DoxyCodeLine{274             \textcolor{comment}{// Get 'Account' Child}}
-\DoxyCodeLine{275             \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccount = pAccounts-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"Account"});}
-\DoxyCodeLine{276 }
-\DoxyCodeLine{277             \textcolor{keywordflow}{while} (pAccount)}
-\DoxyCodeLine{278             \{}
-\DoxyCodeLine{279                 \textcolor{comment}{// Get 'AccountNo' Child}}
-\DoxyCodeLine{280                 \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccountNo = pAccount-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"AccountNo"});}
-\DoxyCodeLine{281                 \textcolor{comment}{// Get Child Text}}
-\DoxyCodeLine{282                 acountChar = pAccountNo-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}();}
-\DoxyCodeLine{283                 \textcolor{comment}{// Check for Matching Account Number}}
-\DoxyCodeLine{284                 \textcolor{keywordflow}{if} (acountChar == a)}
-\DoxyCodeLine{285                 \{}
-\DoxyCodeLine{286                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{287 }
-\DoxyCodeLine{288                 \}}
-\DoxyCodeLine{289 }
-\DoxyCodeLine{290                 \textcolor{comment}{//Next Account}}
-\DoxyCodeLine{291                 pAccount = pAccount-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1264c86233328f0cd36297552d982f80}{NextSiblingElement}}(\textcolor{stringliteral}{"Account"});}
-\DoxyCodeLine{292             \}}
-\DoxyCodeLine{293         \}}
-\DoxyCodeLine{294     \}}
-\DoxyCodeLine{295 }
-\DoxyCodeLine{296     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{297 \}}
+\DoxyCodeLine{288 \{}
+\DoxyCodeLine{289     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{290     \{}
+\DoxyCodeLine{291         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document}{XMLDocument}} doc;}
+\DoxyCodeLine{292         \textcolor{keywordtype}{string} acountChar;}
+\DoxyCodeLine{293         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *path = \mbox{\hyperlink{classconstants}{constants}}.\mbox{\hyperlink{classconstants_a91b4da1fb34bc7ef659c4e29b72abe51}{GetPath}}();}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{295         \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{296         \textcolor{comment}{// Load the XML file into the Doc instance}}
+\DoxyCodeLine{297         doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a2ebd4647a8af5fc6831b294ac26a150a}{LoadFile}}(path);}
+\DoxyCodeLine{298 }
+\DoxyCodeLine{299         \textcolor{comment}{// Get root Element}}
+\DoxyCodeLine{300         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pRootElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_ad2b70320d3c2a071c2f36928edff3e1c}{RootElement}}();}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302         \textcolor{keywordflow}{if} (NULL != pRootElement)}
+\DoxyCodeLine{303         \{}
+\DoxyCodeLine{304             \textcolor{comment}{// Get 'Accounts' Child}}
+\DoxyCodeLine{305             \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccounts = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pRootElement, \textcolor{stringliteral}{"Accounts"});}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307             \textcolor{keywordflow}{if} (NULL != pAccounts)}
+\DoxyCodeLine{308             \{}
+\DoxyCodeLine{309                 \textcolor{comment}{// Get 'Account' Child}}
+\DoxyCodeLine{310                 \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccount = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pAccounts, \textcolor{stringliteral}{"Account"});}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{312                 \textcolor{keywordflow}{while} (pAccount)}
+\DoxyCodeLine{313                 \{}
+\DoxyCodeLine{314                     \textcolor{comment}{// Get 'AccountNo' Child}}
+\DoxyCodeLine{315                     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccountNo = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pAccount, \textcolor{stringliteral}{"AccountNo"});}
+\DoxyCodeLine{316                     \textcolor{comment}{// Get Child Text}}
+\DoxyCodeLine{317                     acountChar = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_a22548e41ebfc416288f2ba00100fe024}{GetElementText}}(pAccountNo);}
+\DoxyCodeLine{318                     \textcolor{comment}{// Check for Matching Account Number}}
+\DoxyCodeLine{319                     \textcolor{keywordflow}{if} (acountChar == a)}
+\DoxyCodeLine{320                     \{}
+\DoxyCodeLine{321                         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{323                     \}}
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325                     \textcolor{comment}{//Next Account}}
+\DoxyCodeLine{326                     pAccount = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_aaa090673587d923a585db99223f6fadf}{GetNextSiblingElement}}(pAccount, \textcolor{stringliteral}{"Account"});}
+\DoxyCodeLine{327                 \}}
+\DoxyCodeLine{328             \}}
+\DoxyCodeLine{329         \}}
+\DoxyCodeLine{330 }
+\DoxyCodeLine{331         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{332     \}}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{334     \textcolor{keywordflow}{catch} (exception ex)}
+\DoxyCodeLine{335     \{}
+\DoxyCodeLine{336         cout << \textcolor{stringliteral}{"Error thrown. Please contact the system administrator"};}
+\DoxyCodeLine{337     \}}
+\DoxyCodeLine{338 \}}
 
 \end{DoxyCode}
 
 
-References tinyxml2\+::\+X\+M\+L\+Node\+::\+First\+Child\+Element(), constants\+::\+Get\+Path(), tinyxml2\+::\+X\+M\+L\+Element\+::\+Get\+Text(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Load\+File(), tinyxml2\+::\+X\+M\+L\+Node\+::\+Next\+Sibling\+Element(), and tinyxml2\+::\+X\+M\+L\+Document\+::\+Root\+Element().
+References Helper\+::\+Get\+Element\+Text(), Helper\+::\+Get\+First\+Child\+Element(), Helper\+::\+Get\+Next\+Sibling\+Element(), constants\+::\+Get\+Path(), helper, tinyxml2\+::\+X\+M\+L\+Document\+::\+Load\+File(), and tinyxml2\+::\+X\+M\+L\+Document\+::\+Root\+Element().
 
+
+
+Referenced by main\+Menu().
+
+\mbox{\Hypertarget{class_accounts_aa4aad7801ef09b9b3bf22cea7e40455b}\label{class_accounts_aa4aad7801ef09b9b3bf22cea7e40455b}} 
+\index{Accounts@{Accounts}!CreditDecision@{CreditDecision}}
+\index{CreditDecision@{CreditDecision}!Accounts@{Accounts}}
+\doxysubsubsection{\texorpdfstring{CreditDecision()}{CreditDecision()}}
+{\footnotesize\ttfamily void Accounts\+::\+Credit\+Decision (\begin{DoxyParamCaption}\item[{int}]{income,  }\item[{int}]{credit\+Score,  }\item[{int}]{credit\+History }\end{DoxyParamCaption})}
+
+
+
+Definition at line 728 of file Accounts.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{730 \{}
+\DoxyCodeLine{731     \textcolor{keywordtype}{int} points = 0;}
+\DoxyCodeLine{732     \textcolor{keywordtype}{double} CreditLine = 0.00;}
+\DoxyCodeLine{733 }
+\DoxyCodeLine{734     \textcolor{keywordflow}{switch} (income)}
+\DoxyCodeLine{735     \{}
+\DoxyCodeLine{736         \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{737             cout << \textcolor{stringliteral}{"Applicant has been declined"};}
+\DoxyCodeLine{738             cout << endl;}
+\DoxyCodeLine{739             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{740         \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{741             points += 2;}
+\DoxyCodeLine{742             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{743         \textcolor{keywordflow}{case} 3:}
+\DoxyCodeLine{744             points += 3;}
+\DoxyCodeLine{745             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{746         \textcolor{keywordflow}{case} 4:}
+\DoxyCodeLine{747             points += 4;}
+\DoxyCodeLine{748             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{749         \textcolor{keywordflow}{case} 5:}
+\DoxyCodeLine{750             points += 5;}
+\DoxyCodeLine{751             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{752     \}}
+\DoxyCodeLine{753 }
+\DoxyCodeLine{754     \textcolor{keywordflow}{switch} (creditScore)}
+\DoxyCodeLine{755     \{}
+\DoxyCodeLine{756         \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{757             cout << \textcolor{stringliteral}{"Applicant has been declined"};}
+\DoxyCodeLine{758             cout << endl;}
+\DoxyCodeLine{759             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{760             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{761         \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{762             points += 2;}
+\DoxyCodeLine{763             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{764         \textcolor{keywordflow}{case} 3:}
+\DoxyCodeLine{765             points += 3;}
+\DoxyCodeLine{766             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{767         \textcolor{keywordflow}{case} 4:}
+\DoxyCodeLine{768             points += 4;}
+\DoxyCodeLine{769             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{770         \textcolor{keywordflow}{case} 5:}
+\DoxyCodeLine{771             points += 5;}
+\DoxyCodeLine{772             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{773     \}}
+\DoxyCodeLine{774 }
+\DoxyCodeLine{775     \textcolor{keywordflow}{switch} (creditHistory)}
+\DoxyCodeLine{776     \{}
+\DoxyCodeLine{777         \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{778             points += 1;}
+\DoxyCodeLine{779             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{780         \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{781             points += 2;}
+\DoxyCodeLine{782             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{783         \textcolor{keywordflow}{case} 3:}
+\DoxyCodeLine{784             points += 3;}
+\DoxyCodeLine{785             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{786         \textcolor{keywordflow}{case} 4:}
+\DoxyCodeLine{787             points += 4;}
+\DoxyCodeLine{788             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{789         \textcolor{keywordflow}{case} 5:}
+\DoxyCodeLine{790             points += 5;}
+\DoxyCodeLine{791             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{792     \}}
+\DoxyCodeLine{793 }
+\DoxyCodeLine{794     \textcolor{comment}{// The formula is based on credit line between \$2000 and \$10000}}
+\DoxyCodeLine{795     CreditLine = (points *10000) / 15;}
+\DoxyCodeLine{796     cout << \textcolor{stringliteral}{"The application for a credit card has been approved! The credit line for this application is \$"} << CreditLine;}
+\DoxyCodeLine{797 }
+\DoxyCodeLine{798     cout << endl;}
+\DoxyCodeLine{799 }
+\DoxyCodeLine{800 \}}
+
+\end{DoxyCode}
 
 
 Referenced by main\+Menu().
@@ -149,65 +247,75 @@ Referenced by main\+Menu().
 
 
 
-Definition at line 137 of file Accounts.\+cpp.
+Definition at line 155 of file Accounts.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{138 \{}
-\DoxyCodeLine{139     \textcolor{keywordtype}{char} date[9];}
-\DoxyCodeLine{140     \_strdate(date);}
-\DoxyCodeLine{141     \mbox{\hyperlink{classconstants}{constants}} \mbox{\hyperlink{classconstants}{constants}};}
-\DoxyCodeLine{142     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document}{XMLDocument}} doc;}
-\DoxyCodeLine{143     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *path = \mbox{\hyperlink{classconstants}{constants}}.\mbox{\hyperlink{classconstants_a91b4da1fb34bc7ef659c4e29b72abe51}{GetPath}}();}
-\DoxyCodeLine{144     \textcolor{keywordtype}{char} accountNumberChar[100];}
-\DoxyCodeLine{145     \textcolor{keywordtype}{char} typeChar[100];}
-\DoxyCodeLine{146 }
-\DoxyCodeLine{147     \textcolor{comment}{// Load the XML file into the Doc instance}}
-\DoxyCodeLine{148     doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a2ebd4647a8af5fc6831b294ac26a150a}{LoadFile}}(path);}
-\DoxyCodeLine{149 }
-\DoxyCodeLine{150     \textcolor{comment}{// Get root Element}}
-\DoxyCodeLine{151     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pTop = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_ad2b70320d3c2a071c2f36928edff3e1c}{RootElement}}();}
-\DoxyCodeLine{152     \textcolor{comment}{// Get 'Transactions' Child}}
-\DoxyCodeLine{153     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pTransactions = pTop-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"Transactions"});}
-\DoxyCodeLine{154     \textcolor{comment}{//Create new Element}}
-\DoxyCodeLine{155     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node}{XMLNode}} *pRoot = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"transaction"});}
-\DoxyCodeLine{156     \textcolor{comment}{//Insert new Element}}
-\DoxyCodeLine{157     pTransactions-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pRoot);}
-\DoxyCodeLine{158     \textcolor{comment}{//Create new Element}}
-\DoxyCodeLine{159     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"AccountNo"});}
-\DoxyCodeLine{160     \textcolor{comment}{//Set new Element Text}}
-\DoxyCodeLine{161     pElement-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a1f9c2cd61b72af5ae708d37b7ad283ce}{SetText}}(strdup(a.c\_str()));    \textcolor{comment}{// AccountNo}}
-\DoxyCodeLine{162     \textcolor{comment}{// Insert new Element}}
-\DoxyCodeLine{163     pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
-\DoxyCodeLine{164     \textcolor{comment}{//Create new element}}
-\DoxyCodeLine{165     pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"type"});}
-\DoxyCodeLine{166     \textcolor{comment}{// Set new Element Text}}
-\DoxyCodeLine{167     pElement-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a1f9c2cd61b72af5ae708d37b7ad283ce}{SetText}}(\textcolor{stringliteral}{"Deposit"});    \textcolor{comment}{// type}}
-\DoxyCodeLine{168     \textcolor{comment}{// Insert new Element}}
-\DoxyCodeLine{169     pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
-\DoxyCodeLine{170     \textcolor{comment}{//Create new Element}}
-\DoxyCodeLine{171     pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"amount"});}
-\DoxyCodeLine{172     \textcolor{comment}{// Set new Element Text}}
-\DoxyCodeLine{173     pElement-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a1f9c2cd61b72af5ae708d37b7ad283ce}{SetText}}(strdup(amount.c\_str()));   \textcolor{comment}{// Amount}}
-\DoxyCodeLine{174     \textcolor{comment}{// Insert new element}}
-\DoxyCodeLine{175     pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
-\DoxyCodeLine{176 }
-\DoxyCodeLine{177     \textcolor{comment}{//Create new Element}}
-\DoxyCodeLine{178     pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"date"});}
-\DoxyCodeLine{179     \textcolor{comment}{//set new Element Text}}
-\DoxyCodeLine{180     pElement-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a1f9c2cd61b72af5ae708d37b7ad283ce}{SetText}}(strdup(date)); \textcolor{comment}{// Date}}
-\DoxyCodeLine{181     \textcolor{comment}{//Insert new Element}}
-\DoxyCodeLine{182     pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
-\DoxyCodeLine{183 }
-\DoxyCodeLine{184     \textcolor{comment}{//Save the changes into the XML file}}
-\DoxyCodeLine{185     doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a73ac416b4a2aa0952e841220eb3da18f}{SaveFile}}(path);}
-\DoxyCodeLine{186 }
-\DoxyCodeLine{187 \}}
+\DoxyCodeLine{156 \{}
+\DoxyCodeLine{157     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{158     \{}
+\DoxyCodeLine{159         \textcolor{keywordtype}{char} date[9];}
+\DoxyCodeLine{160         \_strdate(date);}
+\DoxyCodeLine{161         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document}{XMLDocument}} doc;}
+\DoxyCodeLine{162         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *path = \mbox{\hyperlink{classconstants}{constants}}.\mbox{\hyperlink{classconstants_a91b4da1fb34bc7ef659c4e29b72abe51}{GetPath}}();}
+\DoxyCodeLine{163         \textcolor{keywordtype}{char} accountNumberChar[100];}
+\DoxyCodeLine{164         \textcolor{keywordtype}{char} typeChar[100];}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166         \textcolor{comment}{// Load the XML file into the Doc instance}}
+\DoxyCodeLine{167         doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a2ebd4647a8af5fc6831b294ac26a150a}{LoadFile}}(path);}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169         \textcolor{comment}{// Get root Element}}
+\DoxyCodeLine{170         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pTop = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_ad2b70320d3c2a071c2f36928edff3e1c}{RootElement}}();}
+\DoxyCodeLine{171         \textcolor{comment}{// Get 'Transactions' Child}}
+\DoxyCodeLine{172         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pTransactions = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pTop, \textcolor{stringliteral}{"Transactions"});}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174         \textcolor{comment}{//Create new Element}}
+\DoxyCodeLine{175         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node}{XMLNode}} *pRoot = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"transaction"});}
+\DoxyCodeLine{176         \textcolor{comment}{//Insert new Element}}
+\DoxyCodeLine{177         pTransactions-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pRoot);}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179         \textcolor{comment}{//Create new Element}}
+\DoxyCodeLine{180         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"AccountNo"});}
+\DoxyCodeLine{181         \textcolor{comment}{//Set new Element Text}}
+\DoxyCodeLine{182         \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_ab72db9fa2e41c23a63e699fe0642a0de}{SetElementText}}(pElement, strdup(a.c\_str())); \textcolor{comment}{// AccountNo}}
+\DoxyCodeLine{183         \textcolor{comment}{// Insert new Element}}
+\DoxyCodeLine{184         \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_afe657d2896a2be074945b5d1170043a1}{InsertChild}}(pRoot, pElement, \textcolor{stringliteral}{"EndChild"});}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186         \textcolor{comment}{//Create new element}}
+\DoxyCodeLine{187         pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"type"});}
+\DoxyCodeLine{188         \textcolor{comment}{// Set new Element Text}}
+\DoxyCodeLine{189         \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_ab72db9fa2e41c23a63e699fe0642a0de}{SetElementText}}(pElement, \textcolor{stringliteral}{"Deposit"}); \textcolor{comment}{// type}}
+\DoxyCodeLine{190         \textcolor{comment}{// Insert new Element}}
+\DoxyCodeLine{191         pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193         \textcolor{comment}{//Create new Element}}
+\DoxyCodeLine{194         pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"amount"});}
+\DoxyCodeLine{195         \textcolor{comment}{// Set new Element Text}}
+\DoxyCodeLine{196         \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_ab72db9fa2e41c23a63e699fe0642a0de}{SetElementText}}(pElement, strdup(amount.c\_str()));    \textcolor{comment}{// Amount}}
+\DoxyCodeLine{197         \textcolor{comment}{// Insert new element}}
+\DoxyCodeLine{198         pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200         \textcolor{comment}{//Create new Element}}
+\DoxyCodeLine{201         pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"date"});}
+\DoxyCodeLine{202         \textcolor{comment}{//set new Element Text}}
+\DoxyCodeLine{203         \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_ab72db9fa2e41c23a63e699fe0642a0de}{SetElementText}}(pElement, strdup(date));  \textcolor{comment}{// Amount}}
+\DoxyCodeLine{204         \textcolor{comment}{//Insert new Element}}
+\DoxyCodeLine{205         pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207         \textcolor{comment}{//Save the changes into the XML file}}
+\DoxyCodeLine{208         doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a73ac416b4a2aa0952e841220eb3da18f}{SaveFile}}(path);}
+\DoxyCodeLine{209     \}}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211     \textcolor{keywordflow}{catch} (exception ex)}
+\DoxyCodeLine{212     \{}
+\DoxyCodeLine{213         cout << \textcolor{stringliteral}{"Error thrown. Please contact the system administrator"};}
+\DoxyCodeLine{214     \}}
+\DoxyCodeLine{215 \}}
 
 \end{DoxyCode}
 
 
-References tinyxml2\+::\+X\+M\+L\+Node\+::\+First\+Child\+Element(), constants\+::\+Get\+Path(), tinyxml2\+::\+X\+M\+L\+Node\+::\+Insert\+End\+Child(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Load\+File(), tinyxml2\+::\+X\+M\+L\+Document\+::\+New\+Element(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Root\+Element(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Save\+File(), and tinyxml2\+::\+X\+M\+L\+Element\+::\+Set\+Text().
+References Helper\+::\+Get\+First\+Child\+Element(), constants\+::\+Get\+Path(), helper, Helper\+::\+Insert\+Child(), tinyxml2\+::\+X\+M\+L\+Node\+::\+Insert\+End\+Child(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Load\+File(), tinyxml2\+::\+X\+M\+L\+Document\+::\+New\+Element(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Root\+Element(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Save\+File(), and Helper\+::\+Set\+Element\+Text().
 
 
 
@@ -221,123 +329,130 @@ Referenced by main\+Menu().
 
 
 
-Definition at line 303 of file Accounts.\+cpp.
+Definition at line 344 of file Accounts.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{304 \{}
-\DoxyCodeLine{305     \textcolor{keywordtype}{string} acountChar;}
-\DoxyCodeLine{306     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document}{XMLDocument}} doc;}
-\DoxyCodeLine{307     \mbox{\hyperlink{classconstants}{constants}} \mbox{\hyperlink{classconstants}{constants}};}
-\DoxyCodeLine{308 }
-\DoxyCodeLine{309     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *path = \mbox{\hyperlink{classconstants}{constants}}.\mbox{\hyperlink{classconstants_a91b4da1fb34bc7ef659c4e29b72abe51}{GetPath}}();}
-\DoxyCodeLine{310     \textcolor{keywordtype}{char} amountText[100];}
-\DoxyCodeLine{311     \textcolor{keywordtype}{int} i = 0;}
-\DoxyCodeLine{312 }
-\DoxyCodeLine{313     \textcolor{comment}{// Load the XML file into the Doc instance}}
-\DoxyCodeLine{314     doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a2ebd4647a8af5fc6831b294ac26a150a}{LoadFile}}(path);}
-\DoxyCodeLine{315     \textcolor{comment}{//Get root Element}}
-\DoxyCodeLine{316     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pRootElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_ad2b70320d3c2a071c2f36928edff3e1c}{RootElement}}();}
-\DoxyCodeLine{317 }
-\DoxyCodeLine{318     \textcolor{comment}{// Print out the Header}}
-\DoxyCodeLine{319     cout << \textcolor{stringliteral}{"\(\backslash\)n"};}
-\DoxyCodeLine{320     cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
-\DoxyCodeLine{321     cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Accounts Detail-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
-\DoxyCodeLine{322     cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
-\DoxyCodeLine{323     cout << \textcolor{stringliteral}{"\(\backslash\)n"};}
-\DoxyCodeLine{324 }
-\DoxyCodeLine{325     \textcolor{comment}{// Print out the table header.}}
-\DoxyCodeLine{326     cout << \textcolor{charliteral}{'|'} << setw(7) << \textcolor{stringliteral}{"Acc No."} << \textcolor{charliteral}{'|'} << setw(12) << \textcolor{stringliteral}{"Account Type"} << \textcolor{charliteral}{'|'} << setw(15) << \textcolor{stringliteral}{"Customer Name"} << \textcolor{charliteral}{'|'} << setw(10) << \textcolor{stringliteral}{"Balance"} << \textcolor{charliteral}{'|'} << setw(12) << \textcolor{stringliteral}{"Open Date"} <<}
-\DoxyCodeLine{327         endl << endl;}
-\DoxyCodeLine{328 }
-\DoxyCodeLine{329     \textcolor{keywordflow}{if} (NULL != pRootElement)}
-\DoxyCodeLine{330     \{}
-\DoxyCodeLine{331         \textcolor{comment}{// Get 'Accounts' Child}}
-\DoxyCodeLine{332         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccounts = pRootElement-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"Accounts"});}
-\DoxyCodeLine{333 }
-\DoxyCodeLine{334         \textcolor{keywordflow}{if} (NULL != pAccounts)}
-\DoxyCodeLine{335         \{}
-\DoxyCodeLine{336             \textcolor{comment}{// Get 'Account' Child}}
-\DoxyCodeLine{337             \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccount = pAccounts-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"Account"});}
-\DoxyCodeLine{338 }
-\DoxyCodeLine{339             \textcolor{keywordflow}{while} (pAccount)}
-\DoxyCodeLine{340             \{}
-\DoxyCodeLine{341                 \textcolor{comment}{// Get 'AccountNo' Child}}
-\DoxyCodeLine{342                 \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccountNo = pAccount-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"AccountNo"});}
-\DoxyCodeLine{343 }
-\DoxyCodeLine{344                 acountChar = pAccountNo-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}();}
-\DoxyCodeLine{345                 \textcolor{comment}{// Check for Matching Account Number}}
-\DoxyCodeLine{346                 \textcolor{keywordflow}{if} (acountChar == a)}
-\DoxyCodeLine{347                 \{}
-\DoxyCodeLine{348                     i++;}
-\DoxyCodeLine{349                     \textcolor{comment}{// Print out AccountNo}}
-\DoxyCodeLine{350                     cout << \textcolor{charliteral}{'|'} << setw(7) << pAccountNo-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}();}
-\DoxyCodeLine{351                     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pType = pAccount-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"type"});}
-\DoxyCodeLine{352 }
-\DoxyCodeLine{353                     \textcolor{keywordflow}{if} (NULL != pType)}
-\DoxyCodeLine{354                     \{}
-\DoxyCodeLine{355                         \textcolor{comment}{// Print out Type}}
-\DoxyCodeLine{356                         cout << \textcolor{charliteral}{'|'} << setw(12) << pType-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}();}
-\DoxyCodeLine{357 }
-\DoxyCodeLine{358                     \}}
-\DoxyCodeLine{359 }
-\DoxyCodeLine{360                     \textcolor{comment}{// Get 'customer' Child}}
-\DoxyCodeLine{361                     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *name = pAccount-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"customer"});}
-\DoxyCodeLine{362 }
-\DoxyCodeLine{363                     \textcolor{keywordflow}{if} (NULL != name)}
-\DoxyCodeLine{364                     \{}
-\DoxyCodeLine{365                         \textcolor{comment}{//Print out name}}
-\DoxyCodeLine{366                         cout << \textcolor{charliteral}{'|'} << setw(15) << name-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}();}
-\DoxyCodeLine{367 }
-\DoxyCodeLine{368                     \}}
+\DoxyCodeLine{345 \{}
+\DoxyCodeLine{346     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{347     \{}
+\DoxyCodeLine{348         \textcolor{keywordtype}{string} acountChar;}
+\DoxyCodeLine{349         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document}{XMLDocument}} doc;}
+\DoxyCodeLine{350         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *path = \mbox{\hyperlink{classconstants}{constants}}.\mbox{\hyperlink{classconstants_a91b4da1fb34bc7ef659c4e29b72abe51}{GetPath}}();}
+\DoxyCodeLine{351         \textcolor{keywordtype}{char} amountText[100];}
+\DoxyCodeLine{352         \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{354         \textcolor{comment}{// Load the XML file into the Doc instance}}
+\DoxyCodeLine{355         doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a2ebd4647a8af5fc6831b294ac26a150a}{LoadFile}}(path);}
+\DoxyCodeLine{356         \textcolor{comment}{//Get root Element}}
+\DoxyCodeLine{357         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pRootElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_ad2b70320d3c2a071c2f36928edff3e1c}{RootElement}}();}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359         \textcolor{comment}{// Print out the Header}}
+\DoxyCodeLine{360         cout << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{361         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{362         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Accounts Detail-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{363         cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{364         cout << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{365 }
+\DoxyCodeLine{366         \textcolor{comment}{// Print out the table header.}}
+\DoxyCodeLine{367         cout << \textcolor{charliteral}{'|'} << setw(7) << \textcolor{stringliteral}{"Acc No."} << \textcolor{charliteral}{'|'} << setw(12) << \textcolor{stringliteral}{"Account Type"} << \textcolor{charliteral}{'|'} << setw(15) << \textcolor{stringliteral}{"Customer Name"} << \textcolor{charliteral}{'|'} << setw(10) << \textcolor{stringliteral}{"Balance"} << \textcolor{charliteral}{'|'} << setw(12) << \textcolor{stringliteral}{"Open Date"} <<}
+\DoxyCodeLine{368             endl << endl;}
 \DoxyCodeLine{369 }
-\DoxyCodeLine{370                     \textcolor{comment}{// Get 'balance' Child}}
-\DoxyCodeLine{371                     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *balance = pAccount-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"balance"});}
-\DoxyCodeLine{372 }
-\DoxyCodeLine{373                     \textcolor{keywordflow}{if} (NULL != balance)}
-\DoxyCodeLine{374                     \{}
-\DoxyCodeLine{375                         \textcolor{comment}{// Convert to Char}}
-\DoxyCodeLine{376                         strcpy(amountText, \textcolor{stringliteral}{"\$"});}
-\DoxyCodeLine{377 }
-\DoxyCodeLine{378                         strcat(amountText, balance-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}());}
-\DoxyCodeLine{379                         \textcolor{comment}{//Print out amount}}
-\DoxyCodeLine{380                         cout << \textcolor{charliteral}{'|'} << setw(10) << amountText << \textcolor{charliteral}{'|'};}
-\DoxyCodeLine{381 }
-\DoxyCodeLine{382                     \}}
-\DoxyCodeLine{383 }
-\DoxyCodeLine{384                     \textcolor{comment}{// Get 'openDate' Child}}
-\DoxyCodeLine{385                     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *openDate = pAccount-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"openDate"});}
+\DoxyCodeLine{370         \textcolor{keywordflow}{if} (NULL != pRootElement)}
+\DoxyCodeLine{371         \{}
+\DoxyCodeLine{372             \textcolor{comment}{// Get 'Accounts' Child}}
+\DoxyCodeLine{373             \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccounts = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pRootElement, \textcolor{stringliteral}{"Accounts"});}
+\DoxyCodeLine{374 }
+\DoxyCodeLine{375             \textcolor{keywordflow}{if} (NULL != pAccounts)}
+\DoxyCodeLine{376             \{}
+\DoxyCodeLine{377                 \textcolor{comment}{// Get 'Account' Child}}
+\DoxyCodeLine{378                 \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccount = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pAccounts, \textcolor{stringliteral}{"Account"});}
+\DoxyCodeLine{379 }
+\DoxyCodeLine{380                 \textcolor{keywordflow}{while} (pAccount)}
+\DoxyCodeLine{381                 \{}
+\DoxyCodeLine{382                     \textcolor{comment}{// Get 'AccountNo' Child}}
+\DoxyCodeLine{383                     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccountNo = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pAccount, \textcolor{stringliteral}{"AccountNo"});}
+\DoxyCodeLine{384 }
+\DoxyCodeLine{385                     acountChar = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_a22548e41ebfc416288f2ba00100fe024}{GetElementText}}(pAccountNo);}
 \DoxyCodeLine{386 }
-\DoxyCodeLine{387                     \textcolor{keywordflow}{if} (NULL != openDate)}
-\DoxyCodeLine{388                     \{}
-\DoxyCodeLine{389                         \textcolor{comment}{// print out Open Date}}
-\DoxyCodeLine{390                         cout << setw(12) << openDate-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}() << \textcolor{charliteral}{'|'};}
-\DoxyCodeLine{391 }
-\DoxyCodeLine{392                     \}}
-\DoxyCodeLine{393 }
-\DoxyCodeLine{394                     std::cout << std::endl;}
-\DoxyCodeLine{395                     \textcolor{comment}{// Call bindTransaction  method}}
-\DoxyCodeLine{396                     \mbox{\hyperlink{_accounts_8cpp_a0dd23933bd3fdf8e34527907ba0aeb47}{bindTransaction}}(a);}
-\DoxyCodeLine{397                 \}}
-\DoxyCodeLine{398 }
-\DoxyCodeLine{399                 \textcolor{comment}{// Next Account}}
-\DoxyCodeLine{400                 pAccount = pAccount-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1264c86233328f0cd36297552d982f80}{NextSiblingElement}}(\textcolor{stringliteral}{"Account"});}
-\DoxyCodeLine{401             \}}
-\DoxyCodeLine{402 }
-\DoxyCodeLine{403             \textcolor{comment}{// Print message if account is not found}}
-\DoxyCodeLine{404             \textcolor{keywordflow}{if} (i == 0)}
-\DoxyCodeLine{405             \{}
-\DoxyCodeLine{406                 std::cout << \textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)tNO ACCOUNT FOUND!!!\(\backslash\)n"};}
-\DoxyCodeLine{407                 cout << endl;}
-\DoxyCodeLine{408             \}}
-\DoxyCodeLine{409         \}}
-\DoxyCodeLine{410     \}}
-\DoxyCodeLine{411 \}}
+\DoxyCodeLine{387                     \textcolor{comment}{// Check for Matching Account Number}}
+\DoxyCodeLine{388                     \textcolor{keywordflow}{if} (acountChar == a)}
+\DoxyCodeLine{389                     \{}
+\DoxyCodeLine{390                         i++;}
+\DoxyCodeLine{391                         \textcolor{comment}{// Print out AccountNo}}
+\DoxyCodeLine{392                         cout << \textcolor{charliteral}{'|'} << setw(7) << \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_a22548e41ebfc416288f2ba00100fe024}{GetElementText}}(pAccountNo);}
+\DoxyCodeLine{393                         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pType = pAccount-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"type"});}
+\DoxyCodeLine{394 }
+\DoxyCodeLine{395                         \textcolor{keywordflow}{if} (NULL != pType)}
+\DoxyCodeLine{396                         \{}
+\DoxyCodeLine{397                             \textcolor{comment}{// Print out Type}}
+\DoxyCodeLine{398                             cout << \textcolor{charliteral}{'|'} << setw(12) << \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_a22548e41ebfc416288f2ba00100fe024}{GetElementText}}(pType);}
+\DoxyCodeLine{399 }
+\DoxyCodeLine{400                         \}}
+\DoxyCodeLine{401 }
+\DoxyCodeLine{402                         \textcolor{comment}{// Get 'customer' Child}}
+\DoxyCodeLine{403                         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *name = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pAccount, \textcolor{stringliteral}{"customer"});}
+\DoxyCodeLine{404 }
+\DoxyCodeLine{405                         \textcolor{keywordflow}{if} (NULL != name)}
+\DoxyCodeLine{406                         \{}
+\DoxyCodeLine{407                             \textcolor{comment}{//Print out name}}
+\DoxyCodeLine{408                             cout << \textcolor{charliteral}{'|'} << setw(15) << \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_a22548e41ebfc416288f2ba00100fe024}{GetElementText}}(name);}
+\DoxyCodeLine{409 }
+\DoxyCodeLine{410                         \}}
+\DoxyCodeLine{411 }
+\DoxyCodeLine{412                         \textcolor{comment}{// Get 'balance' Child}}
+\DoxyCodeLine{413                         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *balance = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pAccount, \textcolor{stringliteral}{"balance"});}
+\DoxyCodeLine{414 }
+\DoxyCodeLine{415                         \textcolor{keywordflow}{if} (NULL != balance)}
+\DoxyCodeLine{416                         \{}
+\DoxyCodeLine{417                             \textcolor{comment}{// Convert to Char}}
+\DoxyCodeLine{418                             strcpy(amountText, \textcolor{stringliteral}{"\$"});}
+\DoxyCodeLine{419 }
+\DoxyCodeLine{420                             strcat(amountText, \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_a22548e41ebfc416288f2ba00100fe024}{GetElementText}}(balance));}
+\DoxyCodeLine{421                             \textcolor{comment}{//Print out amount}}
+\DoxyCodeLine{422                             cout << \textcolor{charliteral}{'|'} << setw(10) << amountText << \textcolor{charliteral}{'|'};}
+\DoxyCodeLine{423 }
+\DoxyCodeLine{424                         \}}
+\DoxyCodeLine{425 }
+\DoxyCodeLine{426                         \textcolor{comment}{// Get 'openDate' Child}}
+\DoxyCodeLine{427                         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *openDate = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pAccount, \textcolor{stringliteral}{"openDate"});}
+\DoxyCodeLine{428 }
+\DoxyCodeLine{429                         \textcolor{keywordflow}{if} (NULL != openDate)}
+\DoxyCodeLine{430                         \{}
+\DoxyCodeLine{431                             \textcolor{comment}{// print out Open Date}}
+\DoxyCodeLine{432                             cout << setw(12) << \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_a22548e41ebfc416288f2ba00100fe024}{GetElementText}}(openDate) << \textcolor{charliteral}{'|'};}
+\DoxyCodeLine{433 }
+\DoxyCodeLine{434                         \}}
+\DoxyCodeLine{435 }
+\DoxyCodeLine{436                         std::cout << std::endl;}
+\DoxyCodeLine{437                         \textcolor{comment}{// Call bindTransaction  method}}
+\DoxyCodeLine{438                         \mbox{\hyperlink{_accounts_8cpp_a0dd23933bd3fdf8e34527907ba0aeb47}{bindTransaction}}(a);}
+\DoxyCodeLine{439                     \}}
+\DoxyCodeLine{440 }
+\DoxyCodeLine{441                     \textcolor{comment}{// Next Account}}
+\DoxyCodeLine{442                     pAccount = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_aaa090673587d923a585db99223f6fadf}{GetNextSiblingElement}}(pAccount, \textcolor{stringliteral}{"Account"});}
+\DoxyCodeLine{443                 \}}
+\DoxyCodeLine{444 }
+\DoxyCodeLine{445                 \textcolor{comment}{// Print message if account is not found}}
+\DoxyCodeLine{446                 \textcolor{keywordflow}{if} (i == 0)}
+\DoxyCodeLine{447                 \{}
+\DoxyCodeLine{448                     std::cout << \textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)tNO ACCOUNT FOUND!!!\(\backslash\)n"};}
+\DoxyCodeLine{449                     cout << endl;}
+\DoxyCodeLine{450                 \}}
+\DoxyCodeLine{451             \}}
+\DoxyCodeLine{452         \}}
+\DoxyCodeLine{453     \}}
+\DoxyCodeLine{454 }
+\DoxyCodeLine{455     \textcolor{keywordflow}{catch} (exception ex)}
+\DoxyCodeLine{456     \{}
+\DoxyCodeLine{457         cout << \textcolor{stringliteral}{"Error thrown. Please contact the system administrator"};}
+\DoxyCodeLine{458     \}}
+\DoxyCodeLine{459 \}}
 
 \end{DoxyCode}
 
 
-References bind\+Transaction(), tinyxml2\+::\+X\+M\+L\+Node\+::\+First\+Child\+Element(), constants\+::\+Get\+Path(), tinyxml2\+::\+X\+M\+L\+Element\+::\+Get\+Text(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Load\+File(), tinyxml2\+::\+X\+M\+L\+Node\+::\+Next\+Sibling\+Element(), and tinyxml2\+::\+X\+M\+L\+Document\+::\+Root\+Element().
+References bind\+Transaction(), tinyxml2\+::\+X\+M\+L\+Node\+::\+First\+Child\+Element(), Helper\+::\+Get\+Element\+Text(), Helper\+::\+Get\+First\+Child\+Element(), Helper\+::\+Get\+Next\+Sibling\+Element(), constants\+::\+Get\+Path(), helper, tinyxml2\+::\+X\+M\+L\+Document\+::\+Load\+File(), and tinyxml2\+::\+X\+M\+L\+Document\+::\+Root\+Element().
 
 
 
@@ -351,81 +466,88 @@ Referenced by main\+Menu().
 
 
 
-Definition at line 417 of file Accounts.\+cpp.
+Definition at line 465 of file Accounts.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{418 \{}
-\DoxyCodeLine{419     \textcolor{keywordtype}{string} acountChar;}
-\DoxyCodeLine{420     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document}{XMLDocument}} doc;}
-\DoxyCodeLine{421     \mbox{\hyperlink{classconstants}{constants}} \mbox{\hyperlink{classconstants}{constants}};}
-\DoxyCodeLine{422     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *path = \mbox{\hyperlink{classconstants}{constants}}.\mbox{\hyperlink{classconstants_a91b4da1fb34bc7ef659c4e29b72abe51}{GetPath}}();}
-\DoxyCodeLine{423     \textcolor{keywordtype}{char} amountText[100];}
-\DoxyCodeLine{424     \textcolor{keywordtype}{int} i = 0;}
-\DoxyCodeLine{425 }
-\DoxyCodeLine{426     \textcolor{comment}{// Load the XML file into the Doc instance}}
-\DoxyCodeLine{427     doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a2ebd4647a8af5fc6831b294ac26a150a}{LoadFile}}(path);}
-\DoxyCodeLine{428     \textcolor{comment}{// Get root Element}}
-\DoxyCodeLine{429     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pRootElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_ad2b70320d3c2a071c2f36928edff3e1c}{RootElement}}();}
-\DoxyCodeLine{430 }
-\DoxyCodeLine{431     cout << endl;}
-\DoxyCodeLine{432     \textcolor{comment}{// Print out Message}}
-\DoxyCodeLine{433     cout << \textcolor{stringliteral}{"Balance for account No."} << a << \textcolor{stringliteral}{" is "};}
-\DoxyCodeLine{434 }
-\DoxyCodeLine{435     \textcolor{keywordflow}{if} (NULL != pRootElement)}
-\DoxyCodeLine{436     \{}
-\DoxyCodeLine{437         \textcolor{comment}{// Get 'Accounts' Child}}
-\DoxyCodeLine{438         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccounts = pRootElement-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"Accounts"});}
-\DoxyCodeLine{439 }
-\DoxyCodeLine{440         \textcolor{keywordflow}{if} (NULL != pAccounts)}
-\DoxyCodeLine{441         \{}
-\DoxyCodeLine{442             \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccount = pAccounts-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"Account"});}
-\DoxyCodeLine{443 }
-\DoxyCodeLine{444             \textcolor{keywordflow}{while} (pAccount)}
-\DoxyCodeLine{445             \{}
-\DoxyCodeLine{446                 \textcolor{comment}{// Get 'AccountNo' child}}
-\DoxyCodeLine{447                 \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccountNo = pAccount-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"AccountNo"});}
-\DoxyCodeLine{448                 acountChar = pAccountNo-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}();}
-\DoxyCodeLine{449                 \textcolor{comment}{// Check for Matching Account Number}}
-\DoxyCodeLine{450                 \textcolor{keywordflow}{if} (acountChar == a)}
-\DoxyCodeLine{451                 \{}
-\DoxyCodeLine{452                     \textcolor{comment}{// Get 'type' Child}}
-\DoxyCodeLine{453                     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pType = pAccount-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"type"});}
-\DoxyCodeLine{454 }
-\DoxyCodeLine{455                     \textcolor{comment}{// Get 'customer' Child}}
-\DoxyCodeLine{456                     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *name = pAccount-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"customer"});}
-\DoxyCodeLine{457 }
-\DoxyCodeLine{458                     \textcolor{comment}{// Get 'balance' Child}}
-\DoxyCodeLine{459                     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *balance = pAccount-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"balance"});}
-\DoxyCodeLine{460 }
-\DoxyCodeLine{461                     \textcolor{keywordflow}{if} (NULL != balance)}
-\DoxyCodeLine{462                     \{}
-\DoxyCodeLine{463                         \textcolor{comment}{//Convert to *char}}
-\DoxyCodeLine{464                         strcpy(amountText, \textcolor{stringliteral}{"\$"});}
-\DoxyCodeLine{465                         strcat(amountText, balance-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}());}
-\DoxyCodeLine{466                         \textcolor{comment}{//Print out amount}}
-\DoxyCodeLine{467                         cout << amountText << endl;}
-\DoxyCodeLine{468 }
-\DoxyCodeLine{469                     \}}
-\DoxyCodeLine{470 }
-\DoxyCodeLine{471                     \textcolor{comment}{// Get 'openDate' Child}}
-\DoxyCodeLine{472                     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *openDate = pAccount-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"openDate"});}
-\DoxyCodeLine{473 }
-\DoxyCodeLine{474                     std::cout << std::endl;}
-\DoxyCodeLine{475 }
-\DoxyCodeLine{476                 \}}
-\DoxyCodeLine{477 }
-\DoxyCodeLine{478                 \textcolor{comment}{//Next Account}}
-\DoxyCodeLine{479                 pAccount = pAccount-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1264c86233328f0cd36297552d982f80}{NextSiblingElement}}(\textcolor{stringliteral}{"Account"});}
-\DoxyCodeLine{480             \}}
-\DoxyCodeLine{481         \}}
-\DoxyCodeLine{482     \}}
-\DoxyCodeLine{483 \}}
+\DoxyCodeLine{466 \{}
+\DoxyCodeLine{467     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{468     \{}
+\DoxyCodeLine{469         \textcolor{keywordtype}{string} acountChar;}
+\DoxyCodeLine{470         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document}{XMLDocument}} doc;}
+\DoxyCodeLine{471         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *path = \mbox{\hyperlink{classconstants}{constants}}.\mbox{\hyperlink{classconstants_a91b4da1fb34bc7ef659c4e29b72abe51}{GetPath}}();}
+\DoxyCodeLine{472         \textcolor{keywordtype}{char} amountText[100];}
+\DoxyCodeLine{473         \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{474 }
+\DoxyCodeLine{475         \textcolor{comment}{// Load the XML file into the Doc instance}}
+\DoxyCodeLine{476         doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a2ebd4647a8af5fc6831b294ac26a150a}{LoadFile}}(path);}
+\DoxyCodeLine{477         \textcolor{comment}{// Get root Element}}
+\DoxyCodeLine{478         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pRootElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_ad2b70320d3c2a071c2f36928edff3e1c}{RootElement}}();}
+\DoxyCodeLine{479 }
+\DoxyCodeLine{480         cout << endl;}
+\DoxyCodeLine{481         \textcolor{comment}{// Print out Message}}
+\DoxyCodeLine{482         cout << \textcolor{stringliteral}{"Balance for account No."} << a << \textcolor{stringliteral}{" is "};}
+\DoxyCodeLine{483 }
+\DoxyCodeLine{484         \textcolor{keywordflow}{if} (NULL != pRootElement)}
+\DoxyCodeLine{485         \{}
+\DoxyCodeLine{486             \textcolor{comment}{// Get 'Accounts' Child}}
+\DoxyCodeLine{487             \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccounts = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pRootElement, \textcolor{stringliteral}{"Accounts"});}
+\DoxyCodeLine{488 }
+\DoxyCodeLine{489             \textcolor{keywordflow}{if} (NULL != pAccounts)}
+\DoxyCodeLine{490             \{}
+\DoxyCodeLine{491                 \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccount = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pAccounts, \textcolor{stringliteral}{"Account"});}
+\DoxyCodeLine{492 }
+\DoxyCodeLine{493                 \textcolor{keywordflow}{while} (pAccount)}
+\DoxyCodeLine{494                 \{}
+\DoxyCodeLine{495                     \textcolor{comment}{// Get 'AccountNo' child}}
+\DoxyCodeLine{496                     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccountNo = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pAccount, \textcolor{stringliteral}{"AccountNo"});}
+\DoxyCodeLine{497                     acountChar = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_a22548e41ebfc416288f2ba00100fe024}{GetElementText}}(pAccountNo);}
+\DoxyCodeLine{498                     \textcolor{comment}{// Check for Matching Account Number}}
+\DoxyCodeLine{499                     \textcolor{keywordflow}{if} (acountChar == a)}
+\DoxyCodeLine{500                     \{}
+\DoxyCodeLine{501                         \textcolor{comment}{// Get 'type' Child}}
+\DoxyCodeLine{502                         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pType = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pAccount, \textcolor{stringliteral}{"type"});}
+\DoxyCodeLine{503 }
+\DoxyCodeLine{504                         \textcolor{comment}{// Get 'customer' Child}}
+\DoxyCodeLine{505                         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *name = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pAccount, \textcolor{stringliteral}{"customer"});}
+\DoxyCodeLine{506 }
+\DoxyCodeLine{507                         \textcolor{comment}{// Get 'balance' Child}}
+\DoxyCodeLine{508                         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *balance = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pAccount, \textcolor{stringliteral}{"balance"});}
+\DoxyCodeLine{509 }
+\DoxyCodeLine{510                         \textcolor{keywordflow}{if} (NULL != balance)}
+\DoxyCodeLine{511                         \{}
+\DoxyCodeLine{512                             \textcolor{comment}{//Convert to *char}}
+\DoxyCodeLine{513                             strcpy(amountText, \textcolor{stringliteral}{"\$"});}
+\DoxyCodeLine{514                             strcat(amountText, \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_a22548e41ebfc416288f2ba00100fe024}{GetElementText}}(balance));}
+\DoxyCodeLine{515                             \textcolor{comment}{//Print out amount}}
+\DoxyCodeLine{516                             cout << amountText << endl;}
+\DoxyCodeLine{517 }
+\DoxyCodeLine{518                         \}}
+\DoxyCodeLine{519 }
+\DoxyCodeLine{520                         \textcolor{comment}{// Get 'openDate' Child}}
+\DoxyCodeLine{521                         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *openDate = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pAccount, \textcolor{stringliteral}{"openDate"});}
+\DoxyCodeLine{522 }
+\DoxyCodeLine{523                         std::cout << std::endl;}
+\DoxyCodeLine{524 }
+\DoxyCodeLine{525                     \}}
+\DoxyCodeLine{526 }
+\DoxyCodeLine{527                     \textcolor{comment}{//Next Account}}
+\DoxyCodeLine{528                     pAccount = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_aaa090673587d923a585db99223f6fadf}{GetNextSiblingElement}}(pAccount, \textcolor{stringliteral}{"Account"});}
+\DoxyCodeLine{529                 \}}
+\DoxyCodeLine{530             \}}
+\DoxyCodeLine{531         \}}
+\DoxyCodeLine{532     \}}
+\DoxyCodeLine{533 }
+\DoxyCodeLine{534     \textcolor{keywordflow}{catch} (exception ex)}
+\DoxyCodeLine{535     \{}
+\DoxyCodeLine{536         cout << \textcolor{stringliteral}{"Error thrown. Please contact the system administrator"};}
+\DoxyCodeLine{537     \}}
+\DoxyCodeLine{538 \}}
 
 \end{DoxyCode}
 
 
-References tinyxml2\+::\+X\+M\+L\+Node\+::\+First\+Child\+Element(), constants\+::\+Get\+Path(), tinyxml2\+::\+X\+M\+L\+Element\+::\+Get\+Text(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Load\+File(), tinyxml2\+::\+X\+M\+L\+Node\+::\+Next\+Sibling\+Element(), and tinyxml2\+::\+X\+M\+L\+Document\+::\+Root\+Element().
+References Helper\+::\+Get\+Element\+Text(), Helper\+::\+Get\+First\+Child\+Element(), Helper\+::\+Get\+Next\+Sibling\+Element(), constants\+::\+Get\+Path(), helper, tinyxml2\+::\+X\+M\+L\+Document\+::\+Load\+File(), and tinyxml2\+::\+X\+M\+L\+Document\+::\+Root\+Element().
 
 
 
@@ -439,117 +561,117 @@ Referenced by main\+Menu().
 
 
 
-Definition at line 489 of file Accounts.\+cpp.
+Definition at line 544 of file Accounts.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{490 \{}
-\DoxyCodeLine{491     \textcolor{keywordtype}{string} result;}
-\DoxyCodeLine{492     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document}{XMLDocument}} doc;}
-\DoxyCodeLine{493     \mbox{\hyperlink{classconstants}{constants}} \mbox{\hyperlink{classconstants}{constants}};}
-\DoxyCodeLine{494     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *path = \mbox{\hyperlink{classconstants}{constants}}.\mbox{\hyperlink{classconstants_a91b4da1fb34bc7ef659c4e29b72abe51}{GetPath}}();}
-\DoxyCodeLine{495     \textcolor{keywordtype}{char} amountText[100];}
-\DoxyCodeLine{496 }
-\DoxyCodeLine{497     \textcolor{comment}{// Load the XML file into the Doc instance}}
-\DoxyCodeLine{498     doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a2ebd4647a8af5fc6831b294ac26a150a}{LoadFile}}(path);}
-\DoxyCodeLine{499     \textcolor{comment}{// Get root Element}}
-\DoxyCodeLine{500     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pRootElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_ad2b70320d3c2a071c2f36928edff3e1c}{RootElement}}();}
-\DoxyCodeLine{501 }
-\DoxyCodeLine{502     \textcolor{comment}{// Print out the Header}}
-\DoxyCodeLine{503     cout << \textcolor{stringliteral}{"\(\backslash\)n"};}
-\DoxyCodeLine{504     cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
-\DoxyCodeLine{505     cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Accounts List-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
-\DoxyCodeLine{506     cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
-\DoxyCodeLine{507     cout << \textcolor{stringliteral}{"\(\backslash\)n"};}
-\DoxyCodeLine{508     \textcolor{comment}{// Print out the Table Header}}
-\DoxyCodeLine{509     cout << \textcolor{charliteral}{'|'} << setw(7) << \textcolor{stringliteral}{"Acc No."} << \textcolor{charliteral}{'|'} << setw(12) << \textcolor{stringliteral}{"Account Type"} << \textcolor{charliteral}{'|'} << setw(15) << \textcolor{stringliteral}{"Customer Name"} << \textcolor{charliteral}{'|'} << setw(10) << \textcolor{stringliteral}{"Balance"} << \textcolor{charliteral}{'|'} << setw(12) << \textcolor{stringliteral}{"Open Date"} <<}
-\DoxyCodeLine{510         endl << endl;}
-\DoxyCodeLine{511 }
-\DoxyCodeLine{512     \textcolor{keywordflow}{if} (NULL != pRootElement)}
-\DoxyCodeLine{513     \{}
-\DoxyCodeLine{514         \textcolor{comment}{//Get 'Accounts' Child}}
-\DoxyCodeLine{515         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccounts = pRootElement-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"Accounts"});}
-\DoxyCodeLine{516 }
-\DoxyCodeLine{517         \textcolor{keywordflow}{if} (NULL != pAccounts)}
-\DoxyCodeLine{518         \{}
-\DoxyCodeLine{519             \textcolor{comment}{//Get 'Account' Child}}
-\DoxyCodeLine{520             \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccount = pAccounts-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"Account"});}
-\DoxyCodeLine{521 }
-\DoxyCodeLine{522             \textcolor{keywordflow}{while} (pAccount)}
-\DoxyCodeLine{523             \{}
-\DoxyCodeLine{524                 \textcolor{comment}{// Get 'AccountNo' Child}}
-\DoxyCodeLine{525                 \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccountNo = pAccount-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"AccountNo"});}
-\DoxyCodeLine{526 }
-\DoxyCodeLine{527                 \textcolor{keywordflow}{if} (NULL != pAccountNo)}
-\DoxyCodeLine{528                 \{}
-\DoxyCodeLine{529                     \textcolor{comment}{//Print out AccountNo}}
-\DoxyCodeLine{530                     cout << \textcolor{charliteral}{'|'} << setw(7) << pAccountNo-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}();}
-\DoxyCodeLine{531 }
-\DoxyCodeLine{532                 \}}
-\DoxyCodeLine{533 }
-\DoxyCodeLine{534                 \textcolor{comment}{//Get 'type' Child}}
-\DoxyCodeLine{535                 \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pType = pAccount-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"type"});}
-\DoxyCodeLine{536 }
-\DoxyCodeLine{537                 \textcolor{keywordflow}{if} (NULL != pType)}
-\DoxyCodeLine{538                 \{}
-\DoxyCodeLine{539                     \textcolor{comment}{// Print out 'Tyoe'}}
-\DoxyCodeLine{540                     cout << \textcolor{charliteral}{'|'} << setw(12) << pType-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}();}
-\DoxyCodeLine{541                 \}}
-\DoxyCodeLine{542 }
-\DoxyCodeLine{543                 \textcolor{comment}{// Get 'customer' Child}}
-\DoxyCodeLine{544                 \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *name = pAccount-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"customer"});}
-\DoxyCodeLine{545 }
-\DoxyCodeLine{546                 \textcolor{keywordflow}{if} (NULL != name)}
-\DoxyCodeLine{547                 \{}
-\DoxyCodeLine{548                     \textcolor{comment}{//Print out name}}
-\DoxyCodeLine{549                     cout << \textcolor{charliteral}{'|'} << setw(15) << name-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}();}
-\DoxyCodeLine{550 }
-\DoxyCodeLine{551                 \}}
+\DoxyCodeLine{545 \{}
+\DoxyCodeLine{546     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{547     \{}
+\DoxyCodeLine{548         \textcolor{keywordtype}{string} result;}
+\DoxyCodeLine{549         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document}{XMLDocument}} doc;}
+\DoxyCodeLine{550         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *path = \mbox{\hyperlink{classconstants}{constants}}.\mbox{\hyperlink{classconstants_a91b4da1fb34bc7ef659c4e29b72abe51}{GetPath}}();}
+\DoxyCodeLine{551         \textcolor{keywordtype}{char} amountText[100];}
 \DoxyCodeLine{552 }
-\DoxyCodeLine{553                 \textcolor{comment}{// Get 'balance' Child}}
-\DoxyCodeLine{554                 \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *balance = pAccount-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"balance"});}
-\DoxyCodeLine{555 }
-\DoxyCodeLine{556                 \textcolor{keywordflow}{if} (NULL != balance)}
-\DoxyCodeLine{557                 \{}
-\DoxyCodeLine{558                     \textcolor{comment}{// Convert to *char}}
-\DoxyCodeLine{559                     strcpy(amountText, \textcolor{stringliteral}{"\$"});    \textcolor{comment}{// copy string one into the result.}}
-\DoxyCodeLine{560                     strcat(amountText, balance-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}());  \textcolor{comment}{// append string two to the result.}}
-\DoxyCodeLine{561                     \textcolor{comment}{//Print out amount}}
-\DoxyCodeLine{562                     cout << \textcolor{charliteral}{'|'} << setw(10) << amountText << \textcolor{charliteral}{'|'};}
-\DoxyCodeLine{563 }
-\DoxyCodeLine{564                 \}}
-\DoxyCodeLine{565 }
-\DoxyCodeLine{566                 \textcolor{comment}{// Get 'openDate' Child}}
-\DoxyCodeLine{567                 \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *openDate = pAccount-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"openDate"});}
-\DoxyCodeLine{568 }
-\DoxyCodeLine{569                 \textcolor{keywordflow}{if} (NULL != openDate)}
-\DoxyCodeLine{570                 \{}
-\DoxyCodeLine{571                     \textcolor{comment}{//Print out openDate}}
-\DoxyCodeLine{572                     cout << setw(12) << openDate-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a6d5c8d115561ade4e4456b71d91b6f51}{GetText}}() << \textcolor{charliteral}{'|'};}
-\DoxyCodeLine{573 }
-\DoxyCodeLine{574                 \}}
-\DoxyCodeLine{575 }
-\DoxyCodeLine{576                 cout << endl;}
-\DoxyCodeLine{577                 cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"};}
-\DoxyCodeLine{578                 std::cout << std::endl;}
-\DoxyCodeLine{579                 \textcolor{comment}{// Next Account}}
-\DoxyCodeLine{580                 pAccount = pAccount-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1264c86233328f0cd36297552d982f80}{NextSiblingElement}}(\textcolor{stringliteral}{"Account"});}
-\DoxyCodeLine{581             \}}
-\DoxyCodeLine{582 }
-\DoxyCodeLine{583             \textcolor{comment}{//Print out Footer}}
-\DoxyCodeLine{584             cout << \textcolor{stringliteral}{"\(\backslash\)n"};}
-\DoxyCodeLine{585             cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
-\DoxyCodeLine{586             cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/End of Accounts List-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
-\DoxyCodeLine{587             cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
-\DoxyCodeLine{588             cout << \textcolor{stringliteral}{"\(\backslash\)n"};}
-\DoxyCodeLine{589         \}}
-\DoxyCodeLine{590     \}}
-\DoxyCodeLine{591 \}}
+\DoxyCodeLine{553         \textcolor{comment}{// Load the XML file into the Doc instance}}
+\DoxyCodeLine{554         doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a2ebd4647a8af5fc6831b294ac26a150a}{LoadFile}}(path);}
+\DoxyCodeLine{555         \textcolor{comment}{// Get root Element}}
+\DoxyCodeLine{556         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pRootElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_ad2b70320d3c2a071c2f36928edff3e1c}{RootElement}}();}
+\DoxyCodeLine{557 }
+\DoxyCodeLine{558         \textcolor{comment}{// Print out the Table Header}}
+\DoxyCodeLine{559         cout << \textcolor{charliteral}{'|'} << setw(7) << \textcolor{stringliteral}{"Acc No."} << \textcolor{charliteral}{'|'} << setw(12) << \textcolor{stringliteral}{"Account Type"} << \textcolor{charliteral}{'|'} << setw(15) << \textcolor{stringliteral}{"Customer Name"} << \textcolor{charliteral}{'|'} << setw(10) << \textcolor{stringliteral}{"Balance"} << \textcolor{charliteral}{'|'} << setw(12) << \textcolor{stringliteral}{"Open Date"} <<}
+\DoxyCodeLine{560             endl << endl;}
+\DoxyCodeLine{561 }
+\DoxyCodeLine{562         \textcolor{keywordflow}{if} (NULL != pRootElement)}
+\DoxyCodeLine{563         \{}
+\DoxyCodeLine{564             \textcolor{comment}{//Get 'Accounts' Child}}
+\DoxyCodeLine{565             \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccounts = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pRootElement, \textcolor{stringliteral}{"Accounts"});}
+\DoxyCodeLine{566 }
+\DoxyCodeLine{567             \textcolor{keywordflow}{if} (NULL != pAccounts)}
+\DoxyCodeLine{568             \{}
+\DoxyCodeLine{569                 \textcolor{comment}{//Get 'Account' Child}}
+\DoxyCodeLine{570                 \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccount = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pAccounts, \textcolor{stringliteral}{"Account"});}
+\DoxyCodeLine{571 }
+\DoxyCodeLine{572                 \textcolor{keywordflow}{while} (pAccount)}
+\DoxyCodeLine{573                 \{}
+\DoxyCodeLine{574                     \textcolor{comment}{// Get 'AccountNo' Child}}
+\DoxyCodeLine{575                     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccountNo = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pAccount, \textcolor{stringliteral}{"AccountNo"});}
+\DoxyCodeLine{576 }
+\DoxyCodeLine{577                     \textcolor{keywordflow}{if} (NULL != pAccountNo)}
+\DoxyCodeLine{578                     \{}
+\DoxyCodeLine{579                         \textcolor{comment}{//Print out AccountNo}}
+\DoxyCodeLine{580                         cout << \textcolor{charliteral}{'|'} << setw(7) << \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_a22548e41ebfc416288f2ba00100fe024}{GetElementText}}(pAccountNo);}
+\DoxyCodeLine{581 }
+\DoxyCodeLine{582                     \}}
+\DoxyCodeLine{583 }
+\DoxyCodeLine{584                     \textcolor{comment}{//Get 'type' Child}}
+\DoxyCodeLine{585                     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pType = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pAccount, \textcolor{stringliteral}{"type"});}
+\DoxyCodeLine{586 }
+\DoxyCodeLine{587                     \textcolor{keywordflow}{if} (NULL != pType)}
+\DoxyCodeLine{588                     \{}
+\DoxyCodeLine{589                         \textcolor{comment}{// Print out 'Tyoe'}}
+\DoxyCodeLine{590                         cout << \textcolor{charliteral}{'|'} << setw(12) << \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_a22548e41ebfc416288f2ba00100fe024}{GetElementText}}(pType);}
+\DoxyCodeLine{591                     \}}
+\DoxyCodeLine{592 }
+\DoxyCodeLine{593                     \textcolor{comment}{// Get 'customer' Child}}
+\DoxyCodeLine{594                     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *name = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pAccount, \textcolor{stringliteral}{"customer"});}
+\DoxyCodeLine{595 }
+\DoxyCodeLine{596                     \textcolor{keywordflow}{if} (NULL != name)}
+\DoxyCodeLine{597                     \{}
+\DoxyCodeLine{598                         \textcolor{comment}{//Print out name}}
+\DoxyCodeLine{599                         cout << \textcolor{charliteral}{'|'} << setw(15) << \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_a22548e41ebfc416288f2ba00100fe024}{GetElementText}}(name);}
+\DoxyCodeLine{600 }
+\DoxyCodeLine{601                     \}}
+\DoxyCodeLine{602 }
+\DoxyCodeLine{603                     \textcolor{comment}{// Get 'balance' Child}}
+\DoxyCodeLine{604                     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *balance = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pAccount, \textcolor{stringliteral}{"balance"});}
+\DoxyCodeLine{605 }
+\DoxyCodeLine{606                     \textcolor{keywordflow}{if} (NULL != balance)}
+\DoxyCodeLine{607                     \{}
+\DoxyCodeLine{608                         \textcolor{comment}{// Convert to *char}}
+\DoxyCodeLine{609                         strcpy(amountText, \textcolor{stringliteral}{"\$"});}
+\DoxyCodeLine{610                         strcat(amountText, \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_a22548e41ebfc416288f2ba00100fe024}{GetElementText}}(balance));}
+\DoxyCodeLine{611                         \textcolor{comment}{//Print out amount}}
+\DoxyCodeLine{612                         cout << \textcolor{charliteral}{'|'} << setw(10) << amountText << \textcolor{charliteral}{'|'};}
+\DoxyCodeLine{613 }
+\DoxyCodeLine{614                     \}}
+\DoxyCodeLine{615 }
+\DoxyCodeLine{616                     \textcolor{comment}{// Get 'openDate' Child}}
+\DoxyCodeLine{617                     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *openDate = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pAccount, \textcolor{stringliteral}{"openDate"});}
+\DoxyCodeLine{618                     \textcolor{keywordflow}{if} (NULL != openDate)}
+\DoxyCodeLine{619                     \{}
+\DoxyCodeLine{620                         \textcolor{comment}{//Print out openDate}}
+\DoxyCodeLine{621                         cout << setw(12) << \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_a22548e41ebfc416288f2ba00100fe024}{GetElementText}}(openDate) << \textcolor{charliteral}{'|'};}
+\DoxyCodeLine{622 }
+\DoxyCodeLine{623                     \}}
+\DoxyCodeLine{624 }
+\DoxyCodeLine{625                     cout << endl;}
+\DoxyCodeLine{626                     cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"};}
+\DoxyCodeLine{627                     std::cout << std::endl;}
+\DoxyCodeLine{628                     \textcolor{comment}{// Next Account}}
+\DoxyCodeLine{629                     pAccount = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_aaa090673587d923a585db99223f6fadf}{GetNextSiblingElement}}(pAccount, \textcolor{stringliteral}{"Account"});}
+\DoxyCodeLine{630                 \}}
+\DoxyCodeLine{631 }
+\DoxyCodeLine{632                 \textcolor{comment}{//Print out Footer}}
+\DoxyCodeLine{633                 cout << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{634                 cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{635                 cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/End of Accounts List-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{636                 cout << \textcolor{stringliteral}{"-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"};}
+\DoxyCodeLine{637                 cout << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{638             \}}
+\DoxyCodeLine{639         \}}
+\DoxyCodeLine{640     \}}
+\DoxyCodeLine{641 }
+\DoxyCodeLine{642     \textcolor{keywordflow}{catch} (exception ex)}
+\DoxyCodeLine{643     \{}
+\DoxyCodeLine{644         cout << \textcolor{stringliteral}{"Error thrown. Please contact the system administrator"};}
+\DoxyCodeLine{645     \}}
+\DoxyCodeLine{646 \}}
 
 \end{DoxyCode}
 
 
-References tinyxml2\+::\+X\+M\+L\+Node\+::\+First\+Child\+Element(), constants\+::\+Get\+Path(), tinyxml2\+::\+X\+M\+L\+Element\+::\+Get\+Text(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Load\+File(), tinyxml2\+::\+X\+M\+L\+Node\+::\+Next\+Sibling\+Element(), and tinyxml2\+::\+X\+M\+L\+Document\+::\+Root\+Element().
+References Helper\+::\+Get\+Element\+Text(), Helper\+::\+Get\+First\+Child\+Element(), Helper\+::\+Get\+Next\+Sibling\+Element(), constants\+::\+Get\+Path(), helper, tinyxml2\+::\+X\+M\+L\+Document\+::\+Load\+File(), and tinyxml2\+::\+X\+M\+L\+Document\+::\+Root\+Element().
 
 
 
@@ -563,68 +685,80 @@ Referenced by main\+Menu().
 
 
 
-Definition at line 600 of file Accounts.\+cpp.
+Definition at line 655 of file Accounts.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{601 \{}
-\DoxyCodeLine{602     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document}{XMLDocument}} doc;}
-\DoxyCodeLine{603     \mbox{\hyperlink{classconstants}{constants}} \mbox{\hyperlink{classconstants}{constants}};}
-\DoxyCodeLine{604     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *path = \mbox{\hyperlink{classconstants}{constants}}.\mbox{\hyperlink{classconstants_a91b4da1fb34bc7ef659c4e29b72abe51}{GetPath}}();}
-\DoxyCodeLine{605     \textcolor{keywordtype}{char} accountNumberChar[100];}
-\DoxyCodeLine{606     \textcolor{keywordtype}{char} typeChar[100];}
-\DoxyCodeLine{607 }
-\DoxyCodeLine{608     \textcolor{comment}{// Load the XML file into the Doc instance}}
-\DoxyCodeLine{609     doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a2ebd4647a8af5fc6831b294ac26a150a}{LoadFile}}(path);}
-\DoxyCodeLine{610     \textcolor{comment}{//Get root Element}}
-\DoxyCodeLine{611     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pTop = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_ad2b70320d3c2a071c2f36928edff3e1c}{RootElement}}();}
-\DoxyCodeLine{612 }
-\DoxyCodeLine{613     \textcolor{comment}{// Get 'Accounts' Child}}
-\DoxyCodeLine{614     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccounts = pTop-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"Accounts"});}
-\DoxyCodeLine{615     \textcolor{comment}{//Create new Element}}
-\DoxyCodeLine{616     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node}{XMLNode}} *pRoot = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"Account"});}
-\DoxyCodeLine{617     \textcolor{comment}{//Insert new Element}}
-\DoxyCodeLine{618     pAccounts-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pRoot);}
-\DoxyCodeLine{619     \textcolor{comment}{//Create new Element}}
-\DoxyCodeLine{620     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"AccountNo"});}
-\DoxyCodeLine{621     \textcolor{comment}{// Set new Element Text}}
-\DoxyCodeLine{622     pElement-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a1f9c2cd61b72af5ae708d37b7ad283ce}{SetText}}(strdup(accountNumber.c\_str()));    \textcolor{comment}{// AccountNo}}
-\DoxyCodeLine{623     \textcolor{comment}{// Insert new Element}}
-\DoxyCodeLine{624     pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
-\DoxyCodeLine{625     \textcolor{comment}{//Create new Element}}
-\DoxyCodeLine{626     pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"type"});}
-\DoxyCodeLine{627     \textcolor{comment}{// Set new Element Text}}
-\DoxyCodeLine{628     pElement-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a1f9c2cd61b72af5ae708d37b7ad283ce}{SetText}}(strdup(accountType.c\_str()));  \textcolor{comment}{// type}}
-\DoxyCodeLine{629     \textcolor{comment}{// Insert new Element}}
-\DoxyCodeLine{630     pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
-\DoxyCodeLine{631     \textcolor{comment}{//Create new Element}}
-\DoxyCodeLine{632     pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"customer"});}
-\DoxyCodeLine{633     \textcolor{comment}{// Set new element Text}}
-\DoxyCodeLine{634     pElement-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a1f9c2cd61b72af5ae708d37b7ad283ce}{SetText}}(strdup(customerName.c\_str())); \textcolor{comment}{// customer}}
-\DoxyCodeLine{635     \textcolor{comment}{// Insert new Element}}
-\DoxyCodeLine{636     pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
-\DoxyCodeLine{637     \textcolor{comment}{//Create new Element}}
-\DoxyCodeLine{638     pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"balance"});}
-\DoxyCodeLine{639     \textcolor{comment}{// Set new Element Text}}
-\DoxyCodeLine{640     pElement-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a1f9c2cd61b72af5ae708d37b7ad283ce}{SetText}}(strdup(accountBalance.c\_str()));   \textcolor{comment}{// balance}}
-\DoxyCodeLine{641     \textcolor{comment}{// Insert new Element}}
-\DoxyCodeLine{642     pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
-\DoxyCodeLine{643     \textcolor{comment}{//Create new Element}}
-\DoxyCodeLine{644     pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"openDate"});}
-\DoxyCodeLine{645     \textcolor{comment}{// Set new Element Text}}
-\DoxyCodeLine{646     pElement-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a1f9c2cd61b72af5ae708d37b7ad283ce}{SetText}}(\textcolor{stringliteral}{"01/01/2020"}); \textcolor{comment}{// openDate}}
-\DoxyCodeLine{647     \textcolor{comment}{//Insert new Element}}
-\DoxyCodeLine{648     pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
-\DoxyCodeLine{649 }
-\DoxyCodeLine{650     \textcolor{comment}{//Save the changes into the XML file}}
-\DoxyCodeLine{651     doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a73ac416b4a2aa0952e841220eb3da18f}{SaveFile}}(path);}
-\DoxyCodeLine{652 }
-\DoxyCodeLine{653 \}}
+\DoxyCodeLine{656 \{}
+\DoxyCodeLine{657     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{658     \{}
+\DoxyCodeLine{659         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document}{XMLDocument}} doc;}
+\DoxyCodeLine{660         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *path = \mbox{\hyperlink{classconstants}{constants}}.\mbox{\hyperlink{classconstants_a91b4da1fb34bc7ef659c4e29b72abe51}{GetPath}}();}
+\DoxyCodeLine{661         \textcolor{keywordtype}{char} accountNumberChar[100];}
+\DoxyCodeLine{662         \textcolor{keywordtype}{char} typeChar[100];}
+\DoxyCodeLine{663 }
+\DoxyCodeLine{664         \textcolor{comment}{// Load the XML file into the Doc instance}}
+\DoxyCodeLine{665         doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a2ebd4647a8af5fc6831b294ac26a150a}{LoadFile}}(path);}
+\DoxyCodeLine{666         \textcolor{comment}{//Get root Element}}
+\DoxyCodeLine{667         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pTop = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_ad2b70320d3c2a071c2f36928edff3e1c}{RootElement}}();}
+\DoxyCodeLine{668 }
+\DoxyCodeLine{669         \textcolor{comment}{// Get 'Accounts' Child}}
+\DoxyCodeLine{670         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pAccounts = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pTop, \textcolor{stringliteral}{"Accounts"});}
+\DoxyCodeLine{671 }
+\DoxyCodeLine{672         \textcolor{comment}{//Create new Element}}
+\DoxyCodeLine{673         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node}{XMLNode}} *pRoot = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"Account"});}
+\DoxyCodeLine{674         \textcolor{comment}{//Insert new Element}}
+\DoxyCodeLine{675         pAccounts-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pRoot);}
+\DoxyCodeLine{676 }
+\DoxyCodeLine{677         \textcolor{comment}{//Create new Element}}
+\DoxyCodeLine{678         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"AccountNo"});}
+\DoxyCodeLine{679         \textcolor{comment}{// Set new Element Text}}
+\DoxyCodeLine{680         \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_ab72db9fa2e41c23a63e699fe0642a0de}{SetElementText}}(pElement, strdup(accountNumber.c\_str())); \textcolor{comment}{// AccountNo}}
+\DoxyCodeLine{681         \textcolor{comment}{// Insert new Element}}
+\DoxyCodeLine{682         pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
+\DoxyCodeLine{683 }
+\DoxyCodeLine{684         \textcolor{comment}{//Create new Element}}
+\DoxyCodeLine{685         pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"type"});}
+\DoxyCodeLine{686         \textcolor{comment}{// Set new Element Text}}
+\DoxyCodeLine{687         \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_ab72db9fa2e41c23a63e699fe0642a0de}{SetElementText}}(pElement, strdup(accountType.c\_str()));   \textcolor{comment}{// type}}
+\DoxyCodeLine{688         \textcolor{comment}{// Insert new Element}}
+\DoxyCodeLine{689         pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
+\DoxyCodeLine{690 }
+\DoxyCodeLine{691         \textcolor{comment}{//Create new Element}}
+\DoxyCodeLine{692         pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"customer"});}
+\DoxyCodeLine{693         \textcolor{comment}{// Set new element Text}}
+\DoxyCodeLine{694         \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_ab72db9fa2e41c23a63e699fe0642a0de}{SetElementText}}(pElement, strdup(customerName.c\_str()));  \textcolor{comment}{// customer}}
+\DoxyCodeLine{695         \textcolor{comment}{// Insert new Element}}
+\DoxyCodeLine{696         pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
+\DoxyCodeLine{697 }
+\DoxyCodeLine{698         \textcolor{comment}{//Create new Element}}
+\DoxyCodeLine{699         pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"balance"});}
+\DoxyCodeLine{700         \textcolor{comment}{// Set new Element Text}}
+\DoxyCodeLine{701         \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_ab72db9fa2e41c23a63e699fe0642a0de}{SetElementText}}(pElement, strdup(accountBalance.c\_str()));    \textcolor{comment}{// balance}}
+\DoxyCodeLine{702         \textcolor{comment}{// Insert new Element}}
+\DoxyCodeLine{703         pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
+\DoxyCodeLine{704 }
+\DoxyCodeLine{705         \textcolor{comment}{//Create new Element}}
+\DoxyCodeLine{706         pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"openDate"});}
+\DoxyCodeLine{707         \textcolor{comment}{// Set new Element Text}}
+\DoxyCodeLine{708         \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_ab72db9fa2e41c23a63e699fe0642a0de}{SetElementText}}(pElement, \textcolor{stringliteral}{"03/01/2020"});  \textcolor{comment}{// openDate}}
+\DoxyCodeLine{709         \textcolor{comment}{//Insert new Element}}
+\DoxyCodeLine{710         pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
+\DoxyCodeLine{711 }
+\DoxyCodeLine{712         \textcolor{comment}{//Save the changes into the XML file}}
+\DoxyCodeLine{713         doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a73ac416b4a2aa0952e841220eb3da18f}{SaveFile}}(path);}
+\DoxyCodeLine{714     \}}
+\DoxyCodeLine{715 }
+\DoxyCodeLine{716     \textcolor{keywordflow}{catch} (exception ex)}
+\DoxyCodeLine{717     \{}
+\DoxyCodeLine{718         cout << \textcolor{stringliteral}{"Error thrown. Please contact the system administrator"};}
+\DoxyCodeLine{719     \}}
+\DoxyCodeLine{720 \}}
 
 \end{DoxyCode}
 
 
-References tinyxml2\+::\+X\+M\+L\+Node\+::\+First\+Child\+Element(), constants\+::\+Get\+Path(), tinyxml2\+::\+X\+M\+L\+Node\+::\+Insert\+End\+Child(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Load\+File(), tinyxml2\+::\+X\+M\+L\+Document\+::\+New\+Element(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Root\+Element(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Save\+File(), and tinyxml2\+::\+X\+M\+L\+Element\+::\+Set\+Text().
+References Helper\+::\+Get\+First\+Child\+Element(), constants\+::\+Get\+Path(), helper, tinyxml2\+::\+X\+M\+L\+Node\+::\+Insert\+End\+Child(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Load\+File(), tinyxml2\+::\+X\+M\+L\+Document\+::\+New\+Element(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Root\+Element(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Save\+File(), and Helper\+::\+Set\+Element\+Text().
 
 
 
@@ -638,66 +772,73 @@ Referenced by main\+Menu().
 
 
 
-Definition at line 194 of file Accounts.\+cpp.
+Definition at line 222 of file Accounts.\+cpp.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{195 \{}
-\DoxyCodeLine{196     \textcolor{keywordtype}{char} date[9];}
-\DoxyCodeLine{197     \_strdate(date);}
-\DoxyCodeLine{198     \mbox{\hyperlink{classconstants}{constants}} \mbox{\hyperlink{classconstants}{constants}};}
-\DoxyCodeLine{199 }
-\DoxyCodeLine{200     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document}{XMLDocument}} doc;}
-\DoxyCodeLine{201     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *path = \mbox{\hyperlink{classconstants}{constants}}.\mbox{\hyperlink{classconstants_a91b4da1fb34bc7ef659c4e29b72abe51}{GetPath}}();}
-\DoxyCodeLine{202     \textcolor{keywordtype}{char} accountNumberChar[100];}
-\DoxyCodeLine{203     \textcolor{keywordtype}{char} typeChar[100];}
-\DoxyCodeLine{204     \textcolor{comment}{// Load the XML file into the Doc instance}}
-\DoxyCodeLine{205     doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a2ebd4647a8af5fc6831b294ac26a150a}{LoadFile}}(path);}
-\DoxyCodeLine{206     \textcolor{comment}{// Get root Element// Check for Matching Account Number}}
-\DoxyCodeLine{207     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pTop = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_ad2b70320d3c2a071c2f36928edff3e1c}{RootElement}}();}
-\DoxyCodeLine{208     \textcolor{comment}{//Get 'Transactions' Child}}
-\DoxyCodeLine{209     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pTransactions = pTop-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_a1795a35852dc8aae877cc8ded986e59b}{FirstChildElement}}(\textcolor{stringliteral}{"Transactions"});}
-\DoxyCodeLine{210 }
-\DoxyCodeLine{211     \textcolor{comment}{//Create new Element}}
-\DoxyCodeLine{212     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node}{XMLNode}} *pRoot = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"transaction"});}
-\DoxyCodeLine{213     \textcolor{comment}{//Insert new Element}}
-\DoxyCodeLine{214     pTransactions-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pRoot);}
-\DoxyCodeLine{215 }
-\DoxyCodeLine{216     \textcolor{comment}{//Create new Element}}
-\DoxyCodeLine{217     \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"AccountNo"});}
-\DoxyCodeLine{218     \textcolor{comment}{// Set new Element Text}}
-\DoxyCodeLine{219     pElement-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a1f9c2cd61b72af5ae708d37b7ad283ce}{SetText}}(strdup(a.c\_str()));    \textcolor{comment}{// AccountNo}}
-\DoxyCodeLine{220     \textcolor{comment}{//Insert new Element}}
-\DoxyCodeLine{221     pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
-\DoxyCodeLine{222     \textcolor{comment}{//Create new Element}}
-\DoxyCodeLine{223 }
-\DoxyCodeLine{224     pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"type"});}
-\DoxyCodeLine{225     \textcolor{comment}{//Set new element Text}}
-\DoxyCodeLine{226     pElement-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a1f9c2cd61b72af5ae708d37b7ad283ce}{SetText}}(\textcolor{stringliteral}{"Withdrawal"}); \textcolor{comment}{// type}}
-\DoxyCodeLine{227     \textcolor{comment}{//Insert new Element}}
-\DoxyCodeLine{228     pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
-\DoxyCodeLine{229     \textcolor{comment}{//Create new Element}}
-\DoxyCodeLine{230     pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"amount"});}
-\DoxyCodeLine{231     \textcolor{comment}{//Set new Element Text}}
-\DoxyCodeLine{232     pElement-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a1f9c2cd61b72af5ae708d37b7ad283ce}{SetText}}(strdup(amount.c\_str()));   \textcolor{comment}{// Amount}}
-\DoxyCodeLine{233     \textcolor{comment}{//Insert new Element}}
-\DoxyCodeLine{234     pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
-\DoxyCodeLine{235     \textcolor{comment}{// Create new Element}}
-\DoxyCodeLine{236     pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"date"});}
-\DoxyCodeLine{237     \textcolor{comment}{//Set new Element Text}}
-\DoxyCodeLine{238     pElement-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element_a1f9c2cd61b72af5ae708d37b7ad283ce}{SetText}}(strdup(date)); \textcolor{comment}{// Date}}
-\DoxyCodeLine{239     \textcolor{comment}{//Insert new Element}}
-\DoxyCodeLine{240     pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
-\DoxyCodeLine{241 }
-\DoxyCodeLine{242     \textcolor{comment}{//Save the changes into the XML file}}
-\DoxyCodeLine{243     doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a73ac416b4a2aa0952e841220eb3da18f}{SaveFile}}(path);}
-\DoxyCodeLine{244 }
-\DoxyCodeLine{245 \}}
+\DoxyCodeLine{223 \{}
+\DoxyCodeLine{224     \textcolor{keywordflow}{try}}
+\DoxyCodeLine{225     \{}
+\DoxyCodeLine{226         \textcolor{keywordtype}{char} date[9];}
+\DoxyCodeLine{227         \_strdate(date);}
+\DoxyCodeLine{228         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document}{XMLDocument}} doc;}
+\DoxyCodeLine{229         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *path = \mbox{\hyperlink{classconstants}{constants}}.\mbox{\hyperlink{classconstants_a91b4da1fb34bc7ef659c4e29b72abe51}{GetPath}}();}
+\DoxyCodeLine{230         \textcolor{keywordtype}{char} accountNumberChar[100];}
+\DoxyCodeLine{231         \textcolor{keywordtype}{char} typeChar[100];}
+\DoxyCodeLine{232         \textcolor{comment}{// Load the XML file into the Doc instance}}
+\DoxyCodeLine{233         doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a2ebd4647a8af5fc6831b294ac26a150a}{LoadFile}}(path);}
+\DoxyCodeLine{234         \textcolor{comment}{// Get root Element// Check for Matching Account Number}}
+\DoxyCodeLine{235         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pTop = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_ad2b70320d3c2a071c2f36928edff3e1c}{RootElement}}();}
+\DoxyCodeLine{236         \textcolor{comment}{//Get 'Transactions' Child}}
+\DoxyCodeLine{237         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pTransactions = \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_adc9dda65b697a9054dfa1923fb65c7cc}{GetFirstChildElement}}(pTop, \textcolor{stringliteral}{"Transactions"});  \textcolor{comment}{// pTop-\/>FirstChildElement("Transactions");}}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239         \textcolor{comment}{//Create new Element}}
+\DoxyCodeLine{240         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node}{XMLNode}} *pRoot = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"transaction"});}
+\DoxyCodeLine{241         \textcolor{comment}{//Insert new Element}}
+\DoxyCodeLine{242         pTransactions-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pRoot);}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244         \textcolor{comment}{//Create new Element}}
+\DoxyCodeLine{245         \mbox{\hyperlink{classtinyxml2_1_1_x_m_l_element}{XMLElement}} *pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"AccountNo"});}
+\DoxyCodeLine{246         \textcolor{comment}{// Set new Element Text}}
+\DoxyCodeLine{247         \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_ab72db9fa2e41c23a63e699fe0642a0de}{SetElementText}}(pElement, strdup(a.c\_str())); \textcolor{comment}{// AccountNo}}
+\DoxyCodeLine{248         \textcolor{comment}{//Insert new Element}}
+\DoxyCodeLine{249         pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{251         \textcolor{comment}{//Create new Element}}
+\DoxyCodeLine{252         pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"type"});}
+\DoxyCodeLine{253         \textcolor{comment}{//Set new element Text}}
+\DoxyCodeLine{254         \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_ab72db9fa2e41c23a63e699fe0642a0de}{SetElementText}}(pElement, \textcolor{stringliteral}{"Withdrawal"});  \textcolor{comment}{// type}}
+\DoxyCodeLine{255         \textcolor{comment}{//Insert new Element}}
+\DoxyCodeLine{256         pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258         \textcolor{comment}{//Create new Element}}
+\DoxyCodeLine{259         pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"amount"});}
+\DoxyCodeLine{260         \textcolor{comment}{//Set new Element Text}}
+\DoxyCodeLine{261         \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_ab72db9fa2e41c23a63e699fe0642a0de}{SetElementText}}(pElement, strdup(amount.c\_str()));    \textcolor{comment}{// Amount}}
+\DoxyCodeLine{262         \textcolor{comment}{//Insert new Element}}
+\DoxyCodeLine{263         pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265         \textcolor{comment}{// Create new Element}}
+\DoxyCodeLine{266         pElement = doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a8aa7817d4a1001364b06373763ab99d6}{NewElement}}(\textcolor{stringliteral}{"date"});}
+\DoxyCodeLine{267         \textcolor{comment}{//Set new Element Text}}
+\DoxyCodeLine{268         \mbox{\hyperlink{_accounts_8cpp_a25d594c8395a403b331b2f0ac5dea2ee}{helper}}.\mbox{\hyperlink{class_helper_ab72db9fa2e41c23a63e699fe0642a0de}{SetElementText}}(pElement, strdup(date));  \textcolor{comment}{// Date}}
+\DoxyCodeLine{269         \textcolor{comment}{//Insert new Element}}
+\DoxyCodeLine{270         pRoot-\/>\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_node_aeb249ed60f4e8bfad3709151c3ee4286}{InsertEndChild}}(pElement);}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272         \textcolor{comment}{//Save the changes into the XML file}}
+\DoxyCodeLine{273         doc.\mbox{\hyperlink{classtinyxml2_1_1_x_m_l_document_a73ac416b4a2aa0952e841220eb3da18f}{SaveFile}}(path);}
+\DoxyCodeLine{274     \}}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276     \textcolor{keywordflow}{catch} (exception ex)}
+\DoxyCodeLine{277     \{}
+\DoxyCodeLine{278         cout << \textcolor{stringliteral}{"Error thrown. Please contact the system administrator"};}
+\DoxyCodeLine{279     \}}
+\DoxyCodeLine{280 \}}
 
 \end{DoxyCode}
 
 
-References tinyxml2\+::\+X\+M\+L\+Node\+::\+First\+Child\+Element(), constants\+::\+Get\+Path(), tinyxml2\+::\+X\+M\+L\+Node\+::\+Insert\+End\+Child(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Load\+File(), tinyxml2\+::\+X\+M\+L\+Document\+::\+New\+Element(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Root\+Element(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Save\+File(), and tinyxml2\+::\+X\+M\+L\+Element\+::\+Set\+Text().
+References Helper\+::\+Get\+First\+Child\+Element(), constants\+::\+Get\+Path(), helper, tinyxml2\+::\+X\+M\+L\+Node\+::\+Insert\+End\+Child(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Load\+File(), tinyxml2\+::\+X\+M\+L\+Document\+::\+New\+Element(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Root\+Element(), tinyxml2\+::\+X\+M\+L\+Document\+::\+Save\+File(), and Helper\+::\+Set\+Element\+Text().
 
 
 

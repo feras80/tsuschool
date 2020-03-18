@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['open_596',['OPEN',['../classtinyxml2_1_1_x_m_l_element.html#ab5f90e2493c35702175235127e2935b4a78cf277c55b4655c86458dfecb11d349',1,'tinyxml2::XMLElement']]]
+  ['items_5fper_5fblock_673',['ITEMS_PER_BLOCK',['../classtinyxml2_1_1_mem_pool_t.html#a04cf45156e6f913f93972869ff8a1d94ab72c1e16d6626854c41feb19e60c54d1',1,'tinyxml2::MemPoolT']]]
 ];

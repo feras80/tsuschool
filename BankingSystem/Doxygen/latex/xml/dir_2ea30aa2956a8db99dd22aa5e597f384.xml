@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_2ea30aa2956a8db99dd22aa5e597f384" kind="dir">
+    <compoundname>C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/bin</compoundname>
+    <innerdir refid="dir_68323fab176bfe54037497825ea333b7">C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/bin/Debug</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/cb05314/Documents/TSU/CPPT/BankingSystem/bin/"/>
+  </compounddef>
+</doxygen>
