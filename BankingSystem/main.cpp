@@ -69,6 +69,10 @@ void Header(int option)
 			cout << "..................................Credit Card Application...................................\n";
 			cout << endl;
 			break;
+        case 8:
+			cout << ".......................................Money Transfer.......................................\n";
+			cout << endl;
+			break;
 	}
 }
 
@@ -86,9 +90,12 @@ void mainMenu()
 			// Variables
 			char c;
 			string accountNumber;
+			string fromAccount;
+			string toAccount;
 			string accountType;
 			string customerName;
 			string accountBalance;
+
 			bool accountExists;
 			// Print out main menu choices
 			do {
@@ -101,7 +108,8 @@ void mainMenu()
 				cout << "5. Withdraw\n\ ";
 				cout << "6. Account Balance\n\ ";
 				cout << "7. Credit Card Application \n\ ";
-				cout << "8. Exit \n\ ";
+				cout << "8. Money Transfer \n\ ";
+				cout << "9. Exit \n\ ";
 				cout << endl;
 				// Prompt the user the enter a choice
 				cout << "Enter your choice : \n\ ";
@@ -209,7 +217,7 @@ void mainMenu()
 							else
 							{
 								// Call Deposit function
-								account.Deposit(accountNumber, accountBalance);
+								account.Deposit(accountNumber, accountBalance,false);
 								cout << "Amount has been deposited.";
 							}
 
@@ -245,7 +253,7 @@ void mainMenu()
 							else
 							{
 								// Call Withdraw Function
-								account.Withdraw(accountNumber, accountBalance);
+								account.Withdraw(accountNumber, accountBalance, false);
 								cout << "Amount has been withdrawn.";
 							}
 
@@ -342,7 +350,49 @@ void mainMenu()
 
 						while (c == 'n');
 						break;
-					case 8:
+						case 8:
+						system("cls");
+						do {
+							//Change color
+							system("Color B");
+							//Display Header
+							Header(8);
+							// Prompt the user to enter the Account to Transfer Money From
+							cout << "Enter the Account# that you want to transfer money from:" << endl;
+							cin >> fromAccount;
+							cout << endl;
+
+                            cout << "Enter the Account# that you want to transfer money to:" << endl;
+							cin >> toAccount;
+							cout << endl;
+							cout << "Enter the balance to be transfered:" << endl;
+							cin >> accountBalance;
+							cout << endl;
+
+
+							if (account.AcountExists(fromAccount) == false ||account.AcountExists(toAccount) == false)
+							{
+								cout << "Either one or both Accounts Do not exist.";
+								cout << endl << endl;
+
+							}
+							else
+                            {
+                             // Withdraw from account, deposit into another
+                              account.Deposit(toAccount, accountBalance,true);
+                              account.Withdraw(fromAccount, accountBalance,true);
+                              cout << "Balance has been transfered.";
+                              cout << endl;
+                            }
+
+
+								cout << "Back to main menu?('y' or 'n')\n";
+
+							cin >> c;
+						}
+                         while (c == 'n');
+						break;
+					case 9:
 						//Exit the application
 						exit(0);
 						break;

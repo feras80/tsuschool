@@ -13,8 +13,8 @@ void GetAccount(string a);
 void GetAccountBalance(string a);
 void InsertAccount(string accountNumber, string accountType, string customerName, string accountBalance);
 bool AcountExists(string a);
-void Deposit (string a , string amount);
-void Withdraw (string a , string amount);
+void Deposit (string a , string amount, bool isTransfer);
+void Withdraw (string a , string amount, bool isTransfer);
 void CreditDecision(int income, int creditScore, int creditHistory);
 
 };

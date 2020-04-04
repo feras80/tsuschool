@@ -1,4 +1,4 @@
 1. Download the application from GetHub Repository
 2. Run the application
-3. Use the password 'letmein' to login
+3. Use the password 'myPass' to login
 

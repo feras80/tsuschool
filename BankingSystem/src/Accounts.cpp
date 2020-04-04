@@ -152,7 +152,7 @@ void bindTransaction(string a)
 // a: the account number
 // amount: amount to be Deposited
 
-void Accounts::Deposit(string a, string amount)
+void Accounts::Deposit(string a, string amount, bool isTransfer)
 {
 	try
 	{
@@ -186,7 +186,7 @@ void Accounts::Deposit(string a, string amount)
 		//Create new element
 		pElement = doc.NewElement("type");
 		// Set new Element Text
-		helper.SetElementText(pElement, "Deposit");	// type
+		helper.SetElementText(pElement, isTransfer == true? "Transfer-in": "Deposit");	// type  n1 > n2) ? n1 : n2;
 		// Insert new Element
 		pRoot->InsertEndChild(pElement);
 
@@ -219,7 +219,7 @@ void Accounts::Deposit(string a, string amount)
 // a: the account number
 // amount: amount to be Withdrawn
 
-void Accounts::Withdraw(string a, string amount)
+void Accounts::Withdraw(string a, string amount, bool isTransfer)
 {
 	try
 	{
@@ -251,7 +251,7 @@ void Accounts::Withdraw(string a, string amount)
 		//Create new Element
 		pElement = doc.NewElement("type");
 		//Set new element Text
-		helper.SetElementText(pElement, "Withdrawal");	// type
+		helper.SetElementText(pElement,isTransfer == true? "Transfer-out": "Withdrawal");   // type
 		//Insert new Element
 		pRoot->InsertEndChild(pElement);
 
